@@ -28,6 +28,9 @@
                 @case('gameshard')
                     <x-gameshard-icon class="h-6 w-6 mr-2" />
                     @break
+                @case('discord')
+                    <x-discord-icon class="h-6 w-6 mr-2" />
+                    @break
                 @default
             @endswitch
 

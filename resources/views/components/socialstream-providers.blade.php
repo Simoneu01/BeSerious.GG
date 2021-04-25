@@ -50,4 +50,8 @@
     <a href="{{ route('oauth.redirect', ['provider' => 'gameshard']) }}">
         <x-gameshard-icon class="h-6 w-6"/>
     </a>
+
+    <a href="{{ route('oauth.redirect', ['provider' => 'discord']) }}">
+        <x-discord-icon class="h-6 w-6"/>
+    </a>
 </div>

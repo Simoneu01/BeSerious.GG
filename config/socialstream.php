@@ -33,6 +33,7 @@ return [
         Providers::github(),
         Providers::google(),
         'gameshard',
+        'discord'
     ],
 
     /*
