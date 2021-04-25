@@ -30,4 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'gameshard' => [
+        'client_id' => env('GAMESHARD_CLIENT_ID'),
+        'client_secret' => env('GAMESHARD_CLIENT_SECRET'),
+        'redirect' => env('GAMESHARD_REDIRECT_URL'),
+    ],
 ];

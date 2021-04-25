@@ -25,6 +25,9 @@
                 @case(JoelButcher\Socialstream\Providers::bitbucket())
                     <x-bitbucket-icon class="h-6 w-6 mr-2" />
                     @break
+                @case('gameshard')
+                    <x-gameshard-icon class="h-6 w-6 mr-2" />
+                    @break
                 @default
             @endswitch
 
