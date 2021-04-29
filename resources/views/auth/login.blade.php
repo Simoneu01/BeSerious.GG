@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-auth-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <a href="/">
@@ -51,4 +51,4 @@
             <x-socialstream-providers />
         @endif
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-auth-layout>

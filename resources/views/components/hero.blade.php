@@ -59,7 +59,7 @@
                 </div>
                 <div
                     class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 space-x-2">
-                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block z-40">
                         @auth
                             <span class="inline-flex rounded-md shadow">
                                 <a href="{{ url('/dashboard') }}"
