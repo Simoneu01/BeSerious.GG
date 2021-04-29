@@ -18,7 +18,14 @@
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
+            <!-- Hero -->
+            <x-hero/>
+
+            <!-- Slot -->
             {{ $slot }}
+
+            <!-- Footer -->
+            <x-footer/>
         </div>
     </body>
 </html>
