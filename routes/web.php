@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn () => view('welcome'))->name('welcome');
+Route::get('/chi-siamo', fn () => view('chi-siamo'))->name('chi-siamo');
+Route::get('/twitch', fn () => view('twitch'))->name('twitch');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
