@@ -53,36 +53,38 @@
                 <div class="hidden md:flex md:space-x-10">
                     <a href="{{ route('chi-siamo') }}" class="font-medium text-gray-500 hover:text-gray-900">Chi Siamo</a>
 
-                    <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Be Serious</a>
+                    <a href="{{ route('be-serious') }}" class="font-medium text-gray-500 hover:text-gray-900">Be Serious</a>
 
                     <a href="{{ route('twitch') }}" class="font-medium text-gray-500 hover:text-gray-900">Twitch</a>
                 </div>
                 <div
                     class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 space-x-2">
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block z-40">
-                        @auth
-                            <span class="inline-flex rounded-md shadow">
-                                <a href="{{ url('/dashboard') }}"
-                                   class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
-                                    Dashboard
-                                </a>
-                            </span>
-                        @else
-                            <span class="inline-flex rounded-md shadow">
-                                <a href="{{ route('login') }}"
-                                   class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-red-600 bg-white hover:bg-gray-50">
-                                    Log in
-                                </a>
-                            </span>
-                            @if (Route::has('register'))
+                        @if (Route::has('login'))
+                            @auth
                                 <span class="inline-flex rounded-md shadow">
-                                    <a href="{{ route('register') }}"
+                                    <a href="{{ url('/dashboard') }}"
                                        class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
-                                        Registrati
+                                        Dashboard
                                     </a>
                                 </span>
-                            @endif
-                        @endauth
+                            @else
+                                <span class="inline-flex rounded-md shadow">
+                                    <a href="{{ route('login') }}"
+                                       class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-red-600 bg-white hover:bg-gray-50">
+                                        Log in
+                                    </a>
+                                </span>
+                                @if (Route::has('register'))
+                                    <span class="inline-flex rounded-md shadow">
+                                        <a href="{{ route('register') }}"
+                                           class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
+                                            Registrati
+                                        </a>
+                                    </span>
+                                @endif
+                            @endauth
+                        @endif
                     </div>
                 </div>
             </nav>
@@ -121,7 +123,7 @@
                     <a href="{{ route('chi-siamo') }}"
                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Chi Siamo</a>
 
-                    <a href="#"
+                    <a href="{{ route('be-serious') }}"
                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Be Serious</a>
 
                     <a href="{{ route('twitch') }}"
@@ -134,9 +136,11 @@
                             Dashboard
                         </a>
                     @else
-                        <a href="{{ route('register') }}" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700">
-                            Registrati
-                        </a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700">
+                                Registrati
+                            </a>
+                        @endif
                         <p class="mt-6 text-center text-base font-medium text-gray-500">
                             Già registrato?
                             <a href="{{ route('login') }}" class="text-red-600 hover:text-red-500">
@@ -165,7 +169,7 @@
                         </a>
                     </div>
                     <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                        <a href="#"
+                        <a href="{{ route('be-serious') }}"
                            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-red-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
                             Be Serious
                         </a>

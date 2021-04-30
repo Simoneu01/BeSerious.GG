@@ -21,22 +21,32 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+        <div class="min-h-screen h-full bg-gray-100 flex flex-col justify-between">
+            <div>
+                <div class="bg-red-600 pb-32">
+                    <livewire:navigation-menu/>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+                    <!-- Page Heading -->
+                    @if (isset($header))
+                        <header class="py-10">
+                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <h1 class="text-3xl font-bold text-white">
+                                    {{ $header }}
+                                </h1>
+                            </div>
+                        </header>
+                    @endif
+                </div>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+
+                <!-- Page Content -->
+                <main class="-mt-32">
+                    {{ $slot }}
+                </main>
+            </div>
+
+            <!-- Footer -->
+            <x-footer/>
         </div>
 
         @stack('modals')
