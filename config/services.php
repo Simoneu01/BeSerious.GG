@@ -34,6 +34,7 @@ return [
         'client_id' => env('GAMESHARD_CLIENT_ID'),
         'client_secret' => env('GAMESHARD_CLIENT_SECRET'),
         'redirect' => env('GAMESHARD_REDIRECT_URL'),
+        'api_key' => env('GAMESHARD_API_KEY')
     ],
 
     'github' => [
