@@ -32,12 +32,7 @@ class StaffResource extends Resource
                         ->directory('staff-photos')
                         ->image()
                         ->imageCropAspectRatio('4:3')
-                        ->loadingIndicatorPosition($position = 'right')
                         ->panelAspectRatio('4:3')
-                        ->removeUploadButtonPosition($position = 'left')
-                        ->uploadButtonPosition($position = 'right')
-                        ->uploadProgressIndicatorPosition($position = 'right')
-                        ->visibility($visibility = 'public')
                         ->required()
                 ])->columns(2),
             ]);

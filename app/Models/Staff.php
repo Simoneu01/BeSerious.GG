@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Staff extends Model
 {
@@ -34,5 +35,10 @@ class Staff extends Model
     public function getFullNameAttribute(): string
     {
         return $this->name . ' ' . $this->surname;
+    }
+
+    public function getImgUrlAttribute()
+    {
+        return Storage::disk('public')->url($this->img);
     }
 }

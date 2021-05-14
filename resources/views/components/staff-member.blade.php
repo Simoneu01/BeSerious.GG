@@ -2,7 +2,7 @@
 
 <div class="space-y-4">
     <div class="aspect-w-3 aspect-h-2">
-        <img class="object-cover shadow-lg rounded-lg" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixqx=vnr9wYQs7S&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+        <img class="object-cover shadow-lg rounded-lg" src="{{ $member->img_url }}" alt="">
     </div>
 
     <div class="space-y-2">
