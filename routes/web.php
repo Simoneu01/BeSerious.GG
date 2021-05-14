@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', fn () => view('welcome'))->name('welcome');
-Route::get('/chi-siamo', fn () => view('chi-siamo'))->name('chi-siamo');
 Route::get('/twitch', fn () => view('twitch'))->name('twitch');
 Route::get('/be-serious', fn () => view('be-serious'))->name('be-serious');
+
+Route::get('/chi-siamo', function () {
+    return view('chi-siamo', [
+        'staffMembers' => \App\Models\Staff::all(),
+    ]);
+})->name('chi-siamo');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
