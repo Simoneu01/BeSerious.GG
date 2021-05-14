@@ -40,7 +40,7 @@
                                 </p>
                             </div>
                             <footer class="mt-6">
-                                <p class="text-base font-medium text-white">chinook</p>
+                                <p class="text-base font-medium text-white">Chinook</p>
                                 <p class="text-base font-medium text-red-100">Caster di Rainbow Six Siege</p>
                             </footer>
                         </blockquote>

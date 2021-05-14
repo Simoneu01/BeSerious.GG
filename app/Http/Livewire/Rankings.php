@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -10,10 +13,20 @@ use Livewire\Component;
 
 class Rankings extends Component
 {
-    public $rankings;
+    public Collection $rankings;
+
+    public bool $killcache = false;
+
+    protected $queryString = [
+        'killcache' => ['except' => false],
+    ];
 
     public function mount()
     {
+        if ($this->killcache) {
+            Cache::forget('rankings');
+        }
+
         /** @var Collection $rankings */
         $rankings = Cache::rememberForever('rankings', function () {
             $playday = Http::withHeaders([
@@ -103,12 +116,6 @@ class Rankings extends Component
        $this->rankings = $rankings;
     }
 
-    /**
-     * Get the current trophy color of a prize.
-     *
-     * @param $position int The current prize position
-     * @return string
-     */
     public function getTrophyColor(int $position): string
     {
         return match($position) {
@@ -119,7 +126,7 @@ class Rankings extends Component
         };
     }
 
-    public function render()
+    public function render(): Factory|View|Application
     {
         return view('livewire.rankings');
     }
