@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
@@ -106,11 +105,9 @@ class Rankings extends Component
             }
 
             $rankings = collect($rankings);
-            $rankings = $rankings->sortBy([
+            return $rankings->sortBy([
                 ['points', 'desc']
             ]);
-
-            return $rankings;
         });
 
        $this->rankings = $rankings;
@@ -118,15 +115,22 @@ class Rankings extends Component
 
     public function getTrophyColor(int $position): string
     {
-        return match($position) {
-            1 => "#FFD147",
-            2 => "#C9C8CC",
-            3 => "#B5785B",
-            default => "#000000",
-        };
+        switch($position) {
+            case 1:
+                return "#FFD147";
+            case 2:
+                return "#C9C8CC";
+            case 3:
+                return "#B5785B";
+            default:
+                return "000000";
+        }
     }
 
-    public function render(): Factory|View|Application
+    /**
+     * @return Application|Factory|View
+     */
+    public function render()
     {
         return view('livewire.rankings');
     }
