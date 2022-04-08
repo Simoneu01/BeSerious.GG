@@ -1,4 +1,4 @@
-<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.68 133" {{ $attributes }}>
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.68 133" aria-hidden="true" {{ $attributes }}>
     <defs>
         <style>
             .cls-1{fill:#ea4a94;}.cls-2{fill:#292829;}.cls-3{fill:#fff;}.cls-4{fill:#3498d4;}.cls-5{fill:#dc2181;}
