@@ -4,7 +4,7 @@
         <div class="relative h-16 flex items-center justify-between lg:border-b lg:border-red-400 lg:border-opacity-25">
             <div class="px-2 flex items-center lg:px-0">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
+                <div class="shrink-0">
                     <a href="{{ route('dashboard') }}">
                         <x-6ixproject.white-icon class="block h-8 w-8"/>
                     </a>
@@ -69,7 +69,7 @@
             </div>
             <div class="hidden lg:block lg:ml-4">
                 <div class="flex items-center">
-                    <button class="bg-red-600 flex-shrink-0 rounded-full p-1 text-red-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-600 focus:ring-white">
+                    <button class="bg-red-600 shrink-0 rounded-full p-1 text-red-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-600 focus:ring-white">
                         <span class="sr-only">View notifications</span>
                         <!-- Heroicon name: outline/bell -->
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -78,7 +78,7 @@
                     </button>
 
                     <!-- Settings/Profile Dropdown -->
-                    <div class="ml-3 relative flex-shrink-0">
+                    <div class="ml-3 relative shrink-0">
                         <x-jet-dropdown align="right" width="48" contentClasses="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <x-slot name="trigger">
                                 <button type="button" class="bg-red-600 rounded-full flex text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-600 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -146,14 +146,14 @@
         </div>
         <div class="pt-4 pb-3 border-t border-red-700">
             <div class="px-5 flex items-center">
-                <div class="flex-shrink-0">
+                <div class="shrink-0">
                     <img class="rounded-full h-10 w-10" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
                 </div>
                 <div class="ml-3">
                     <div class="text-base font-medium text-white">{{ Auth::user()->name }}</div>
                     <div class="text-sm font-medium text-red-300">{{ Auth::user()->email }}</div>
                 </div>
-                <button class="ml-auto bg-red-600 flex-shrink-0 rounded-full p-1 text-red-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-600 focus:ring-white">
+                <button class="ml-auto bg-red-600 shrink-0 rounded-full p-1 text-red-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-600 focus:ring-white">
                     <span class="sr-only">View notifications</span>
                     <!-- Heroicon name: outline/bell -->
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
