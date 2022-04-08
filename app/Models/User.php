@@ -24,11 +24,7 @@ class User extends Authenticatable implements FilamentUser
     use SetsProfilePhotoFromUrl;
     use TwoFactorAuthenticatable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    /** @inheritdoc  */
     protected $fillable = [
         'name',
         'email',
@@ -59,7 +55,7 @@ class User extends Authenticatable implements FilamentUser
     /**
      * The accessors to append to the model's array form.
      *
-     * @var array
+     * @var array<string>
      */
     protected $appends = [
         'profile_photo_url',

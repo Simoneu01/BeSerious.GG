@@ -34,7 +34,7 @@ class ConnectedAccount extends SocialstreamConnectedAccount
     /**
      * The event map for the model.
      *
-     * @var array
+     * @var @var array<string, class-string>
      */
     protected $dispatchesEvents = [
         'created' => ConnectedAccountCreated::class,
