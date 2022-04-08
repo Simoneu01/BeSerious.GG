@@ -7,5 +7,5 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateArticle extends CreateRecord
 {
-    public static $resource = ArticleResource::class;
+    protected static string $resource = ArticleResource::class;
 }

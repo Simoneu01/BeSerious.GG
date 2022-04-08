@@ -10,11 +10,7 @@ class Staff extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    /** @inheritdoc  */
     protected $fillable = [
         'name',
         'surname',
@@ -26,7 +22,7 @@ class Staff extends Model
     /**
      * Cast attributes
      *
-     * @var string[]
+     * @var array<string, string>
      */
     protected $casts = [
         'socials' => 'array',

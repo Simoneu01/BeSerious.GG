@@ -9,11 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    /** @inheritdoc  */
     protected $fillable = [
         'title',
         'body',

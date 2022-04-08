@@ -3,66 +3,59 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\StaffResource\Pages;
-use App\Filament\Resources\StaffResource\RelationManagers;
-use App\Filament\Roles;
-use Filament\Resources\Forms\Components;
-use Filament\Resources\Forms\Form;
+use Filament\Forms\Components;
+use Filament\Resources\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Tables\Table;
-use Filament\Resources\Tables\Columns;
-use Filament\Resources\Tables\Filter;
+use Filament\Resources\Table;
+use Filament\Tables\Columns;
 
 class StaffResource extends Resource
 {
-    public static $icon = 'heroicon-o-users';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    public static function form(Form $form)
+    public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Components\Grid::make([
+                Components\Grid::make()->schema([
                     Components\TextInput::make('name')->autofocus()->required(),
                     Components\TextInput::make('surname')->required(),
                     Components\TextInput::make('role')->required(),
                     Components\KeyValue::make('socials')
-                ])->columns(2),
+                ]),
 
-                Components\Grid::make([
+                Components\Grid::make()->schema([
                     Components\FileUpload::make('img')
                         ->directory('staff-photos')
                         ->image()
                         ->imageCropAspectRatio('4:3')
                         ->panelAspectRatio('4:3')
                         ->required()
-                ])->columns(2),
+                ]),
             ]);
     }
 
-    public static function table(Table $table)
+    public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Columns\Text::make('name')->primary(),
-                Columns\Text::make('surname'),
-                Columns\Text::make('role'),
+                Columns\TextColumn::make('id')->sortable(),
+                Columns\TextColumn::make('name')->sortable()->searchable(),
+                Columns\TextColumn::make('surname')->sortable()->searchable(),
+                Columns\TextColumn::make('role')->sortable()->searchable(),
+                Columns\TextColumn::make('created_at')->sortable(),
+                Columns\TextColumn::make('updated_at')->sortable(),
             ])
             ->filters([
             ]);
     }
 
-    public static function relations()
+    public static function getPages(): array
     {
         return [
-            //
-        ];
-    }
-
-    public static function routes()
-    {
-        return [
-            Pages\ListStaff::routeTo('/', 'index'),
-            Pages\CreateStaff::routeTo('/create', 'create'),
-            Pages\EditStaff::routeTo('/{record}/edit', 'edit'),
+            'index' => Pages\ListStaff::route('/'),
+            'create' => Pages\CreateStaff::route('/create'),
+            'edit' => Pages\EditStaff::route('/{record}/edit'),
         ];
     }
 }
