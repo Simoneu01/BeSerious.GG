@@ -17,21 +17,21 @@ class StaffResource extends Resource
     {
         return $form
             ->schema([
-                Components\Grid::make([
+                Components\Grid::make()->schema([
                     Components\TextInput::make('name')->autofocus()->required(),
                     Components\TextInput::make('surname')->required(),
                     Components\TextInput::make('role')->required(),
                     Components\KeyValue::make('socials')
-                ])->columns(2),
+                ]),
 
-                Components\Grid::make([
+                Components\Grid::make()->schema([
                     Components\FileUpload::make('img')
                         ->directory('staff-photos')
                         ->image()
                         ->imageCropAspectRatio('4:3')
                         ->panelAspectRatio('4:3')
                         ->required()
-                ])->columns(2),
+                ]),
             ]);
     }
 
@@ -39,9 +39,12 @@ class StaffResource extends Resource
     {
         return $table
             ->columns([
-                Columns\TextColumn::make('name'),
-                Columns\TextColumn::make('surname'),
-                Columns\TextColumn::make('role'),
+                Columns\TextColumn::make('id')->sortable(),
+                Columns\TextColumn::make('name')->sortable()->searchable(),
+                Columns\TextColumn::make('surname')->sortable()->searchable(),
+                Columns\TextColumn::make('role')->sortable()->searchable(),
+                Columns\TextColumn::make('created_at')->sortable(),
+                Columns\TextColumn::make('updated_at')->sortable(),
             ])
             ->filters([
             ]);

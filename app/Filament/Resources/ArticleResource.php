@@ -17,23 +17,22 @@ class ArticleResource extends Resource
     {
         return $form
             ->schema([
-
-                Components\Grid::make([
-                    Components\TextInput::make('title')->autofocus()->required(),
-                    Components\Select::make('type')
-                        ->placeholder('Select a type')
-                        ->options([
-                            'article' => 'Articolo',
-                            'video' => 'Video',
-                        ]),
-                    Components\DateTimePicker::make('publish_at'),
-                    Components\TagsInput::make('tags'),
-                ])->columns(2),
+                Components\Grid::make()
+                    ->schema([
+                        Components\TextInput::make('title')->autofocus()->required(),
+                        Components\Select::make('type')
+                            ->placeholder('Select a type')
+                            ->options([
+                                'article' => 'Articolo',
+                                'video' => 'Video',
+                            ]),
+                        Components\DateTimePicker::make('publish_at'),
+                        Components\TagsInput::make('tags'),
+                    ]),
 
                 Components\Textarea::make('body')
                     ->required()
                     ->rows(3),
-
             ]);
     }
 
@@ -41,8 +40,11 @@ class ArticleResource extends Resource
     {
         return $table
             ->columns([
-                Columns\TextColumn::make('title'),
+                Columns\TextColumn::make('id')->sortable(),
+                Columns\TextColumn::make('title')->searchable(),
                 Columns\TextColumn::make('type'),
+                Columns\TextColumn::make('created_at')->sortable(),
+                Columns\TextColumn::make('updated_at')->sortable(),
             ])
             ->filters([
                 //
