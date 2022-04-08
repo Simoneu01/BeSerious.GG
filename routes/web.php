@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => view('welcome'))->name('welcome');
 Route::get('/twitch', fn () => view('twitch'))->name('twitch');
-Route::get('/be-serious', fn () => view('be-serious'))->name('be-serious');
+Route::get('/campionato/2022', fn () => view('campionato'))->name('campionato.2022');
+Route::get('/campionato/2021', fn () => view('be-serious'))->name('be-serious');
 
 Route::get('/chi-siamo', function () {
     return view('chi-siamo', [

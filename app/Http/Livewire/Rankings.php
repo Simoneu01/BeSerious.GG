@@ -13,7 +13,7 @@ use Livewire\Component;
 class Rankings extends Component
 {
     public Collection $rankings;
-
+    public string $year = '2021';
     public bool $killcache = false;
 
     protected $queryString = [
@@ -23,15 +23,19 @@ class Rankings extends Component
     public function mount()
     {
         if ($this->killcache) {
-            Cache::forget('rankings');
+            Cache::forget('rankings' . $this->year);
         }
 
+        $tournamentLink = match($this->year) {
+            default => 'https://gameshard.io/api/tournaments/75/phases/47/rounds'
+        };
+
         /** @var Collection $rankings */
-        $rankings = Cache::rememberForever('rankings', function () {
+        $rankings = Cache::rememberForever('rankings' . $this->year, function () use ($tournamentLink) {
             $playday = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer ' . config('services.gameshard.api_key'),
-            ])->get('https://gameshard.io/api/tournaments/75/phases/47/rounds');
+            ])->get($tournamentLink);
 
             $playdayIds = collect($playday->json('data'))->pluck('id');
 
