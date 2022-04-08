@@ -75,7 +75,7 @@ class Rankings extends Component
                 $game = $game->first();
                 $homeContestant = $game['contestants'][0];
                 $awayContestant = $game['contestants'][1];
-                if ($homeContestant['score'] + $awayContestant['score'] > 12) {
+                if ((int) $homeContestant['score'] + (int) $awayContestant['score'] > 12) {
                     // Overt Time
                     if ($homeContestant['score'] > $awayContestant['score']) {
                         $rankings[$homeContestant['id']]['ot_win']++;

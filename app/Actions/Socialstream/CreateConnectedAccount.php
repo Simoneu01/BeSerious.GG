@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use JoelButcher\Socialstream\ConnectedAccount;
 use JoelButcher\Socialstream\Contracts\CreatesConnectedAccounts;
 use JoelButcher\Socialstream\Socialstream;
+use Laravel\Socialite\AbstractUser;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
 class CreateConnectedAccount implements CreatesConnectedAccounts
@@ -21,7 +22,7 @@ class CreateConnectedAccount implements CreatesConnectedAccounts
     public function create(Authenticatable $user, string $provider, ProviderUser $providerUser): ConnectedAccount
     {
         return Socialstream::connectedAccountModel()::forceCreate([
-            'user_id' => $user->id,
+            'user_id' => $user->getAuthIdentifier(),
             'provider' => strtolower($provider),
             'provider_id' => $providerUser->getId(),
             'name' => $providerUser->getName(),
