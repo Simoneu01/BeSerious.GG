@@ -3,20 +3,17 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ArticleResource\Pages;
-use App\Filament\Resources\ArticleResource\RelationManagers;
-use App\Filament\Roles;
-use Filament\Resources\Forms\Components;
-use Filament\Resources\Forms\Form;
+use Filament\Forms\Components;
+use Filament\Resources\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Tables\Columns;
-use Filament\Resources\Tables\Filter;
-use Filament\Resources\Tables\Table;
+use Filament\Tables\Columns;
+use Filament\Resources\Table;
 
 class ArticleResource extends Resource
 {
-    public static $icon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-collection';
 
-    public static function form(Form $form)
+    public static function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -40,30 +37,24 @@ class ArticleResource extends Resource
             ]);
     }
 
-    public static function table(Table $table)
+    public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                Columns\TextColumn::make('title'),
+                Columns\TextColumn::make('type'),
             ])
             ->filters([
                 //
             ]);
     }
 
-    public static function relations()
+    public static function getPages(): array
     {
         return [
-            //
-        ];
-    }
-
-    public static function routes()
-    {
-        return [
-            Pages\ListArticles::routeTo('/', 'index'),
-            Pages\CreateArticle::routeTo('/create', 'create'),
-            Pages\EditArticle::routeTo('/{record}/edit', 'edit'),
+            'index' => Pages\ListArticles::route('/'),
+            'create' => Pages\CreateArticle::route('/create'),
+            'edit' => Pages\EditArticle::route('/{record}/edit'),
         ];
     }
 }

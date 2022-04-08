@@ -3,20 +3,17 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\StaffResource\Pages;
-use App\Filament\Resources\StaffResource\RelationManagers;
-use App\Filament\Roles;
-use Filament\Resources\Forms\Components;
-use Filament\Resources\Forms\Form;
+use Filament\Forms\Components;
+use Filament\Resources\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Tables\Table;
-use Filament\Resources\Tables\Columns;
-use Filament\Resources\Tables\Filter;
+use Filament\Resources\Table;
+use Filament\Tables\Columns;
 
 class StaffResource extends Resource
 {
-    public static $icon = 'heroicon-o-users';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    public static function form(Form $form)
+    public static function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -38,31 +35,24 @@ class StaffResource extends Resource
             ]);
     }
 
-    public static function table(Table $table)
+    public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Columns\Text::make('name')->primary(),
-                Columns\Text::make('surname'),
-                Columns\Text::make('role'),
+                Columns\TextColumn::make('name'),
+                Columns\TextColumn::make('surname'),
+                Columns\TextColumn::make('role'),
             ])
             ->filters([
             ]);
     }
 
-    public static function relations()
+    public static function getPages(): array
     {
         return [
-            //
-        ];
-    }
-
-    public static function routes()
-    {
-        return [
-            Pages\ListStaff::routeTo('/', 'index'),
-            Pages\CreateStaff::routeTo('/create', 'create'),
-            Pages\EditStaff::routeTo('/{record}/edit', 'edit'),
+            'index' => Pages\ListStaff::route('/'),
+            'create' => Pages\CreateStaff::route('/create'),
+            'edit' => Pages\EditStaff::route('/{record}/edit'),
         ];
     }
 }

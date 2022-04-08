@@ -10,7 +10,6 @@ use JoelButcher\Socialstream\SetsProfilePhotoFromUrl;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Filament\Models\Concerns\IsFilamentUser;
 use Filament\Models\Contracts\FilamentUser;
 
 class User extends Authenticatable implements FilamentUser
@@ -24,7 +23,6 @@ class User extends Authenticatable implements FilamentUser
     use Notifiable;
     use SetsProfilePhotoFromUrl;
     use TwoFactorAuthenticatable;
-    use IsFilamentUser;
 
     /**
      * The attributes that are mass assignable.
@@ -68,21 +66,6 @@ class User extends Authenticatable implements FilamentUser
     ];
 
     /**
-     * @var string The name of a boolean column in your database.
-     */
-    public static string $filamentUserColumn = 'is_filament_user';
-
-    /**
-     * @var string The name of a boolean column in your database.
-     */
-    public static string $filamentAdminColumn = 'is_filament_admin';
-
-    /**
-     * @var string The name of a JSON column in your database.
-     */
-    public static string $filamentRolesColumn = 'filament_roles';
-
-    /**
      * Get the URL to the user's profile photo.
      *
      * @return string
@@ -94,5 +77,15 @@ class User extends Authenticatable implements FilamentUser
         }
 
         return $this->getPhotoUrl();
+    }
+
+    public function canAccessFilament(): bool
+    {
+        return true;
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->profile_photo_url;
     }
 }
