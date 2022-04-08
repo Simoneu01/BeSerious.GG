@@ -2,14 +2,13 @@
 [![PHPStan](https://github.com/Simoneu01/BeSerious.GG/actions/workflows/phpstan.yml/badge.svg)](https://github.com/Simoneu01/BeSerious.GG/actions/workflows/phpstan.yml)
 [![codecov](https://codecov.io/gh/Simoneu01/BeSerious.GG/branch/main/graph/badge.svg?token=IBU2YZRCTD)](https://codecov.io/gh/Simoneu01/BeSerious.GG)
 
-
 ## About BeSerious
 
 Be Serious è un torneo italiano.
 
 ## Contributing
 
-Thank you for considering contributing to the BeSerious! 
+Thank you for considering contributing to the BeSerious!
 
 ## Code of Conduct
 
