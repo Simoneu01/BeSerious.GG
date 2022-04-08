@@ -36,23 +36,23 @@ class Rankings extends Component
             $playdayIds = collect($playday->json('data'))->pluck('id');
 
             $matchesIds = collect([]);
-            $playdayIds->each(fn($playday) => $matchesIds->push(collect(Http::withHeaders([
+            $playdayIds->each(fn ($playday) => $matchesIds->push(collect(Http::withHeaders([
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer ' . config('services.gameshard.api_key'),
             ])->get("https://gameshard.io/api/matches?filter[round_id]=$playday")->json('data'))->pluck('id')));
 
             $gameIds = collect([]);
-            $matchesIds->flatten()->each(fn($match) => $gameIds->push(collect(Http::withHeaders([
+            $matchesIds->flatten()->each(fn ($match) => $gameIds->push(collect(Http::withHeaders([
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer ' . config('services.gameshard.api_key'),
             ])->get("https://gameshard.io/api/matches/$match/games")->json('data'))));
 
             // Inizializzo rankings a 0
-            $games = $gameIds->filter(fn(Collection $game) => $game->first()['played_at']);
+            $games = $gameIds->filter(fn (Collection $game) => $game->first()['played_at']);
             $rankings = [];
             foreach ($games as $game) {
                 $game = $game->first();
-                foreach($game['contestants'] as $contestant) {
+                foreach ($game['contestants'] as $contestant) {
                     $rankings[$contestant['id']] = [
                         'win' => 0,
                         'loss' => 0,
@@ -71,7 +71,7 @@ class Rankings extends Component
             /*
              * Imposto il numero di win, loss, ot_win e ot_loss
              */
-            foreach($games as $game) {
+            foreach ($games as $game) {
                 $game = $game->first();
                 $homeContestant = $game['contestants'][0];
                 $awayContestant = $game['contestants'][1];
@@ -110,12 +110,12 @@ class Rankings extends Component
             ]);
         });
 
-       $this->rankings = $rankings;
+        $this->rankings = $rankings;
     }
 
     public function getTrophyColor(int $position): string
     {
-        switch($position) {
+        switch ($position) {
             case 1:
                 return "#FFD147";
             case 2:

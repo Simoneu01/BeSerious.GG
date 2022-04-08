@@ -34,4 +34,3 @@ parameters:
 			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$tokenSecret\\.$#"
 			count: 1
 			path: app/Actions/Socialstream/UpdateConnectedAccount.php
-
