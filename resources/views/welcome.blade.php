@@ -15,7 +15,7 @@
             </div>
             <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                    <div class="flex-shrink-0">
+                    <div class="shrink-0">
                         <img class="h-48 w-full object-cover" src="https://www.esportsmag.it/wp-content/uploads/2021/03/Be-Serious.png" alt="">
                     </div>
                     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
@@ -35,7 +35,7 @@
                             </a>
                         </div>
                         <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
+                            <div class="shrink-0">
                                 <a href="https://www.esportsmag.it/author/massimiliano-di-pasquale/">
                                     <span class="sr-only">Massimiliano Dipasquale</span>
                                     <img class="h-10 w-10 rounded-full" src="https://secure.gravatar.com/avatar/bc2e17b00a428aaf28d443fbfcf671cd?s=96&r=g" alt="">
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                    <div class="flex-shrink-0">
+                    <div class="shrink-0">
                         <img class="h-48 w-full object-cover" src="https://www.uagna.it/wp-content/uploads/2021/04/EzG6_YCWQAERZ04.jpg" alt="">
                     </div>
                     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
@@ -85,7 +85,7 @@
                             </a>
                         </div>
                         <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
+                            <div class="shrink-0">
                                 <a href="https://www.uagna.it/author/mark">
                                     <span class="sr-only">Mark</span>
                                     <img class="h-10 w-10 rounded-full" src="https://secure.gravatar.com/avatar/59322bd6b3af0d1b728ef24f63fcf015" alt="">
@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                    <div class="flex-shrink-0">
+                    <div class="shrink-0">
                         <img class="h-48 w-full object-cover" src="https://www.esportsmag.it/wp-content/uploads/2021/03/Be-Serious.png" alt="">
                     </div>
                     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
@@ -134,7 +134,7 @@
                             </a>
                         </div>
                         <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
+                            <div class="shrink-0">
                                 <a href="https://www.esportsmag.it/author/massimiliano-di-pasquale/">
                                     <span class="sr-only">Massimiliano Dipasquale</span>
                                     <img class="h-10 w-10 rounded-full" src="https://secure.gravatar.com/avatar/bc2e17b00a428aaf28d443fbfcf671cd?s=96&r=g" alt="">
