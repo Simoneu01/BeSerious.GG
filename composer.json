@@ -25,12 +25,15 @@
         "symfony/mailgun-mailer": "^6.0"
     },
     "require-dev": {
-        "spatie/laravel-ignition": "^1.0",
         "fakerphp/faker": "^1.14.1",
         "laravel/sail": "^1.7.0",
         "mockery/mockery": "^1.4.3",
         "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5"
+        "nunomaduro/larastan": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.5",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -70,7 +73,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
