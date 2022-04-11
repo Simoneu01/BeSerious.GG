@@ -2,8 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -119,22 +117,15 @@ class Rankings extends Component
 
     public function getTrophyColor(int $position): string
     {
-        switch ($position) {
-            case 1:
-                return "#FFD147";
-            case 2:
-                return "#C9C8CC";
-            case 3:
-                return "#B5785B";
-            default:
-                return "000000";
-        }
+        return match ($position) {
+            1 => "#FFD147",
+            2 => "#C9C8CC",
+            3 => "#B5785B",
+            default => "000000",
+        };
     }
 
-    /**
-     * @return Application|Factory|View
-     */
-    public function render()
+    public function render(): View
     {
         return view('livewire.rankings');
     }
