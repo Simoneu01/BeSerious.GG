@@ -6,13 +6,17 @@
 
 Be Serious è un torneo italiano.
 
+## Installation
+- Clone the project and `cd` into it
+- Install composer deps: `composer install`
+- Install npm deps: `npm install && npm run dev`
+- Create a copy of .env file `cp .env.example .env` and fill it
+- Generate an app encryption key `php artisan key:generate`
+- Migrate the databse `php artisan migrate`
+
 ## Contributing
 
 Thank you for considering contributing to the BeSerious!
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
 ## Security Vulnerabilities
 
