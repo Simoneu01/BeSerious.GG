@@ -8,12 +8,12 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
 
             $table->string('title');
             $table->text('body');
-            $table->string('type');
             $table->string('img')->nullable();
+            $table->string('url')->nullable();
             $table->string('author')->nullable();
             $table->string('author_img')->nullable();
             $table->string('author_link')->nullable();
