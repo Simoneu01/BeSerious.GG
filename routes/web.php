@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\PressNews;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,8 @@ Route::get('/chi-siamo', function () {
         'staffMembers' => \App\Models\Staff::all(),
     ]);
 })->name('chi-siamo');
+
+Route::get('/press', PressNews::class)->name('press');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

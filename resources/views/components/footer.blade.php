@@ -14,7 +14,7 @@
             </div>
 
             <div class="px-5 py-2">
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                <a href="{{ route('press') }}" class="text-base text-gray-500 hover:text-gray-900">
                     Press
                 </a>
             </div>
