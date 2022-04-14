@@ -58,7 +58,7 @@
     <!-- Create a Twitch.Player object. This will render within the placeholder div -->
     <script type="text/javascript">
         new Twitch.Player("twitch-embed", {
-            channel: "6ixproject",
+            channel: "BeSerious_IT",
             width: "100%",
             height: "100%",
             autoplay: "true"
