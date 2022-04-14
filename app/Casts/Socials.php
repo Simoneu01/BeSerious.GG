@@ -25,7 +25,7 @@ class Socials implements CastsAttributes
     {
         $socials = [];
 
-        foreach(json_decode($value, true) as $social) {
+        foreach (json_decode($value, true) as $social) {
             $socials[] = new Social($social);
         }
 
@@ -43,8 +43,7 @@ class Socials implements CastsAttributes
      */
     public function set($model, $key, $value, $attributes)
     {
-        foreach ($value as $social)
-        {
+        foreach ($value as $social) {
             if (! $social instanceof Social) {
                 try {
                     $social = new Social($social);
