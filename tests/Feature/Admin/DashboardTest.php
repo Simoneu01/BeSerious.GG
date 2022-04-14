@@ -21,7 +21,7 @@ class DashboardTest extends TestCase
 
     public function test_admin_dashboard_can_be_accessed_by_guest_in_local_env()
     {
-        $this->app->detectEnvironment(function() {
+        $this->app->detectEnvironment(function () {
             return 'local';
         });
 
