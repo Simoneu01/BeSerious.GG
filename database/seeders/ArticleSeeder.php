@@ -44,5 +44,17 @@ class ArticleSeeder extends Seeder
             'url' => 'https://www.esportsmag.it/rainbow-six-nasce-una-nuova-lega-minore-ecco-il-be-serious/',
             'created_at' => '2021-04-17 00:00:00'
         ]);
+
+        Article::firstOrCreate([
+            'title' => 'Il futuro di Rainbow Six in Italia si chiama BeSerious',
+        ], [
+            'body' => "Da tempo la community italiana di Rainbow Six Siege chiedeva un percorso ufficiale e alternativo al PG Nationals. Un torneo simile, che riuscisse a dare spazio ai più giovani e li preparasse non solo sul campo di battaglia, ma anche nel gestire le pressioni di un match competitivo.",
+            'img' => 'https://cdn.tuttosport.com/img/990/495/2021/12/09/143758671-a20db3a3-6b54-480a-a2f2-9988656239b5.jpg',
+            'author' => 'Massimiliano Dipasquale',
+            'author_link' => 'https://www.esportsmag.it/author/massimiliano-di-pasquale/',
+            'author_img' => 'https://secure.gravatar.com/avatar/bc2e17b00a428aaf28d443fbfcf671cd?s=96&r=g',
+            'url' => 'https://www.tuttosport.com/news/esports/pg-esports/pg-national-raimbow-six/2021/12/09-87783978/il_futuro_di_rainbow_six_in_italia_si_chiama_beserious',
+            'created_at' => '2021-12-09 00:00:00'
+        ]);
     }
 }
