@@ -149,4 +149,3 @@ parameters:
 			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$widget_permission_prefix\\.$#"
 			count: 1
 			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
-
