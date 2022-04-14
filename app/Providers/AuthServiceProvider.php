@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\ConnectedAccount;
+use App\Models\User;
 use App\Policies\ConnectedAccountPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -26,6 +28,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::after(function (User $user) {
+            return $user->hasRole('admin');
+        });
     }
 }

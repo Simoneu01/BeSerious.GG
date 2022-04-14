@@ -13,6 +13,7 @@ use Filament\Tables\Columns;
 class StaffResource extends Resource
 {
     protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?string $navigationGroup = 'Staff';
 
     public static function form(Form $form): Form
     {
