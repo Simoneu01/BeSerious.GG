@@ -5,7 +5,7 @@
 
 <div {{ $attributes->class(['flex flex-col rounded-lg shadow-lg overflow-hidden']) }}>
     <div class="shrink-0">
-        <img class="h-48 w-full object-cover" src="{{ $article->img }}">
+        <img class="h-48 w-full object-cover" src="{{ $article->img }}" alt="{{ $article->title }} image">
     </div>
     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
         <div class="flex-1">
@@ -27,7 +27,7 @@
             <div class="shrink-0">
                 <a href="{{ $article->author_link }}">
                     <span class="sr-only">{{ $article->author }}</span>
-                    <img class="h-10 w-10 rounded-full" src="{{ $article->author_img }}">
+                    <img class="h-10 w-10 rounded-full" src="{{ $article->author_img }}" alt="{{ $article->author }} image">
                 </a>
             </div>
             <div class="ml-3">

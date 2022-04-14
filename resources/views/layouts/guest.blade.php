@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <livewire:styles/>
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
@@ -27,5 +28,9 @@
             <!-- Footer -->
             <x-footer/>
         </div>
+
+        @stack('modals')
+
+        <livewire:scripts/>
     </body>
 </html>
