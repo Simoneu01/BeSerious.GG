@@ -105,6 +105,19 @@
 
                                 <div class="border-t border-gray-100"></div>
 
+                                @if(true)
+                                    <div class="block px-4 py-2 text-xs text-gray-400" tabindex="-1" id="user-menu-item-0">
+                                        {{ __('Amministrazione') }}
+                                    </div>
+
+                                    <x-jet-dropdown-link href="{{ route('filament.pages.dashboard') }}" tabindex="-1" id="user-menu-item-1">
+                                        {{ __('Admin') }}
+                                    </x-jet-dropdown-link>
+
+                                    <div class="border-t border-gray-100"></div>
+                                @endif
+
+
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf

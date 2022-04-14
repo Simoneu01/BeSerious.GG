@@ -13,8 +13,8 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
-        'type',
         'img',
+        'url',
         'author',
         'author_img',
         'author_link'

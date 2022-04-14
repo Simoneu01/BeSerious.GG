@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\Socials;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -25,7 +26,7 @@ class Staff extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'socials' => 'array',
+        'socials' => Socials::class,
     ];
 
     public function getFullNameAttribute(): string
@@ -33,7 +34,7 @@ class Staff extends Model
         return $this->name . ' ' . $this->surname;
     }
 
-    public function getImgUrlAttribute()
+    public function getImgUrlAttribute(): string
     {
         return Storage::disk('public')->url($this->img);
     }

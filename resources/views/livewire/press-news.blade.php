@@ -1,6 +1,5 @@
-<x-guest-layout>
-    <!-- Blog -->
-    <div class="relative bg-gray-100 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+<div>
+    <div class="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div class="absolute inset-0">
             <div class="bg-gray-50 h-1/3 sm:h-2/3"></div>
         </div>
@@ -15,12 +14,13 @@
             </div>
             <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                 @foreach($articles as $article)
-                    <x-article :article="$article"/>
+                    <x-article :article="$article" wire:key="{{ $loop->index }}"/>
                 @endforeach
+            </div>
+
+            <div class="mt-4">
+                {{ $articles->links() }}
             </div>
         </div>
     </div>
-
-    <!-- Testimonials -->
-    <x-testimonials/>
-</x-guest-layout>
+</div>
