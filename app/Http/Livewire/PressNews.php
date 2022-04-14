@@ -13,7 +13,7 @@ class PressNews extends Component
 
     public function render(): View
     {
-        return view('livewire.press-news',[
+        return view('livewire.press-news', [
             'articles' => Article::orderByDesc('created_at')->paginate(3),
         ])->layout('layouts.guest');
     }
