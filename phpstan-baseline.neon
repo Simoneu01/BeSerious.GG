@@ -34,3 +34,118 @@ parameters:
 			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$tokenSecret\\.$#"
 			count: 1
 			path: app/Actions/Socialstream/UpdateConnectedAccount.php
+
+		-
+			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$permissions\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource.php
+
+		-
+			message: "#^Parameter \\#1 \\$name of static method Filament\\\\Forms\\\\Components\\\\Field\\:\\:make\\(\\) expects string, array\\<TKey of \\(int\\|string\\), TValue\\>\\|bool given\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of static method Illuminate\\\\Support\\\\Str\\:\\:of\\(\\) expects string, array\\<TKey of \\(int\\|string\\), TValue\\>\\|bool given\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource.php
+
+		-
+			message: "#^Property 'name' does not exist in Spatie\\\\Permission\\\\Models\\\\Permission model\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/CreateRole.php
+
+		-
+			message: "#^Property 'name' does not exist in Spatie\\\\Permission\\\\Models\\\\Permission model\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/EditRole.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$entities_custom_permissions\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$entities_pages\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$entities_resources\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$entities_widgets\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$exclude_enabled\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$exclude_pages\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$exclude_resources\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$exclude_widgets\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$filament_user_role_enabled\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$filament_user_role_name\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$form\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$page_permission_prefix\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$register_role_policy\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$resource_permission_prefixes\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$resources_generator_option\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$super_admin_role_enabled\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$super_admin_role_name\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$widget_permission_prefix\\.$#"
+			count: 1
+			path: app/Filament/Resources/Shield/RoleResource/Pages/ShieldSettings.php

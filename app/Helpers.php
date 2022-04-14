@@ -4,11 +4,11 @@ if (! function_exists('str_ordinal')) {
     /**
      * Append an ordinal indicator to a numeric value.
      *
-     * @param  string|int  $value
-     * @param  bool  $superscript
+     * @param int|string $value
+     * @param bool $superscript
      * @return string
      */
-    function str_ordinal($value, $superscript = false): string
+    function str_ordinal(int|string $value, bool $superscript = false): string
     {
         $number = abs($value);
 
