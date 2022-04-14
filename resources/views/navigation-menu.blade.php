@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <x-6ixproject.white-icon class="block h-8 w-8"/>
+                        <x-beserious.icon class="block h-8 w-8"/>
                     </a>
                 </div>
 

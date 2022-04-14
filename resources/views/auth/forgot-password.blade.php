@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
             <a href="/">
-                <x-6ixproject.icon class="h-16 w-16"/>
+                <x-beserious.icon class="h-16 w-16"/>
             </a>
         </x-slot>
 

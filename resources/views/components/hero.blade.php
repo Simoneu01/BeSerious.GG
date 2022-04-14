@@ -31,7 +31,7 @@
                 <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
                     <div class="flex items-center justify-between w-full md:w-auto">
                         <a href="{{ route('welcome') }}">
-                            <span class="sr-only">6ixProject</span>
+                            <span class="sr-only">BeSerious</span>
                             <x-6ixproject.red-icon class="h-8 w-auto sm:h-10"/>
                         </a>
                         <div class="-mr-2 flex items-center md:hidden">
