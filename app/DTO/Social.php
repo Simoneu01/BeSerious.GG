@@ -10,6 +10,6 @@ use Spatie\DataTransferObject\DataTransferObject;
 class Social extends DataTransferObject
 {
     #[CastWith(EnumCaster::class)]
-    public SocialEnum $name;
+    public SocialEnum $type;
     public string $url;
 }

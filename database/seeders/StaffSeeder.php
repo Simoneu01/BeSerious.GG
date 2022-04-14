@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Enums\SocialEnum;
 use App\Models\Staff;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class StaffSeeder extends Seeder
 {
@@ -13,11 +16,11 @@ class StaffSeeder extends Seeder
             'name' => 'Simone',
             'surname' => 'Ungaro'
         ], [
-            'img' => 'asd',
+            'img' => Storage::disk('public')->putFile('staff-photos', new File(resource_path('/staff-photos/simo.png'))),
             'role' => 'League Ops',
             'socials' => [
-                ['name' => 'twitter', 'url' => 'https://twitter.com/Simoneu01'],
-                ['name' => 'linkedin', 'url' => 'https://www.linkedin.com/in/simone-ungaro-52a738152/']
+                ['type' => SocialEnum::TWITTER->value, 'url' => 'https://twitter.com/Simoneu01'],
+                ['type' => SocialEnum::LINKEDIN->value, 'url' => 'https://www.linkedin.com/in/simone-ungaro-52a738152/']
             ]
         ]);
     }

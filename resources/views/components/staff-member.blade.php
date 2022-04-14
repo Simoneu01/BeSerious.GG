@@ -14,8 +14,8 @@
             @foreach($member->socials as $social)
                 <li>
                     <a href="{{ $social->url }}" class="text-gray-400 hover:text-gray-500">
-                        <span class="sr-only">{{ $social->name->getLabel() }}</span>
-                        <x-dynamic-component :component="$social->name->getIcon()" class="h-5 w-5" />
+                        <span class="sr-only">{{ $social->type->getLabel() }}</span>
+                        <x-dynamic-component :component="$social->type->getIcon()" class="h-5 w-5" />
                     </a>
                 </li>
             @endforeach

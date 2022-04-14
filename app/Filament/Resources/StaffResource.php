@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\SocialEnum;
 use App\Filament\Resources\StaffResource\Pages;
 use Filament\Forms\Components;
 use Filament\Resources\Form;
@@ -21,18 +22,22 @@ class StaffResource extends Resource
                     Components\TextInput::make('name')->autofocus()->required(),
                     Components\TextInput::make('surname')->required(),
                     Components\TextInput::make('role')->required(),
-                    Components\KeyValue::make('socials')
+                    Components\Repeater::make('socials')
+                        ->schema([
+                            Components\TextInput::make('url')->required(),
+                            Components\Select::make('type')
+                                ->options(SocialEnum::class)
+                                ->required(),
+                        ])
+                        ->columns(2)
                 ]),
 
-                Components\Grid::make()->schema([
-                    Components\FileUpload::make('img')
-                        ->directory('staff-photos')
-                        ->image()
-                        ->imageCropAspectRatio('4:3')
-                        ->panelAspectRatio('4:3')
-                        ->required()
-                ]),
-            ]);
+                Components\FileUpload::make('img')
+                    ->directory('staff-photos')
+                    ->image()
+                    ->imageCropAspectRatio('4:3')
+                    ->required()
+        ]);
     }
 
     public static function table(Table $table): Table
