@@ -27,7 +27,7 @@ class EditRole extends EditRecord
     protected function afterSave(): void
     {
         $permissionModels = collect();
-        $this->permissions->each(function($permission) use($permissionModels) {
+        $this->permissions->each(function ($permission) use ($permissionModels) {
             $permissionModels->push(Permission::firstOrCreate(
                 ['name' => $permission],
                 ['guard_name' => config('filament.auth.guard')]

@@ -70,13 +70,13 @@ class ShieldSettings extends Page implements HasFormActions
                         ->schema([
                             Forms\Components\Toggle::make('super_admin_role_enabled')
                                 ->label(__('filament-shield::filament-shield.labels.super_admin.toggle_input'))
-                                ->hint(fn($state) => $state ? '<span class="font-bold text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : '<span class="font-bold text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
+                                ->hint(fn ($state) => $state ? '<span class="font-bold text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : '<span class="font-bold text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
                                 ->required()
                                 ->reactive(),
                             Forms\Components\TextInput::make('super_admin_role_name')
                                 ->label(__('filament-shield::filament-shield.labels.super_admin.text_input'))
-                                ->afterStateHydrated(fn(Closure $set, Closure $get, $state) => $set($state,Str::of($get($state))->snake()))
-                                ->visible(fn($get) => $get('super_admin_role_enabled')),
+                                ->afterStateHydrated(fn (Closure $set, Closure $get, $state) => $set($state, Str::of($get($state))->snake()))
+                                ->visible(fn ($get) => $get('super_admin_role_enabled')),
                         ])
                         ->columns(1)
                         ->columnSpan(1),
@@ -85,12 +85,12 @@ class ShieldSettings extends Page implements HasFormActions
                         ->schema([
                             Forms\Components\Toggle::make('filament_user_role_enabled')
                                 ->label(__('filament-shield::filament-shield.labels.filament_user.toggle_input'))
-                                ->hint(fn($state) => $state ? '<span class="font-bold text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : '<span class="font-bold text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
+                                ->hint(fn ($state) => $state ? '<span class="font-bold text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : '<span class="font-bold text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
                                 ->required()
                                 ->reactive(),
                             Forms\Components\TextInput::make('filament_user_role_name')
                                 ->label(__('filament-shield::filament-shield.labels.filament_user.text_input'))
-                                ->visible(fn($get) => $get('filament_user_role_enabled')),
+                                ->visible(fn ($get) => $get('filament_user_role_enabled')),
                         ])
                         ->columns(1)
                         ->columnSpan(1),
@@ -98,7 +98,7 @@ class ShieldSettings extends Page implements HasFormActions
                         ->schema([
                             Forms\Components\Toggle::make('register_role_policy')
                                 ->label(__('filament-shield::filament-shield.labels.role_policy.toggle_input'))
-                                ->hint(fn($state) => $state ? '<span class="font-bold text-success-700">'.__("filament-shield::filament-shield.labels.status.yes").'</span>' : '<span class="font-bold text-primary-700">'.__("filament-shield::filament-shield.labels.status.no").'</span>')
+                                ->hint(fn ($state) => $state ? '<span class="font-bold text-success-700">'.__("filament-shield::filament-shield.labels.status.yes").'</span>' : '<span class="font-bold text-primary-700">'.__("filament-shield::filament-shield.labels.status.no").'</span>')
                                 ->default(true)
                                 ->helperText('<span class="text-md text-gray-600 leading-loose">'.__("filament-shield::filament-shield.labels.role_policy.message").'</span>')
                                 ->reactive()
@@ -141,25 +141,25 @@ class ShieldSettings extends Page implements HasFormActions
                         ->schema([
                             Forms\Components\Toggle::make('entities_resources')
                                 ->label(__('filament-shield::filament-shield.labels.entities.resources'))
-                                ->helperText(fn($state) => $state ? __("filament-shield::filament-shield.labels.entities.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
+                                ->helperText(fn ($state) => $state ? __("filament-shield::filament-shield.labels.entities.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
                                 ->reactive(),
                             Forms\Components\Toggle::make('entities_pages')
                                 ->label(__('filament-shield::filament-shield.labels.entities.pages'))
-                                ->helperText(fn($state) => $state ? __("filament-shield::filament-shield.labels.entities.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
+                                ->helperText(fn ($state) => $state ? __("filament-shield::filament-shield.labels.entities.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
                                 ->reactive(),
                             Forms\Components\Toggle::make('entities_widgets')
                                 ->label(__('filament-shield::filament-shield.labels.entities.widgets'))
-                                ->helperText(fn($state) => $state ? __("filament-shield::filament-shield.labels.entities.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
+                                ->helperText(fn ($state) => $state ? __("filament-shield::filament-shield.labels.entities.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
                                 ->reactive(),
                             Forms\Components\Toggle::make('entities_custom_permissions')
                                 ->label(__('filament-shield::filament-shield.labels.entities.custom_permissions'))
-                                ->helperText(fn($state) => $state ? __("filament-shield::filament-shield.labels.entities.custom_permissions.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.custom_permissions.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
+                                ->helperText(fn ($state) => $state ? __("filament-shield::filament-shield.labels.entities.custom_permissions.message").' <span class="font-medium text-success-700">'.__("filament-shield::filament-shield.labels.status.enabled").'</span>' : __("filament-shield::filament-shield.labels.entities.custom_permissions.message").'<span class="font-medium text-primary-700">'.__("filament-shield::filament-shield.labels.status.disabled").'</span>')
                                 ->reactive()
                         ])
                         ->columns(4),
                 ]),
             $layout::make()
-                ->visible(fn($get): bool => (bool) $get('entities_resources'))
+                ->visible(fn ($get): bool => (bool) $get('entities_resources'))
                 ->schema([
                     Forms\Components\Grid::make()
                     ->schema([
@@ -186,15 +186,15 @@ class ShieldSettings extends Page implements HasFormActions
                                 ->content(__('filament-shield::filament-shield.labels.exclude.message'))
                                 ->extraAttributes(['class' => 'text-sm text-gray-500']),
                             Forms\Components\Toggle::make('exclude_enabled')
-                                ->label(fn($state): string => $state ? __("filament-shield::filament-shield.labels.status.enabled") : __("filament-shield::filament-shield.labels.status.disabled"))
+                                ->label(fn ($state): string => $state ? __("filament-shield::filament-shield.labels.status.enabled") : __("filament-shield::filament-shield.labels.status.disabled"))
                                 ->default(config('filament-shield.exclude.enabled'))
                                 ->reactive(),
                             Forms\Components\Grid::make()
-                                ->visible(fn($get) => $get('exclude_enabled'))
+                                ->visible(fn ($get) => $get('exclude_enabled'))
                                 ->schema([
                                     Forms\Components\MultiSelect::make('exclude_resources')
                                         ->placeholder(__("filament-shield::filament-shield.labels.exclude.resources.placeholder"))
-                                        ->options(function() {
+                                        ->options(function () {
                                             return collect(Filament::getResources())
                                                 ->reduce(function ($resources, $resource) {
                                                     $resources[Str::afterLast($resource, '\\')] = Str::afterLast($resource, '\\');
@@ -206,31 +206,31 @@ class ShieldSettings extends Page implements HasFormActions
                                         ->placeholder(__("filament-shield::filament-shield.labels.exclude.pages.placeholder"))
                                         ->options(function () {
                                             return collect(Filament::getPages())
-                                                ->reduce(function($pages,$page) {
+                                                ->reduce(function ($pages, $page) {
                                                     $label = Str::of($page)
                                                         ->after('Pages\\')
-                                                        ->replace('\\',' ');
+                                                        ->replace('\\', ' ');
 
                                                     $value = Str::of($page)
                                                         ->after('Pages\\')
-                                                        ->replace('\\','');
+                                                        ->replace('\\', '');
 
                                                     $pages["{$value}"] = "{$label}";
                                                     return $pages;
-                                            },[]);
+                                                }, []);
                                         })
                                         ->label(__("filament-shield::filament-shield.labels.exclude.pages")),
                                     Forms\Components\MultiSelect::make('exclude_widgets')
                                         ->placeholder(__("filament-shield::filament-shield.labels.exclude.widgets.placeholder"))
                                         ->options(function () {
                                             return collect(Filament::getWidgets())
-                                                ->reduce(function($widgets,$widget) {
+                                                ->reduce(function ($widgets, $widget) {
                                                     $name = Str::of($widget)
                                                             ->after('Widgets\\')
-                                                            ->replace('\\','');
+                                                            ->replace('\\', '');
                                                     $widgets["{$name}"] = "{$name}";
                                                     return $widgets;
-                                            },[]);
+                                                }, []);
                                         })
                                         ->label(__("filament-shield::filament-shield.labels.exclude.widgets.placeholder")),
                                 ])
@@ -242,7 +242,8 @@ class ShieldSettings extends Page implements HasFormActions
 
     protected function generateNewConfig(): void
     {
-        $this->copyStubToApp('Config',
+        $this->copyStubToApp(
+            'Config',
             config_path('filament-shield.php'),
             [
                 'super_admin_role_enabled' => $this->super_admin_role_enabled ? 'true' : 'false',

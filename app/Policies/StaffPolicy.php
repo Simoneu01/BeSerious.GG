@@ -74,5 +74,4 @@ class StaffPolicy
     {
         return $user->can('delete_any_staff');
     }
-
 }

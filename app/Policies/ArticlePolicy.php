@@ -74,5 +74,4 @@ class ArticlePolicy
     {
         return $user->can('delete_any_article');
     }
-
 }
