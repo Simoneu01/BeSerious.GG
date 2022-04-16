@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9aed5287415b33f98156d06ad0415b24",
+    "content-hash": "480063b0b59d67929366584b20b08b02",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -2889,16 +2889,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.0.16",
+            "version": "3.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "dea729954c596bdb6cdaecba6f73df9f3e2c4255"
+                "reference": "29eb78cac0be0c22237c5e0f6f98234d97037d79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/dea729954c596bdb6cdaecba6f73df9f3e2c4255",
-                "reference": "dea729954c596bdb6cdaecba6f73df9f3e2c4255",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/29eb78cac0be0c22237c5e0f6f98234d97037d79",
+                "reference": "29eb78cac0be0c22237c5e0f6f98234d97037d79",
                 "shasum": ""
             },
             "require": {
@@ -2959,7 +2959,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.0.16"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.17"
             },
             "funding": [
                 {
@@ -2975,7 +2975,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-11T13:32:22+00:00"
+            "time": "2022-04-14T14:57:13+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -3035,16 +3035,16 @@
         },
         {
             "name": "league/oauth1-client",
-            "version": "v1.10.0",
+            "version": "v1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth1-client.git",
-                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc"
+                "reference": "d6365b901b5c287dd41f143033315e2f777e1167"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
-                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/d6365b901b5c287dd41f143033315e2f777e1167",
+                "reference": "d6365b901b5c287dd41f143033315e2f777e1167",
                 "shasum": ""
             },
             "require": {
@@ -3105,9 +3105,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/oauth1-client/issues",
-                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.0"
+                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.1"
             },
-            "time": "2021-08-15T23:05:49+00:00"
+            "time": "2022-04-15T14:02:14+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -7632,6 +7632,62 @@
             "time": "2022-03-08T17:03:00+00:00"
         },
         {
+            "name": "webbingbrasil/filament-advancedfilter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webbingbrasil/filament-advancedfilter.git",
+                "reference": "4ed3805d7fd3f404c23d7e57b614f26c500c5bc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webbingbrasil/filament-advancedfilter/zipball/4ed3805d7fd3f404c23d7e57b614f26c500c5bc1",
+                "reference": "4ed3805d7fd3f404c23d7e57b614f26c500c5bc1",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.10.40",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webbingbrasil\\FilamentAdvancedFilter\\FilamentAdvancedFilterProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webbingbrasil\\FilamentAdvancedFilter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Danilo Andrade",
+                    "email": "danilo@webbingbrasil.com.br",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Advanced filter component for filament admin.",
+            "homepage": "https://github.com/webbingbrasil/filament-advancedfilter",
+            "keywords": [
+                "filament",
+                "filter",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/webbingbrasil/filament-advancedfilter/issues",
+                "source": "https://github.com/webbingbrasil/filament-advancedfilter/tree/v1.0.0"
+            },
+            "time": "2022-04-08T23:50:21+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.10.0",
             "source": {
@@ -8908,16 +8964,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.5.4",
+            "version": "1.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "bbf68cae24f6dc023c607ea0f87da55dd9d55c2b"
+                "reference": "799dd8c2d2c9c704bb55d2078078cb970cf0f6d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/bbf68cae24f6dc023c607ea0f87da55dd9d55c2b",
-                "reference": "bbf68cae24f6dc023c607ea0f87da55dd9d55c2b",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/799dd8c2d2c9c704bb55d2078078cb970cf0f6d1",
+                "reference": "799dd8c2d2c9c704bb55d2078078cb970cf0f6d1",
                 "shasum": ""
             },
             "require": {
@@ -8943,7 +8999,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.5.4"
+                "source": "https://github.com/phpstan/phpstan/tree/1.5.6"
             },
             "funding": [
                 {
@@ -8963,7 +9019,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-03T12:39:00+00:00"
+            "time": "2022-04-15T11:13:37+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -10548,16 +10604,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "9ad1d32acf8c855d711964bc19092b0bc9792273"
+                "reference": "924d1ae878874ad0bb49f63b69a9af759a34ee78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/9ad1d32acf8c855d711964bc19092b0bc9792273",
-                "reference": "9ad1d32acf8c855d711964bc19092b0bc9792273",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/924d1ae878874ad0bb49f63b69a9af759a34ee78",
+                "reference": "924d1ae878874ad0bb49f63b69a9af759a34ee78",
                 "shasum": ""
             },
             "require": {
@@ -10634,7 +10690,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-04-13T08:06:05+00:00"
+            "time": "2022-04-14T18:04:51+00:00"
         },
         {
             "name": "theseer/tokenizer",
