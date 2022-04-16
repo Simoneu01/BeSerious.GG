@@ -19,7 +19,7 @@ class StaffPolicy
     {
         return $user->can('view_any_staff');
     }
-    
+
     /**
      * Determine whether the user can create models.
      *
@@ -63,5 +63,4 @@ class StaffPolicy
     {
         return $user->can('delete_any_staff');
     }
-
 }

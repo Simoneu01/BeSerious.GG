@@ -63,5 +63,4 @@ class PlayerPolicy
     {
         return $user->can('delete_any_player');
     }
-
 }

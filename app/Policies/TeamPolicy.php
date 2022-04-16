@@ -63,5 +63,4 @@ class TeamPolicy
     {
         return $user->can('delete_any_team');
     }
-
 }
