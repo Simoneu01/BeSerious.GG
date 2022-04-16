@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Teams;
 
-use App\Filament\Resources\TeamResource\Pages;
-use App\Filament\Resources\TeamResource\RelationManagers;
+use App\Filament\Resources\Teams\TeamResource\Pages;
+use App\Filament\Resources\Teams\TeamResource\RelationManagers;
 use App\Models\Team;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -69,9 +69,9 @@ class TeamResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => TeamResource\Pages\ListTeams::route('/'),
-            'create' => TeamResource\Pages\CreateTeam::route('/create'),
-            'edit' => TeamResource\Pages\EditTeam::route('/{record}/edit'),
+            'index' => Pages\ListTeams::route('/'),
+            'create' => Pages\CreateTeam::route('/create'),
+            'edit' => Pages\EditTeam::route('/{record}/edit'),
         ];
     }
 }

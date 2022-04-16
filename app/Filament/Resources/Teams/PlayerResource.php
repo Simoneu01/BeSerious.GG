@@ -3,17 +3,14 @@
 namespace App\Filament\Resources\Teams;
 
 use App\Enums\SocialEnum;
-use App\Filament\Resources\PlayerResource\Pages;
-use App\Filament\Resources\PlayerResource\RelationManagers;
+use App\Filament\Resources\Teams\PlayerResource\Pages;
+use App\Filament\Resources\Teams\PlayerResource\RelationManagers;
 use App\Models\Player;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Model;
-use Filament\Tables\Filters\Filter;
-use Illuminate\Database\Eloquent\Builder;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
 
 class PlayerResource extends Resource
@@ -74,13 +71,13 @@ class PlayerResource extends Resource
                                 ->placeholder("Seleziona un'opzione")
                                 ->relationship('user', 'name')
                                 ->searchable()
-                                ->default(fn ($livewire) => $livewire instanceof PlayerResource\Pages\EditPlayer ? $livewire->record->user : null),
+                                ->default(fn ($livewire) => $livewire instanceof Pages\EditPlayer ? $livewire->record->user : null),
                             Forms\Components\BelongsToSelect::make('current_team_id')
                                 ->label('Team Corrente')
                                 ->placeholder("Seleziona un'opzione")
                                 ->relationship('team', 'name')
                                 ->searchable()
-                                ->default(fn ($livewire) => $livewire instanceof PlayerResource\Pages\EditPlayer ? $livewire->record->team : null),
+                                ->default(fn ($livewire) => $livewire instanceof Pages\EditPlayer ? $livewire->record->team : null),
                         ]),
                 ]),
             ])->columns(3);
@@ -106,11 +103,6 @@ class PlayerResource extends Resource
             ]);
     }
 
-    protected function getTableFiltersFormWidth(): string
-    {
-        return '4xl';
-    }
-
     public static function getRelations(): array
     {
         return [
@@ -121,9 +113,9 @@ class PlayerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => PlayerResource\Pages\ListPlayers::route('/'),
-            'create' => PlayerResource\Pages\CreatePlayer::route('/create'),
-            'edit' => PlayerResource\Pages\EditPlayer::route('/{record}/edit'),
+            'index' => Pages\ListPlayers::route('/'),
+            'create' => Pages\CreatePlayer::route('/create'),
+            'edit' => Pages\EditPlayer::route('/{record}/edit'),
         ];
     }
 }
