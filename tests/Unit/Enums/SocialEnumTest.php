@@ -31,4 +31,22 @@ class SocialEnumTest extends TestCase
         $twitter = SocialEnum::from('twitch');
         $this->assertSame('fab-twitch', $twitter->getIcon());
     }
+
+    public function test_get_classes()
+    {
+        $twitter = SocialEnum::from('twitter');
+        $this->assertSame('hover:text-[#00acee]', $twitter->getClasses());
+
+        $twitter = SocialEnum::from('linkedin');
+        $this->assertSame('hover:text-[#0e76a8]', $twitter->getClasses());
+
+        $twitter = SocialEnum::from('instagram');
+        $this->assertSame('hover:text-orange-500', $twitter->getClasses());
+
+        $twitter = SocialEnum::from('facebook');
+        $this->assertSame('hover:text-[#1778F2]', $twitter->getClasses());
+
+        $twitter = SocialEnum::from('twitch');
+        $this->assertSame('hover:text-[#9147ff]', $twitter->getClasses());
+    }
 }
