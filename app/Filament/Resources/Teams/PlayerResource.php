@@ -81,7 +81,6 @@ class PlayerResource extends Resource
                         ]),
                 ]),
             ])->columns(3);
-
     }
 
     public static function table(Table $table): Table
