@@ -11,6 +11,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use RalphJSmit\Filament\SEO\SEO;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
 
 class PlayerResource extends Resource
@@ -80,6 +81,13 @@ class PlayerResource extends Resource
                                 ->default(fn ($livewire) => $livewire instanceof Pages\EditPlayer ? $livewire->record->team : null),
                         ]),
                 ]),
+
+                Forms\Components\Section::make('SEO')
+                    ->description('Impostazioni SEO')
+                    ->collapsed()
+                    ->schema([
+                        SEO::make()
+                    ])
             ])->columns(3);
     }
 
