@@ -19,7 +19,7 @@ class ArticlePolicy
     {
         return $user->can('view_any_article');
     }
-    
+
     /**
      * Determine whether the user can create models.
      *
@@ -63,5 +63,4 @@ class ArticlePolicy
     {
         return $user->can('delete_any_article');
     }
-
 }
