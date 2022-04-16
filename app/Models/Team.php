@@ -21,4 +21,11 @@ class Team extends Model
     {
         return Storage::disk('public')->url($this->logo);
     }
+
+    public function players()
+    {
+        return $this->belongsToMany(Player::class)
+            ->withPivot('role', 'joined_at', 'detached_at')
+            ->withTimestamps();
+    }
 }

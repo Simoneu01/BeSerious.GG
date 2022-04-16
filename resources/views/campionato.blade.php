@@ -8,17 +8,17 @@
                     <p class="text-xl text-gray-500">Scopri chi fa parte del BeSerious 2022</p>
                 </div>
                 <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
-                    @foreach(range(1, 8) as $i)
+                    @foreach($teams as $team)
                         <li>
-                            <div class="space-y-4">
+                            <a class="space-y-4" href="{{ route('team.show', $team) }}">
                                 <div class="aspect-w-1 aspect-h-1">
-                                    <img class="object-cover shadow-lg rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-150 duration-500" src="{{ \App\Models\Team::first()->logo_url }}" alt="">
+                                    <img class="object-cover shadow-lg rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-500" src="{{ $team->logo_url }}" alt="">
                                 </div>
 
                                 <div class="text-lg leading-6 font-medium">
-                                    <h3>{{ \App\Models\Team::first()->name }}</h3>
+                                    <h3>{{ $team->name }}</h3>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                     @endforeach
                 </ul>

@@ -34,6 +34,11 @@ class Player extends Model
         return Storage::disk('public')->url($this->img);
     }
 
+    public function getDisplayNameAttribute(): string
+    {
+        return $this->name . " '" . $this->nickname . "' " . $this->surname;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -42,5 +47,12 @@ class Player extends Model
     public function team()
     {
         return $this->belongsTo(Team::class, foreignKey: 'current_team_id');
+    }
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class)
+            ->withPivot('role', 'joined_at', 'detached_at')
+            ->withTimestamps();
     }
 }
