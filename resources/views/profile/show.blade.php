@@ -16,7 +16,7 @@
                             Account
                         </x-profile.sidebar-link>
 
-                        <x-profile.sidebar-link href="{{ route('profile.show.password') }}" :active="request()->routeIs(['profile.show.password', 'profile.show.new-password'])" icon="heroicon-o-key">
+                        <x-profile.sidebar-link href="{{ route('profile.password') }}" :active="request()->routeIs(['profile.password', 'profile.new-password'])" icon="heroicon-o-key">
                             Password
                         </x-profile.sidebar-link>
 
@@ -28,8 +28,8 @@
                             Billing
                         </x-profile.sidebar-link>
 
-                        <x-profile.sidebar-link :active="false" icon="heroicon-o-view-grid-add">
-                            Integrations
+                        <x-profile.sidebar-link href="{{ route('profile.accounts') }}" :active="request()->routeIs('profile.accounts')" icon="heroicon-o-view-grid-add">
+                            Connected Accounts
                         </x-profile.sidebar-link>
                     </nav>
                 </aside>
@@ -41,20 +41,6 @@
 
     {{--<div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()) && ! is_null($user->password))
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.update-password-form')
-                </div>
-
-                <x-jet-section-border />
-            @else
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.set-password-form')
-                </div>
-
-                <x-jet-section-border />
-            @endif
-
             @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication() && ! is_null($user->password))
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.two-factor-authentication-form')
@@ -62,13 +48,6 @@
 
                 <x-jet-section-border />
             @endif
-
-            @if (JoelButcher\Socialstream\Socialstream::show())
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.connected-accounts-form')
-                </div>
-            @endif
-
 
             @if ( ! is_null($user->password))
                 <x-jet-section-border />

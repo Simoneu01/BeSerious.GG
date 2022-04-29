@@ -26,8 +26,9 @@ Route::get('/press', PressNews::class)->name('press');
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user/profile', \App\Http\Livewire\Profile\UpdateProfile::class)->name('profile.show');
-    Route::middleware([\App\Http\Middleware\HavePasswordMiddleware::class])->get('/user/profile/password', \App\Http\Livewire\Profile\UpdatePassword::class)->name('profile.show.password');
-    Route::middleware([\App\Http\Middleware\PasswordMiddleware::class])->get('/user/profile/new-password', \App\Http\Livewire\Profile\SetPassword::class)->name('profile.show.new-password');
+    Route::middleware([\App\Http\Middleware\HavePasswordMiddleware::class])->get('/user/profile/password', \App\Http\Livewire\Profile\UpdatePassword::class)->name('profile.password');
+    Route::middleware([\App\Http\Middleware\PasswordMiddleware::class])->get('/user/profile/new-password', \App\Http\Livewire\Profile\SetPassword::class)->name('profile.new-password');
+    Route::get('/user/profile/accounts', \App\Http\Livewire\Profile\ConnectedAccount::class)->name('profile.accounts');
 
     Route::get('/dashboard', function () {
         return view('dashboard');

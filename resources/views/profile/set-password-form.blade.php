@@ -20,8 +20,8 @@
                 <x-jet-input id="password_confirmation" type="password" class="mt-1 block w-full" wire:model.defer="state.password_confirmation" autocomplete="new-password" />
                 <x-jet-input-error for="password_confirmation" class="mt-2" />
             </div>
-            </div>
         </div>
+    </div>
 
     <div class="mt-4 py-4 px-4 flex justify-end sm:px-6">
         <button type="button" class="bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">

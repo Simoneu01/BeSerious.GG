@@ -10,7 +10,7 @@ class HavePasswordMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (is_null(auth()->user()->password)) {
-            return to_route('profile.show.new-password');
+            return to_route('profile.new-password');
         }
 
         return $next($request);
