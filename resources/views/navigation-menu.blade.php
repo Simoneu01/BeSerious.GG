@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <x-6ixproject.white-icon class="block h-8 w-8"/>
+                        <x-beserious.icon class="block h-12 w-12 text-white"/>
                     </a>
                 </div>
 
@@ -17,7 +17,7 @@
                             {{ __('Dashboard') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                        <x-jet-nav-link href="{{ route('campionato.2022') }}" :active="request()->routeIs('welcome')">
                             {{ __('BeSerious') }}
                         </x-jet-nav-link>
 
@@ -25,7 +25,7 @@
                             {{ __('Pickem') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                        <x-jet-nav-link href="{{ route('twitch') }}" :active="request()->routeIs('welcome')">
                             {{ __('Twitch') }}
                         </x-jet-nav-link>
                     </div>
@@ -105,7 +105,7 @@
 
                                 <div class="border-t border-gray-100"></div>
 
-                                @if(true)
+                                @role('admin')
                                     <div class="block px-4 py-2 text-xs text-gray-400" tabindex="-1" id="user-menu-item-0">
                                         {{ __('Amministrazione') }}
                                     </div>
@@ -115,7 +115,7 @@
                                     </x-jet-dropdown-link>
 
                                     <div class="border-t border-gray-100"></div>
-                                @endif
+                                @endrole
 
 
                                 <!-- Authentication -->
