@@ -21,8 +21,8 @@
                             {{ __('BeSerious') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
-                            {{ __('Pickem') }}
+                        <x-jet-nav-link href="{{ route('predictions') }}" :active="request()->routeIs('predictions')">
+                            {{ __('Predictions') }}
                         </x-jet-nav-link>
 
                         <x-jet-nav-link href="{{ route('twitch') }}" :active="request()->routeIs('welcome')">

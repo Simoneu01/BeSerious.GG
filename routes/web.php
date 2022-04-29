@@ -29,6 +29,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::middleware([\App\Http\Middleware\HavePasswordMiddleware::class])->get('/user/profile/password', \App\Http\Livewire\Profile\UpdatePassword::class)->name('profile.password');
     Route::middleware([\App\Http\Middleware\PasswordMiddleware::class])->get('/user/profile/new-password', \App\Http\Livewire\Profile\SetPassword::class)->name('profile.new-password');
     Route::get('/user/profile/accounts', \App\Http\Livewire\Profile\ConnectedAccount::class)->name('profile.accounts');
+    Route::get('/predictions', fn () => view('predictions'))->name('predictions');
 
     Route::get('/dashboard', function () {
         return view('dashboard');
