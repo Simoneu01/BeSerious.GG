@@ -35,35 +35,6 @@
                 </div>
             </div>
 
-            {{--<div x-data="{photoName: null, photoPreview: null}" class="mt-6 grow lg:mt-0 lg:ml-6 lg:grow-0 lg:shrink-0">
-                <p class="text-sm font-medium text-gray-700" aria-hidden="true">
-                    Photo
-                </p>
-
-                <!-- Profile Photo File Input -->
-                <input type="file" class="hidden"
-                       wire:model="photo"
-                       x-ref="photo"
-                       x-on:change="
-                                photoName = $refs.photo.files[0].name;
-                                const reader = new FileReader();
-                                reader.onload = (e) => {
-                                    photoPreview = e.target.result;
-                                };
-                                reader.readAsDataURL($refs.photo.files[0]);
-                        " />
-
-                <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                    {{ __('Select A New Photo') }}
-                </x-jet-secondary-button>
-
-                @if ($this->user->profile_photo_path)
-                    <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                        {{ __('Remove Photo') }}
-                    </x-jet-secondary-button>
-                @endif
-            </div>--}}
-
             <div x-data="{photoName: null, photoPreview: null}" class="mt-6 grow lg:mt-0 lg:ml-6 lg:grow-0 lg:shrink-0">
                 <p class="text-sm font-medium text-gray-700" aria-hidden="true">
                     Photo
