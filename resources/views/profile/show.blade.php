@@ -24,10 +24,6 @@
                             Notifications
                         </x-profile.sidebar-link>
 
-                        <x-profile.sidebar-link :active="false" icon="heroicon-o-credit-card">
-                            Billing
-                        </x-profile.sidebar-link>
-
                         <x-profile.sidebar-link href="{{ route('profile.accounts') }}" :active="request()->routeIs('profile.accounts')" icon="heroicon-o-view-grid-add">
                             Connected Accounts
                         </x-profile.sidebar-link>
