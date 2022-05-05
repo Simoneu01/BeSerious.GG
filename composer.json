@@ -31,6 +31,7 @@
         "webbingbrasil/filament-advancedfilter": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.14.1",
         "laravel/sail": "^1.7.0",
         "mockery/mockery": "^1.4.3",
@@ -68,7 +69,9 @@
             "@php artisan key:generate --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan filament:upgrade",
+            "@php artisan ide-helper:models -W -R"
         ]
     },
     "extra": {
