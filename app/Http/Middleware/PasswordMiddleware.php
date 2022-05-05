@@ -12,7 +12,7 @@ class PasswordMiddleware
         if (auth()->user()->password) {
             return to_route('profile.show.password');
         }
-        
+
         return $next($request);
     }
 }
