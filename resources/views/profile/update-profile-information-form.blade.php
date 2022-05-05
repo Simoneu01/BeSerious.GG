@@ -119,16 +119,20 @@
                 <label for="name" class="block text-sm font-medium text-gray-700">{{ __('Name') }}</label>
                 <input type="text" name="name" id="name" autocomplete="name" wire:model.defer="state.name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
             </div>
-
+            <div class="col-span-12 sm:col-span-6">
+                <label for="email" class="block text-sm font-medium text-gray-700">{{ __('Email') }}</label>
+                <input type="text" name="email" id="email" autocomplete="email" wire:model.defer="state.email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
+            </div>
         </div>
     </div>
 
-    <div class="mt-4 py-4 px-4 flex justify-end sm:px-6">
-        <button type="button" class="bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-            Annulla
-        </button>
-        <button type="submit" class="ml-5 bg-red-700 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-            Salva
-        </button>
+    <div class="mt-4 py-4 px-4 flex justify-end sm:px-6 items-center">
+        <x-jet-action-message class="mr-3" on="saved">
+            {{ __('Salvato.') }}
+        </x-jet-action-message>
+
+        <x-jet-button wire:loading.attr="disabled">
+            {{ __('Salva') }}
+        </x-jet-button>
     </div>
 </form>
