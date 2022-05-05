@@ -22,6 +22,7 @@
         "livewire/livewire": "^2.4",
         "owenvoke/blade-fontawesome": "^2.0",
         "ralphjsmit/laravel-filament-seo": "^0.7.0",
+        "sebastiaankloos/filament-code-editor": "^1.0",
         "socialiteproviders/discord": "^4.1",
         "spatie/data-transfer-object": "^3.7",
         "symfony/http-client": "^6.0",
