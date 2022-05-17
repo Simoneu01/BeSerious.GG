@@ -12,7 +12,7 @@
                             Profile
                         </x-profile.sidebar-link>
 
-                        <x-profile.sidebar-link :active="false" icon="heroicon-o-cog">
+                        <x-profile.sidebar-link href="{{ route('profile.account') }}" :active="request()->routeIs(['profile.account'])" icon="heroicon-o-cog">
                             Account
                         </x-profile.sidebar-link>
 
@@ -24,8 +24,8 @@
                             Notifications
                         </x-profile.sidebar-link>
 
-                        <x-profile.sidebar-link href="{{ route('profile.accounts') }}" :active="request()->routeIs('profile.accounts')" icon="heroicon-o-view-grid-add">
-                            Connected Accounts
+                        <x-profile.sidebar-link href="{{ route('profile.2fa') }}" :active="request()->routeIs('profile.2fa')" icon="heroicon-o-qrcode">
+                            2FA
                         </x-profile.sidebar-link>
                     </nav>
                 </aside>

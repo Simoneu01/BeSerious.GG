@@ -1,14 +1,19 @@
-<x-jet-action-section>
-    <x-slot name="title">
-        {{ __('Delete Account') }}
-    </x-slot>
+<div class="divide-y divide-gray-200 lg:col-span-9">
+    <!-- Connected Account section -->
+    <div class="py-6 px-4 sm:p-6 lg:pb-8">
+        <div>
+            <h2 class="text-lg leading-6 font-medium text-gray-900">
+                {{ __('Delete Account') }}
+            </h2>
+            <p class="mt-1 text-sm text-gray-500">
+                {{ __('Permanently delete your account.') }}
+            </p>
+        </div>
+    </div>
 
-    <x-slot name="description">
-        {{ __('Permanently delete your account.') }}
-    </x-slot>
 
-    <x-slot name="content">
-        <div class="max-w-xl text-sm text-gray-600">
+    <div class="py-6 px-4 sm:p-6 lg:pb-8">
+        <div class="text-sm text-gray-600">
             {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
         </div>
 
@@ -29,10 +34,10 @@
 
                 <div class="mt-4" x-data="{}" x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-jet-input type="password" class="mt-1 block w-3/4"
-                                placeholder="{{ __('Password') }}"
-                                x-ref="password"
-                                wire:model.defer="password"
-                                wire:keydown.enter="deleteUser" />
+                                 placeholder="{{ __('Password') }}"
+                                 x-ref="password"
+                                 wire:model.defer="password"
+                                 wire:keydown.enter="deleteUser" />
 
                     <x-jet-input-error for="password" class="mt-2" />
                 </div>
@@ -48,5 +53,5 @@
                 </x-jet-danger-button>
             </x-slot>
         </x-jet-dialog-modal>
-    </x-slot>
-</x-jet-action-section>
+    </div>
+</div>

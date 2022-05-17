@@ -3,9 +3,9 @@
 namespace App\Http\Livewire\Profile;
 
 use Illuminate\Contracts\View\View;
-use JoelButcher\Socialstream\Http\Livewire\ConnectedAccountsForm;
+use Laravel\Jetstream\Http\Livewire\DeleteUserForm;
 
-class ConnectedAccount extends ConnectedAccountsForm
+class DeleteAccount extends DeleteUserForm
 {
     /**
      * Render the component.
@@ -14,7 +14,7 @@ class ConnectedAccount extends ConnectedAccountsForm
      */
     public function render(): View
     {
-        return view('profile.connected-accounts-form')
+        return view('profile.delete-user-form')
             ->layout('profile.show');
     }
 }
