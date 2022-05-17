@@ -32,7 +32,7 @@
                     <div class="flex items-center justify-between w-full md:w-auto">
                         <a href="{{ route('welcome') }}">
                             <span class="sr-only">BeSerious</span>
-                            <x-6ixproject.red-icon class="h-8 w-auto sm:h-10"/>
+                            <x-beserious.logo class="h-8 w-auto sm:h-16 text-red-600"/>
                         </a>
                         <div class="-mr-2 flex items-center md:hidden">
                             <button type="button"

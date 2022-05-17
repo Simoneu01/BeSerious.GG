@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class UpdatePasswordTest extends TestCase
+class SetPasswordTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_password_can_be_updated()
+    public function test_password_can_be_setted()
     {
         $this->actingAs($user = User::factory()->create());
 

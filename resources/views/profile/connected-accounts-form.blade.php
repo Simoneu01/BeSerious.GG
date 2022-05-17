@@ -1,26 +1,23 @@
-<x-jet-action-section>
-    <x-slot name="title">
-        {{ __('Connected Accounts') }}
-    </x-slot>
-
-    <x-slot name="description">
-        {{ __('Manage and remove your connect accounts.') }}
-    </x-slot>
-
-    <x-slot name="content">
-        <h3 class="text-lg font-medium text-gray-900">
-            @if (count($this->accounts) == 0)
-                {{ __('You have no connected accounts.') }}
-            @else
-                {{ __('Your connected accounts.') }}
-            @endif
-        </h3>
-
-        <div class="mt-3 max-w-xl text-sm text-gray-600">
-            {{ __('You are free to connect any social accounts to your profile and may remove any connected accounts at any time. If you feel any of your connected accounts have been compromised, you should disconnect them immediately and change your password.') }}
+<form class="divide-y divide-gray-200 lg:col-span-9">
+    <!-- Connected Account section -->
+    <div class="py-6 px-4 sm:p-6 lg:pb-8">
+        <div>
+            <h2 class="text-lg leading-6 font-medium text-gray-900">
+                @if (count($this->accounts) == 0)
+                    {{ __('You have no connected accounts.') }}
+                @else
+                    {{ __('Your connected accounts.') }}
+                @endif
+            </h2>
+            <p class="mt-1 text-sm text-gray-500">
+                {{ __('You are free to connect any social accounts to your profile and may remove any connected accounts at any time. If you feel any of your connected accounts have been compromised, you should disconnect them immediately and change your password.') }}
+            </p>
         </div>
+    </div>
 
-        <div class="mt-5 space-y-6">
+
+    <div class="py-6 px-4 sm:p-6 lg:pb-8">
+        <div class="space-y-6">
             @foreach ($this->providers as $provider)
                 @php
                     $account = null;
@@ -74,5 +71,5 @@
                 </x-jet-danger-button>
             </x-slot>
         </x-jet-dialog-modal>
-    </x-slot>
-</x-jet-action-section>
+    </div>
+</form>
