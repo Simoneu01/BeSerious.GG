@@ -1320,12 +1320,10 @@
                                 u = t[o].oldValue,
                                 a = () => {
                                     r.has(e) || r.set(e, []),
-                                        r
-                                            .get(e)
-                                            .push({
-                                                name: n,
-                                                value: e.getAttribute(n),
-                                            });
+                                        r.get(e).push({
+                                            name: n,
+                                            value: e.getAttribute(n),
+                                        });
                                 },
                                 c = () => {
                                     i.has(e) || i.set(e, []), i.get(e).push(n);
