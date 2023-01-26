@@ -5,7 +5,7 @@ set -e
 # Read Last commit hash from .git
 # This prevents installing git, and allows display of commit
 read -r longhash < /var/www/html/BeSerious.GG/.git/refs/heads/main
-shorthash=$(echo $longhash |cut -c1-7)
+shorthash=$(echo "$longhash" |cut -c1-7)
 BeSeriousVersion='1.0.0'
 echo '
 -------------------------------------
@@ -19,14 +19,14 @@ echo '
  | |__| (_| | | | (_| |\ V /  __/ |
  |_____\__,_|_|  \__,_| \_/ \___|_|
 -------------------------------------
-BeSerious.GG Version: '$BeSeriousVersion'
-BeSerious.GG Commit:  '$shorthash'
-https://github.com/Simoneu01/BeSerious.GG/commit/'$longhash'
+BeSerious.GG Version: '"$BeSeriousVersion"'
+BeSerious.GG Commit:  '"$shorthash"'
+https://github.com/Simoneu01/BeSerious.GG/commit/'"$longhash"'
 -------------------------------------'
 
 if [ -n "$STARTUP_DELAY" ]
 	then echo "**** Delaying startup ($STARTUP_DELAY seconds)... ****"
-	sleep $STARTUP_DELAY
+	sleep "$STARTUP_DELAY"
 fi
 
 echo "**** Make sure the /conf folder exist ****"
@@ -37,7 +37,7 @@ cd /var/www/html/BeSerious.GG
 
 if [ "$DB_CONNECTION" = "sqlite" ] || [ -z "$DB_CONNECTION" ]
     echo "**** DATABASE PATH  ****"
-    echo $DB_DATABASE
+    echo "$DB_DATABASE"
 	then if [ -n "$DB_DATABASE" ]
 		then if [ ! -e "$DB_DATABASE" ]
 			then echo "**** Specified sqlite database doesn't exist. Creating it ****"
@@ -51,8 +51,8 @@ if [ "$DB_CONNECTION" = "sqlite" ] || [ -z "$DB_CONNECTION" ]
 		if [ ! -L database/database.sqlite ]
 			then [ ! -e /conf/database.sqlite ] && \
 			echo "**** Create the database  ****"
-            touch $DB_DATABASE
-            chown www-data:www-data $DB_DATABASE
+            touch "$DB_DATABASE"
+            chown www-data:www-data "$DB_DATABASE"
 
             echo "**** Copy the default database to /conf ****" && \
             cp database/database.sqlite /conf/database.sqlite
@@ -66,7 +66,7 @@ fi
 
 echo "**** Copy the .env to /conf ****" && \
 [ ! -e /conf/.env ] && \
-	sed 's|^#DB_DATABASE=$|DB_DATABASE='$DB_DATABASE'|' /var/www/html/BeSerious.GG/.env.example > /conf/.env
+	sed 's|^#DB_DATABASE=$|DB_DATABASE='"$DB_DATABASE"'|' /var/www/html/BeSerious.GG/.env.example > /conf/.env
 [ ! -L /var/www/html/BeSerious.GG/.env ] && \
 	ln -s /conf/.env /var/www/html/BeSerious.GG/.env
 echo "**** Inject .env values ****" && \
@@ -111,4 +111,4 @@ service cron start
 
 echo "**** Setup complete, starting the server. ****"
 php-fpm8.2
-exec $@
+exec "$@"
