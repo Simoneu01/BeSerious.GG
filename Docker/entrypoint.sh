@@ -29,9 +29,15 @@ if [ -n "$STARTUP_DELAY" ]
 	sleep $STARTUP_DELAY
 fi
 
+echo "**** Make sure the /conf folder exist ****"
+[ ! -d /conf ]    && mkdir -p /conf
+
 cd /var/www/html/BeSerious.GG
 
+
 if [ "$DB_CONNECTION" = "sqlite" ] || [ -z "$DB_CONNECTION" ]
+    echo "**** DATABASE PATH  ****"
+    echo $DB_DATABASE
 	then if [ -n "$DB_DATABASE" ]
 		then if [ ! -e "$DB_DATABASE" ]
 			then echo "**** Specified sqlite database doesn't exist. Creating it ****"
@@ -44,12 +50,16 @@ if [ "$DB_CONNECTION" = "sqlite" ] || [ -z "$DB_CONNECTION" ]
 		export DB_DATABASE
 		if [ ! -L database/database.sqlite ]
 			then [ ! -e /conf/database.sqlite ] && \
-			echo "**** Copy the default database to /conf ****" && \
-			cp database/database.sqlite /conf/database.sqlite
-			echo "**** Create the symbolic link for the database ****"
-			rm database/database.sqlite
-			ln -s /conf/database.sqlite database/database.sqlite
-			chown -h www-data:www-data /conf /conf/database.sqlite database/database.sqlite
+			echo "**** Create the database  ****"
+            touch $DB_DATABASE
+            chown www-data:www-data $DB_DATABASE
+
+            echo "**** Copy the default database to /conf ****" && \
+            cp database/database.sqlite /conf/database.sqlite
+            echo "**** Create the symbolic link for the database ****"
+            rm database/database.sqlite
+            ln -s /conf/database.sqlite database/database.sqlite
+            chown -h www-data:www-data /conf /conf/database.sqlite database/database.sqlite
 		fi
 	fi
 fi
@@ -63,10 +73,12 @@ echo "**** Inject .env values ****" && \
 	/inject.sh
 
 [ ! -e /tmp/first_run ] && \
+    echo "**** [DEBUG] List files ****" && \
+    ls -la /var/www/html/BeSerious.GG && \
 	echo "**** Generate the key (to make sure that cookies cannot be decrypted etc) ****" && \
-	./artisan key:generate -n && \
+	php artisan key:generate -n && \
 	echo "**** Migrate the database ****" && \
-	./artisan migrate --force && \
+	php artisan migrate --force && \
 	touch /tmp/first_run
 
 echo "**** Create user and use PUID/PGID ****"
@@ -81,8 +93,12 @@ echo "**** Make sure Laravel's log exists ****" && \
 touch /var/www/html/BeSerious.GG/storage/logs/laravel.log
 
 echo "**** Set Permissions ****" && \
+# Set ownership of directories, then files and only when required. See LycheeOrg/Lychee-Docker#120
+find /conf/.env \( ! -user "$USER" -o ! -group "$USER" \) -exec chown "$USER":"$USER" \{\} \;
+# Laravel needs to be able to chmod user.css for no good reason
+find /var/www/html/BeSerious.GG/storage/logs/laravel.log \( ! -user "www-data" -o ! -group "$USER" \) -exec chown www-data:"$USER" \{\} \;
 usermod -a -G "$USER" www-data
-find /var/www/html/BeSerious.GG/storage/logs/laravel.log \( ! -perm -ug+w -o ! -perm -ugo+rX \) -exec chmod ug+w,ugo+rX \{\} \;
+find /conf/.env /var/www/html/BeSerious.GG/storage/logs/laravel.log \( ! -perm -ug+w -o ! -perm -ugo+rX \) -exec chmod ug+w,ugo+rX \{\} \;
 
 # Update CA Certificates if we're using armv7 because armv7 is weird (#76)
 if [[ $(uname -a) == *"armv7"* ]]; then
@@ -94,5 +110,5 @@ echo "**** Start cron daemon ****"
 service cron start
 
 echo "**** Setup complete, starting the server. ****"
-php-fpm8.1
+php-fpm8.2
 exec $@

@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM debian:bookworm-slim
 
 # Set version label
 LABEL maintainer="Simoneu01"
@@ -18,10 +18,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN \
     set -ev && \
     apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y software-properties-common && \
-    add-apt-repository ppa:ondrej/php && \
-    apt-get update && \
     apt-get upgrade -y
 
 # Install base dependencies
@@ -37,16 +33,16 @@ RUN apt-get install -y --no-install-recommends \
 
 # Install php dependencies
 RUN apt-get install -y --no-install-recommends  \
-    php8.1 \
-    php8.1-sqlite3 \
-    php8.1-mbstring \
-    php8.1-gd \
-    php8.1-xml \
-    php8.1-zip \
-    php8.1-fpm \
-    php8.1-redis \
-    php8.1-bcmath \
-    php8.1-intl
+    php8.2 \
+    php8.2-sqlite3 \
+    php8.2-mbstring \
+    php8.2-gd \
+    php8.2-xml \
+    php8.2-zip \
+    php8.2-fpm \
+    php8.2-redis \
+    php8.2-bcmath \
+    php8.2-intl
 
 # Add user
 RUN addgroup --gid "$PGID" "$USER" && \
@@ -54,7 +50,7 @@ RUN addgroup --gid "$PGID" "$USER" && \
 
 # Clone the repository
 RUN cd /var/www/html && \
-    git clone https://github.com/Simoneu01/BeSerious.GG.git && \
+    git clone -b docker https://github.com/Simoneu01/BeSerious.GG.git && \
     mv BeSerious.GG/.git/refs/heads/main BeSerious.GG/main || cp BeSerious.GG/.git/HEAD BeSerious.GG/main && \
     mv BeSerious.GG/.git/HEAD BeSerious.GG/HEAD && \
     rm -r BeSerious.GG/.git/* && \
@@ -71,12 +67,12 @@ RUN cd /var/www/html && \
     rm    storage/logs/* 2> /dev/null || true && \
     chown -R www-data:www-data /var/www/html/BeSerious.GG && \
     echo "* * * * * www-data cd /var/www/html/BeSerious.GG && php artisan schedule:run >> /dev/null 2>&1" >> /etc/crontab && \
-    apt-get purge -y --autoremove git composer && \
+    apt-get purge -y --autoremove git && \
     apt-get clean -qy &&\
     rm -rf /var/lib/apt/lists/*
 
 # Add custom Nginx configuration
-#COPY default.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 #VOLUME /conf /uploads /sym
