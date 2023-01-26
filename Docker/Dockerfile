@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
 # Set version label
-LABEL maintainer="lycheeorg"
+LABEL maintainer="Simoneu01"
 
 # Environment variables
 ENV PUID='1000'
@@ -55,12 +55,12 @@ RUN addgroup --gid "$PGID" "$USER" && \
 # Clone the repository
 RUN cd /var/www/html && \
     git clone https://github.com/Simoneu01/BeSerious.GG.git && \
-    #mv BeSerious.GG/.git/refs/heads/main BeSerious.GG/main || cp BeSerious.GG/.git/HEAD BeSerious.GG/main && \
-    #mv BeSerious.GG/.git/HEAD BeSerious.GG/HEAD && \
-    #rm -r BeSerious.GG/.git/* && \
-    #mkdir -p BeSerious.GG/.git/refs/heads && \
-    #mv BeSerious.GG/HEAD BeSerious.GG/.git/HEAD && \
-    #mv BeSerious.GG/main BeSerious.GG/.git/refs/heads/main && \
+    mv BeSerious.GG/.git/refs/heads/main BeSerious.GG/main || cp BeSerious.GG/.git/HEAD BeSerious.GG/main && \
+    mv BeSerious.GG/.git/HEAD BeSerious.GG/HEAD && \
+    rm -r BeSerious.GG/.git/* && \
+    mkdir -p BeSerious.GG/.git/refs/heads && \
+    mv BeSerious.GG/HEAD BeSerious.GG/.git/HEAD && \
+    mv BeSerious.GG/main BeSerious.GG/.git/refs/heads/main && \
     cd /var/www/html/BeSerious.GG && \
     composer install --no-dev --prefer-dist && \
     find . -wholename '*/[Tt]ests/*' -delete && \
@@ -80,12 +80,14 @@ RUN cd /var/www/html && \
 
 EXPOSE 80
 #VOLUME /conf /uploads /sym
+VOLUME /conf
 
 WORKDIR /var/www/html/BeSerious.GG
 
-COPY entrypoint.sh /
+COPY entrypoint.sh inject.sh /
 
 RUN chmod +x /entrypoint.sh && \
+    chmod +x /inject.sh && \
     if [ ! -e /run/php ] ; then mkdir /run/php ; fi
 
 HEALTHCHECK CMD curl --fail http://localhost:80/ || exit 1

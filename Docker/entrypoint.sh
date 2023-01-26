@@ -4,9 +4,9 @@ set -e
 
 # Read Last commit hash from .git
 # This prevents installing git, and allows display of commit
-read -r longhash < /var/www/html/BeSerious.GG/.git/refs/heads/master
+read -r longhash < /var/www/html/BeSerious.GG/.git/refs/heads/main
 shorthash=$(echo $longhash |cut -c1-7)
-BeSeriousVersion=$(</var/www/html/BeSerious.GG/version.md)
+BeSeriousVersion='1.0.0'
 echo '
 -------------------------------------
   _               _
@@ -21,7 +21,7 @@ echo '
 -------------------------------------
 BeSerious.GG Version: '$BeSeriousVersion'
 BeSerious.GG Commit:  '$shorthash'
-https://github.com/BeSerious.GGOrg/BeSerious.GG/commit/'$longhash'
+https://github.com/Simoneu01/BeSerious.GG/commit/'$longhash'
 -------------------------------------'
 
 if [ -n "$STARTUP_DELAY" ]
