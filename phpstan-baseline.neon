@@ -1,37 +1,12 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$refreshToken\\.$#"
-			count: 1
-			path: app/Actions/Socialstream/CreateConnectedAccount.php
-
-		-
 			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$token\\.$#"
 			count: 1
 			path: app/Actions/Socialstream/CreateConnectedAccount.php
 
 		-
-			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$tokenSecret\\.$#"
-			count: 1
-			path: app/Actions/Socialstream/CreateConnectedAccount.php
-
-		-
-			message: "#^Expression on left side of \\?\\? is not nullable\\.$#"
-			count: 1
-			path: app/Actions/Socialstream/CreateUserFromProvider.php
-
-		-
-			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$refreshToken\\.$#"
-			count: 1
-			path: app/Actions/Socialstream/UpdateConnectedAccount.php
-
-		-
 			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$token\\.$#"
-			count: 1
-			path: app/Actions/Socialstream/UpdateConnectedAccount.php
-
-		-
-			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$tokenSecret\\.$#"
 			count: 1
 			path: app/Actions/Socialstream/UpdateConnectedAccount.php
 
