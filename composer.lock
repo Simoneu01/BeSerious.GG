@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5dc82816a67612b8fe5361570c0f1579",
+    "content-hash": "ad5442757d9790eea771072b334146f2",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -130,30 +130,37 @@
         },
         {
             "name": "bezhansalleh/filament-shield",
-            "version": "v1.1.12",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bezhanSalleh/filament-shield.git",
-                "reference": "9090369f00d3d656edb9472699253bb06acc085f"
+                "reference": "b2700e3cc376724dce592a9e346b8c5e57d3f616"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bezhanSalleh/filament-shield/zipball/9090369f00d3d656edb9472699253bb06acc085f",
-                "reference": "9090369f00d3d656edb9472699253bb06acc085f",
+                "url": "https://api.github.com/repos/bezhanSalleh/filament-shield/zipball/b2700e3cc376724dce592a9e346b8c5e57d3f616",
+                "reference": "b2700e3cc376724dce592a9e346b8c5e57d3f616",
                 "shasum": ""
             },
             "require": {
-                "filament/filament": "^2.0",
-                "illuminate/contracts": "^8.0|^9.0",
+                "filament/filament": "^2.13",
+                "illuminate/contracts": "^8.6|^9.0",
                 "php": "^8.0|^8.1",
+                "spatie/invade": "^1.0",
                 "spatie/laravel-package-tools": "^1.9.2",
                 "spatie/laravel-permission": "^5.0"
             },
             "require-dev": {
+                "barryvdh/laravel-ide-helper": "^2.12",
+                "laravel/pint": "^1.0",
                 "nunomaduro/collision": "^5.0|^6.0",
+                "nunomaduro/larastan": "^2.0.1",
                 "orchestra/testbench": "^6.0|^7.0",
                 "pestphp/pest": "^1.21",
                 "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
                 "phpunit/phpunit": "^9.5"
             },
             "type": "library",
@@ -161,7 +168,10 @@
                 "laravel": {
                     "providers": [
                         "BezhanSalleh\\FilamentShield\\FilamentShieldServiceProvider"
-                    ]
+                    ],
+                    "aliases": {
+                        "FilamentShield": "BezhanSalleh\\FilamentShield\\Facades\\FilamentShield"
+                    }
                 }
             },
             "autoload": {
@@ -197,7 +207,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bezhanSalleh/filament-shield/issues",
-                "source": "https://github.com/bezhanSalleh/filament-shield/tree/v1.1.12"
+                "source": "https://github.com/bezhanSalleh/filament-shield/tree/2.3.2"
             },
             "funding": [
                 {
@@ -205,7 +215,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-19T13:26:03+00:00"
+            "time": "2022-11-16T21:41:17+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
