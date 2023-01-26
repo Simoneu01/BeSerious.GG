@@ -4,23 +4,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Roles
+    | Defualt Roles
     |--------------------------------------------------------------------------
     |
-    | Permissions' generated will be assigned automatically to the following roles when enabled.
+    | The default is `super_admin` but you can change it to whatever works best for you.
     | `filament_user` if enabled will help smoothly provide access to filament users
-    | in production when implementing `FilamentUser` interface.
+    | in production when implementing `FilamentUser`
     */
 
 
     'super_admin' => [
-        'enabled' => true,
+        'enabled'   => true,
         'role_name' => 'admin'
     ],
 
     'filament_user' => [
+        'enabled'   => false,
         'role_name' => 'filament_user',
-        'enabled' => false
     ],
 
     /*
@@ -37,14 +37,7 @@ return [
     */
 
     'prefixes' => [
-        'resource' => [
-            'view',
-            'view_any',
-            'create',
-            'delete',
-            'delete_any',
-            'update',
-        ],
+        'resource' => ["view","view_any","create","delete","delete_any","update"],
         'page'  =>  'view',
         'widget' => 'view'
     ],
@@ -82,19 +75,17 @@ return [
     |--------------------------------------------------------------------------
     | Exclude
     |--------------------------------------------------------------------------
-    | When enabled Exclude entites listed here during permission generation.
-    |
+    | Generate permissions or permissions with policies for all the entities
+    | except listed here.
+    | Generated Permission name will be formatted as:
+    | Page: `view_page_name` i.e, `SettingsPage` => `view_settings_page`
+    | Widget: `view_widget_name` i.e, `IncomeWidget` => `view_income_widget`
     */
 
     'exclude' => [
         'enabled' => true,
-        'pages' => [
-            'Dashboard'
-        ],
-        'widgets' => [
-            'AccountWidget',
-            'FilamentInfoWidget'
-        ],
+        'pages' => ["Dashboard"],
+        'widgets' => ["AccountWidget","FilamentInfoWidget"],
         'resources' => [],
     ],
 
