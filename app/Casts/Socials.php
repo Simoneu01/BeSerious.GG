@@ -4,12 +4,13 @@ namespace App\Casts;
 
 use App\DTO\Social;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Illuminate\Contracts\Database\Eloquent\SerializesCastableAttributes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use InvalidArgumentException;
 use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
-class Socials implements CastsAttributes
+class Socials implements CastsAttributes, SerializesCastableAttributes
 {
     /**
      * Cast the given value.
@@ -25,10 +26,12 @@ class Socials implements CastsAttributes
     {
         $socials = [];
 
-        foreach (json_decode($value, true) as $social) {
-            $socials[] = new Social($social);
+        if (! is_null($value)) {
+            foreach (json_decode($value, true) as $social) {
+                $socials[] = new Social($social);
+            }
         }
-
+        
         return $socials;
     }
 
@@ -54,5 +57,19 @@ class Socials implements CastsAttributes
         }
 
         return json_encode($value);
+    }
+
+    /**
+     * Get the serialized representation of the value.
+     *
+     * @param  Model  $model
+     * @param  string  $key
+     * @param  mixed  $value
+     * @param  array  $attributes
+     * @return mixed
+     */
+    public function serialize($model, string $key, $value, array $attributes): mixed
+    {
+        return json_decode($attributes['socials'], true);
     }
 }
