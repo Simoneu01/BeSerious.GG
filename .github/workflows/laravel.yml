@@ -78,3 +78,9 @@ jobs:
 
       - name: Compile assets for production
         run: npm run production
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: >
+            chore: compile assets
