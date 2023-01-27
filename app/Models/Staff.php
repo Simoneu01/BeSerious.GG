@@ -64,6 +64,6 @@ class Staff extends Model
 
     public function getImgUrlAttribute(): string
     {
-        return Storage::disk('public')->url($this->img);
+        return $this->img ? Storage::disk('public')->url($this->img) : asset('img/default.png');
     }
 }
