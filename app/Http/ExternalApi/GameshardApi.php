@@ -18,23 +18,24 @@ class GameshardApi
     /**
      * @throws RequestException
      */
-    public function pullPlaydays(int $tournamentId, int $phaseId): Collection
+    public function pullRoundsIds(string $tournamentId, string $phaseId): Collection
     {
-        $playdays = Http::withToken($this->gameshardToken)
+        $rounds = Http::acceptJson()
+            ->withToken($this->gameshardToken)
             ->get("https://gameshard.io/api/tournaments/$tournamentId/phases/$phaseId/rounds")
             ->throw()
             ->json('data');
 
-        return collect($playdays)->pluck('id');
+        return collect($rounds)->pluck('id');
     }
 
     /**
      * @throws RequestException
      */
-    public function pullMatchesFromPlayday(string $playday)
+    public function pullMatchesFromRoundId(string $roundId)
     {
         return Http::withToken($this->gameshardToken)
-            ->get("https://gameshard.io/api/matches?filter[round_id]=$playday")
+            ->get("https://gameshard.io/api/matches?filter[round_id]=$roundId")
             ->throw()
             ->json('data');
     }
@@ -42,10 +43,21 @@ class GameshardApi
     /**
      * @throws RequestException
      */
-    public function pullMatchesIdsFromPlayday(string $playday)
+    public function pullMatchesIdsFromRoundId(string $roundId): Collection
     {
-        $matches = $this->pullMatchesFromPlayday($playday);
+        $matches = $this->pullMatchesFromRoundId($roundId);
 
         return collect($matches)->pluck('id');
+    }
+
+    public function pullGamesIds(string $matchId): Collection
+    {
+        $games = Http::acceptJson()
+            ->withToken($this->gameshardToken)
+            ->get("https://gameshard.io/api/matches/$matchId/games")
+            ->throw()
+            ->json('data');
+
+        return collect($games);
     }
 }
