@@ -1,4 +1,19 @@
 <x-guest-layout>
+    <!-- About -->
+    <div class="bg-gray-100">
+        <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8">
+            <div class="space-y-12">
+                <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Cos'è il BeSerious?</h2>
+                    <p class="text-xl text-black">BeSerious è il campionato cadetto italiano di Rainbow Six: Siege.<br/>
+                        Insieme a <strong>PG Esports</strong> ed <strong>Ubisoft</strong>, BeSerious si concentra a sviluppare il T4 creando un ambiente dove i giovani giocatori di talento ma senza esperienza competitiva
+                        possano dimostrare il loro valore e prepararsi a sfidare gli ultimi 2 team in classifica del PG Nationals: R6 all'interno del Relegation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Team -->
     <div class="bg-gray-100">
         <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
