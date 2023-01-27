@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Http\ExternalApi\GameshardApi;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
@@ -67,9 +68,14 @@ class Rankings extends Component
              */
             foreach ($games as $game) {
                 $game = $game->first();
-                dd($game);
-                $homeContestant = $game['contestants'][0];
-                $awayContestant = $game['contestants'][1];
+                $homeContestant = Arr::get($game['contestants'],0, null);
+                if (!$homeContestant) {
+                    continue;
+                }
+                $awayContestant = Arr::get($game['contestants'],1, null);
+                if (!$awayContestant) {
+                    continue;
+                }
                 if ((int) $homeContestant['score'] + (int) $awayContestant['score'] > 12) {
                     // Overt Time
                     if ($homeContestant['score'] > $awayContestant['score']) {
