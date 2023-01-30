@@ -50,7 +50,7 @@ RUN addgroup --gid "$PGID" "$USER" && \
 
 # Clone the repository
 RUN cd /var/www/html && \
-    git clone -b docker https://github.com/Simoneu01/BeSerious.GG.git && \
+    git clone https://github.com/Simoneu01/BeSerious.GG.git && \
     mv BeSerious.GG/.git/refs/heads/main BeSerious.GG/main || cp BeSerious.GG/.git/HEAD BeSerious.GG/main && \
     mv BeSerious.GG/.git/HEAD BeSerious.GG/HEAD && \
     rm -r BeSerious.GG/.git/* && \
