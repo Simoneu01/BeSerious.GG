@@ -4,9 +4,9 @@ FROM debian:bookworm-slim
 LABEL maintainer="Simoneu01"
 
 # Environment variables
-ENV PUID='1000'
-ENV PGID='1000'
-ENV USER='beserious'
+ENV PUID='568'
+ENV PGID='568'
+ENV USER='apps'
 ENV PHP_TZ=UTC
 
 # Arguments
