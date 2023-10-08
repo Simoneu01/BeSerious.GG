@@ -47,12 +47,15 @@ class GameShardProvider extends AbstractProvider implements ProviderInterface
      */
     protected function mapUserToObject(array $user): User
     {
+        // TODO: download avatar and then save it in local
+        // $user['data']['avatar'] ?? null
+
         return (new User)->setRaw($user)->map([
             'id' => $user['data']['id'],
             'nickname' => $user['data']['username'],
             'name' => $user['data']['first_name'] . ' ' . $user['data']['last_name'],
             'email' => $user['data']['email'],
-            'avatar' => $user['data']['avatar'] ?? null,
+            'avatar' => null,
         ]);
     }
 

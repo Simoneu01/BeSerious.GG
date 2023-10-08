@@ -21,9 +21,9 @@ return new class() extends Migration
             $table->string('email')->nullable();
             $table->string('telephone')->nullable();
             $table->text('avatar_path')->nullable();
-            $table->string('token', 1000);
+            $table->string('token', 1100);
             $table->string('secret')->nullable(); // OAuth1
-            $table->string('refresh_token', 1000)->nullable(); // OAuth2
+            $table->string('refresh_token', 1100)->nullable(); // OAuth2
             $table->dateTime('expires_at')->nullable(); // OAuth2
             $table->timestamps();
 
