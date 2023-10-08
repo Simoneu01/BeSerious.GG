@@ -7,28 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          check-latest: true
-
-      - name: Install NPM dependencies
-        run: npm install
-
-      - name: Compile assets
-        run: npm run build
-
   laravel-tests:
     runs-on: ubuntu-latest
-    needs: build
 
     steps:
       - name: Setup PHP
@@ -51,6 +31,18 @@ jobs:
 
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          check-latest: true
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Compile assets
+        run: npm run build
 
       - name: Create Database
         run: |
