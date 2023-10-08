@@ -12,7 +12,7 @@ use SocialiteProviders\Manager\SocialiteWasCalled;
 class EventServiceProvider extends ServiceProvider
 {
     /**
-     * The event listener mappings for the application.
+     * The event to listener mappings for the application.
      *
      * @var array<class-string, array<int, class-string>>
      */
@@ -40,7 +40,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @return bool
      */
-    public function shouldDiscoverEvents()
+    public function shouldDiscoverEvents(): bool
     {
         return false;
     }
