@@ -1,4 +1,4 @@
 exclude:
-  - "**/public/**"
-  - "**/node_modules/**/*"
-  - "**/vendor/**/*"
+  - '**/public/**'
+  - '**/node_modules/**/*'
+  - '**/vendor/**/*'
