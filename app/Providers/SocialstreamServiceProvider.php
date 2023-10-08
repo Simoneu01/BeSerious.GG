@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Actions\Socialstream\CreateConnectedAccount;
 use App\Actions\Socialstream\CreateUserFromProvider;
+use App\Actions\Socialstream\GenerateRedirectForProvider;
 use App\Actions\Socialstream\HandleInvalidState;
 use App\Actions\Socialstream\ResolveSocialiteUser;
 use App\Actions\Socialstream\SetUserPassword;

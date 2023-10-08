@@ -14,7 +14,7 @@
         "bezhansalleh/filament-shield": "^1.1.12",
         "filament/filament": "^2.16.66",
         "guzzlehttp/guzzle": "^7.5.0",
-        "joelbutcher/socialstream": "^3.8.2",
+        "joelbutcher/socialstream": "3.9.1",
         "laravel/framework": "^9.48",
         "laravel/jetstream": "^2.16",
         "laravel/pint": "^1.13.2",

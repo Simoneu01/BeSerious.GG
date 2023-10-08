@@ -9,8 +9,10 @@ class HandleInvalidState implements HandlesInvalidState
 {
     /**
      * Handle an invalid state exception from a Socialite provider.
+     *
+     * @return mixed
      */
-    public function handle(InvalidStateException $exception, callable $callback = null): mixed
+    public function handle(InvalidStateException $exception, callable $callback = null)
     {
         if ($callback) {
             return $callback($exception);
