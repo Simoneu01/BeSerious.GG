@@ -28,6 +28,7 @@ use JoelButcher\Socialstream\Events\ConnectedAccountUpdated;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User|null $user
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|ConnectedAccount newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ConnectedAccount newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ConnectedAccount query()
@@ -46,6 +47,7 @@ use JoelButcher\Socialstream\Events\ConnectedAccountUpdated;
  * @method static \Illuminate\Database\Eloquent\Builder|ConnectedAccount whereToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ConnectedAccount whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ConnectedAccount whereUserId($value)
+ *
  * @mixin \Eloquent
  */
 class ConnectedAccount extends SocialstreamConnectedAccount

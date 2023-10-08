@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Storage;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read string $full_name
  * @property-read string $img_url
+ *
  * @method static \Database\Factories\StaffFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Staff newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Staff newQuery()
@@ -32,6 +33,7 @@ use Illuminate\Support\Facades\Storage;
  * @method static \Illuminate\Database\Eloquent\Builder|Staff whereSocials($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Staff whereSurname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Staff whereUpdatedAt($value)
+ *
  * @mixin \Eloquent
  */
 class Staff extends Model

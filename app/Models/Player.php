@@ -29,6 +29,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $teams
  * @property-read int|null $teams_count
  * @property-read \App\Models\User|null $user
+ *
  * @method static \Database\Factories\PlayerFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Player newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Player newQuery()
@@ -44,6 +45,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
  * @method static \Illuminate\Database\Eloquent\Builder|Player whereSurname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Player whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Player whereUserId($value)
+ *
  * @mixin \Eloquent
  */
 class Player extends Model
