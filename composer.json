@@ -20,6 +20,7 @@
         "laravel/pint": "^1.13",
         "laravel/sanctum": "^2.15",
         "laravel/socialite": "^5.2",
+        "laravel/telescope": "^4.16",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.4",
         "owenvoke/blade-fontawesome": "^2.0",
