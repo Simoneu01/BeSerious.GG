@@ -49,7 +49,8 @@ return [
 
     'features' => [
         Features::createAccountOnFirstLogin(),
-        Features::providerAvatars(),
+        // Features::generateMissingEmails(),
         Features::rememberSession(),
+        Features::providerAvatars(),
     ],
 ];

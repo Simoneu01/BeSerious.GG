@@ -18,7 +18,7 @@ jobs:
           coverage: pcov
 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -31,6 +31,18 @@ jobs:
 
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          check-latest: true
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Compile assets
+        run: npm run build
 
       - name: Create Database
         run: |
@@ -51,30 +63,10 @@ jobs:
           path: storage/logs
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage.xml
           flags: tests
           verbose: true
           fail_ci_if_error: true
-
-  build:
-    runs-on: ubuntu-latest
-    needs: laravel-tests
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          check-latest: true
-
-      - name: Install NPM dependencies
-        run: npm install
-
-      - name: Compile assets for production
-        run: npm run production

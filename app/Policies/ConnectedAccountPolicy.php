@@ -11,6 +11,16 @@ class ConnectedAccountPolicy
     use HandlesAuthorization;
 
     /**
+     * Determine whether the user can view any models.
+     *
+     * @return mixed
+     */
+    public function viewAny(User $user)
+    {
+        return true;
+    }
+
+    /**
      * Determine whether the user can view the model.
      *
      * @return mixed
@@ -18,6 +28,16 @@ class ConnectedAccountPolicy
     public function view(User $user, ConnectedAccount $connectedAccount)
     {
         return $user->ownsConnectedAccount($connectedAccount);
+    }
+
+    /**
+     * Determine whether the user can create models.
+     *
+     * @return mixed
+     */
+    public function create(User $user)
+    {
+        return true;
     }
 
     /**
