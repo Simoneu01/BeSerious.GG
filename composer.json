@@ -10,18 +10,20 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
-        "bezhansalleh/filament-shield": "^1.1",
-        "filament/filament": "^2.0",
-        "guzzlehttp/guzzle": "^7.3.0",
+        "bezhansalleh/filament-shield": "^2.3.2",
+        "filament/filament": "^v2.16.66",
+        "guzzlehttp/guzzle": "^7.5.0",
         "joelbutcher/socialstream": "^3.4",
         "laravel/framework": "^9.7",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.15",
         "laravel/socialite": "^5.2",
+        "laravel/telescope": "^4.12",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.4",
         "owenvoke/blade-fontawesome": "^2.0",
         "ralphjsmit/laravel-filament-seo": "^0.7.0",
+        "sebastiaankloos/filament-code-editor": "^1.0",
         "socialiteproviders/discord": "^4.1",
         "spatie/data-transfer-object": "^3.7",
         "symfony/http-client": "^6.0",
@@ -30,6 +32,7 @@
         "webbingbrasil/filament-advancedfilter": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.14.1",
         "laravel/sail": "^1.7.0",
         "mockery/mockery": "^1.4.3",
@@ -56,6 +59,8 @@
         }
     },
     "scripts": {
+        "phpstan": "./vendor/bin/phpstan analyse",
+        "phpstan-baseline": "./vendor/bin/phpstan analyse --generate-baseline",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -67,7 +72,10 @@
             "@php artisan key:generate --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan telescope:publish --ansi",
+            "@php artisan filament:upgrade",
+            "@php artisan ide-helper:models -W -R"
         ]
     },
     "extra": {
