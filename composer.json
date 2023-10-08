@@ -16,6 +16,7 @@
         "joelbutcher/socialstream": "^3.4",
         "laravel/framework": "^9.7",
         "laravel/jetstream": "^2.3",
+        "laravel/pint": "^1.13",
         "laravel/sanctum": "^2.15",
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.7",
@@ -56,6 +57,14 @@
         }
     },
     "scripts": {
+        "pint": "./vendor/bin/pint",
+        "prettier": "npm run prettier",
+        "style": [
+            "@pint",
+            "@prettier"
+        ],
+        "phpstan": "./vendor/bin/phpstan analyse",
+        "phpstan-baseline": "./vendor/bin/phpstan analyse --generate-baseline",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -67,7 +76,8 @@
             "@php artisan key:generate --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@style"
         ]
     },
     "extra": {
