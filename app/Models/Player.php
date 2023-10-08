@@ -24,7 +24,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read string $display_name
  * @property-read string $img_url
- * @property-read \RalphJSmit\Laravel\SEO\Models\SEO|null $seo
+ * @property-read \RalphJSmit\Laravel\SEO\Models\SEO $seo
  * @property-read \App\Models\Team|null $team
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $teams
  * @property-read int|null $teams_count

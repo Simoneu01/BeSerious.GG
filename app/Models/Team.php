@@ -19,7 +19,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
  * @property-read string $logo_url
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Player> $players
  * @property-read int|null $players_count
- * @property-read \RalphJSmit\Laravel\SEO\Models\SEO|null $seo
+ * @property-read \RalphJSmit\Laravel\SEO\Models\SEO $seo
  *
  * @method static \Database\Factories\TeamFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Team newModelQuery()
