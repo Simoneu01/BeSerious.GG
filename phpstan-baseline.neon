@@ -6,6 +6,16 @@ parameters:
 			path: app/Actions/Socialstream/CreateConnectedAccount.php
 
 		-
+			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$email\\.$#"
+			count: 1
+			path: app/Actions/Socialstream/ResolveSocialiteUser.php
+
+		-
+			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$id\\.$#"
+			count: 1
+			path: app/Actions/Socialstream/ResolveSocialiteUser.php
+
+		-
 			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$token\\.$#"
 			count: 1
 			path: app/Actions/Socialstream/UpdateConnectedAccount.php
@@ -24,16 +34,6 @@ parameters:
 			message: "#^Parameter \\#1 \\$string of static method Illuminate\\\\Support\\\\Str\\:\\:of\\(\\) expects string, array\\<TKey of \\(int\\|string\\), TValue\\>\\|bool given\\.$#"
 			count: 1
 			path: app/Filament/Resources/Shield/RoleResource.php
-
-		-
-			message: "#^Property 'name' does not exist in Spatie\\\\Permission\\\\Models\\\\Permission model\\.$#"
-			count: 1
-			path: app/Filament/Resources/Shield/RoleResource/Pages/CreateRole.php
-
-		-
-			message: "#^Property 'name' does not exist in Spatie\\\\Permission\\\\Models\\\\Permission model\\.$#"
-			count: 1
-			path: app/Filament/Resources/Shield/RoleResource/Pages/EditRole.php
 
 		-
 			message: "#^Access to an undefined property App\\\\Filament\\\\Resources\\\\Shield\\\\RoleResource\\\\Pages\\\\ShieldSettings\\:\\:\\$entities_custom_permissions\\.$#"

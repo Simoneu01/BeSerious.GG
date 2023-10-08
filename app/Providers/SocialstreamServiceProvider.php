@@ -10,7 +10,6 @@ use App\Actions\Socialstream\ResolveSocialiteUser;
 use App\Actions\Socialstream\SetUserPassword;
 use App\Actions\Socialstream\UpdateConnectedAccount;
 use Illuminate\Support\ServiceProvider;
-use JoelButcher\Socialstream\Actions\GenerateRedirectForProvider;
 use JoelButcher\Socialstream\Socialstream;
 
 class SocialstreamServiceProvider extends ServiceProvider
