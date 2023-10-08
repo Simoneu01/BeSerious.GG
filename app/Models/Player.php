@@ -8,6 +8,44 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
+/**
+ * App\Models\Player
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $surname
+ * @property string $nickname
+ * @property string $img
+ * @property string|null $nationality
+ * @property int|null $current_team_id
+ * @property array<int, Social>|null $socials
+ * @property int|null $user_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read string $display_name
+ * @property-read string $img_url
+ * @property-read \RalphJSmit\Laravel\SEO\Models\SEO|null $seo
+ * @property-read \App\Models\Team|null $team
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $teams
+ * @property-read int|null $teams_count
+ * @property-read \App\Models\User|null $user
+ * @method static \Database\Factories\PlayerFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|Player newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Player newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Player query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereCurrentTeamId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereNationality($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereNickname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereSocials($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereSurname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Player whereUserId($value)
+ * @mixin \Eloquent
+ */
 class Player extends Model
 {
     use HasFactory;
