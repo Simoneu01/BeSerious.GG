@@ -17,7 +17,7 @@ class Staff extends Model
         'surname',
         'role',
         'img',
-        'socials'
+        'socials',
     ];
 
     /**

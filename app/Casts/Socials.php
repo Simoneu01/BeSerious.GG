@@ -15,11 +15,12 @@ class Socials implements CastsAttributes, SerializesCastableAttributes
     /**
      * Cast the given value.
      *
-     * @param Model $model
-     * @param string $key
-     * @param mixed $value
-     * @param array $attributes
+     * @param  Model  $model
+     * @param  string  $key
+     * @param  mixed  $value
+     * @param  array  $attributes
      * @return array<int, Social>
+     *
      * @throws \Spatie\DataTransferObject\Exceptions\UnknownProperties
      */
     public function get($model, $key, $value, $attributes)
@@ -31,7 +32,7 @@ class Socials implements CastsAttributes, SerializesCastableAttributes
                 $socials[] = new Social($social);
             }
         }
-        
+
         return $socials;
     }
 
@@ -40,7 +41,7 @@ class Socials implements CastsAttributes, SerializesCastableAttributes
      *
      * @param  Model  $model
      * @param  string  $key
-     * @param  Collection<int, Social>|array<int, Social> $value
+     * @param  Collection<int, Social>|array<int, Social>  $value
      * @param  array  $attributes
      * @return false|string
      */
@@ -63,10 +64,7 @@ class Socials implements CastsAttributes, SerializesCastableAttributes
      * Get the serialized representation of the value.
      *
      * @param  Model  $model
-     * @param  string  $key
      * @param  mixed  $value
-     * @param  array  $attributes
-     * @return mixed
      */
     public function serialize($model, string $key, $value, array $attributes): mixed
     {

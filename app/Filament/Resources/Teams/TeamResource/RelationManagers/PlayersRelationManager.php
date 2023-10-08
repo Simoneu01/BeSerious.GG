@@ -16,8 +16,11 @@ class PlayersRelationManager extends BelongsToManyRelationManager
     protected static ?string $recordTitleAttribute = 'nickname';
 
     protected static bool $hasAssociateAction = true;
+
     protected static bool $hasDissociateAction = true;
+
     protected static bool $hasDissociateBulkAction = true;
+
     protected static bool $canCreateAnother = false;
 
     public static function form(Form $form): Form
@@ -42,7 +45,7 @@ class PlayersRelationManager extends BelongsToManyRelationManager
             ])
             ->filters([
                 Filters\TextFilter::make('nationality'),
-                Filters\TextFilter::make('role')
+                Filters\TextFilter::make('role'),
             ]);
     }
 

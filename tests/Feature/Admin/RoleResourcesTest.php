@@ -2,9 +2,7 @@
 
 namespace Tests\Feature\Admin;
 
-use App\Filament\Resources\ArticleResource;
 use App\Filament\Resources\Shield\RoleResource;
-use App\Models\Article;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Spatie\Permission\Models\Role;

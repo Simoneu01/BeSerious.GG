@@ -35,7 +35,7 @@ return [
         'client_id' => env('GAMESHARD_CLIENT_ID'),
         'client_secret' => env('GAMESHARD_CLIENT_SECRET'),
         'redirect' => env('GAMESHARD_REDIRECT_URL'),
-        'api_key' => env('GAMESHARD_API_KEY')
+        'api_key' => env('GAMESHARD_API_KEY'),
     ],
 
     'github' => [
@@ -52,9 +52,9 @@ return [
         // optional
         'allow_gif_avatars' => (bool) env('DISCORD_AVATAR_GIF', true),
         'avatar_default_extension' => env('DISCORD_EXTENSION_DEFAULT', 'jpg'), // only pick from jpg, png, webp
-      ],
+    ],
 
-      'google' => [
+    'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URL'),

@@ -13,6 +13,7 @@ use Filament\Tables\Columns;
 class StaffResource extends Resource
 {
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
     protected static ?string $navigationGroup = 'Staff';
 
     public static function form(Form $form): Form
@@ -30,15 +31,15 @@ class StaffResource extends Resource
                                 ->options(SocialEnum::class)
                                 ->required(),
                         ])
-                        ->columns(2)
+                        ->columns(2),
                 ]),
 
                 Components\FileUpload::make('img')
                     ->directory('staff-photos')
                     ->image()
                     ->imageCropAspectRatio('4:3')
-                    ->required()
-        ]);
+                    ->required(),
+            ]);
     }
 
     public static function table(Table $table): Table

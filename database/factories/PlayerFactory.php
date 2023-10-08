@@ -22,7 +22,7 @@ class PlayerFactory extends Factory
             'socials' => [
                 ['type' => SocialEnum::TWITTER->value, 'url' => $this->faker->url()],
             ],
-            'user_id' => null
+            'user_id' => null,
         ];
     }
 }

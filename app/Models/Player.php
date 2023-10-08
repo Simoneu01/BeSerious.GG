@@ -22,7 +22,7 @@ class Player extends Model
         'nationality',
         'current_team_id',
         'socials',
-        'user_id'
+        'user_id',
     ];
 
     /**

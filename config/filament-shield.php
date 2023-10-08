@@ -12,14 +12,13 @@ return [
     | in production when implementing `FilamentUser`
     */
 
-
     'super_admin' => [
-        'enabled'   => true,
-        'role_name' => 'admin'
+        'enabled' => true,
+        'role_name' => 'admin',
     ],
 
     'filament_user' => [
-        'enabled'   => false,
+        'enabled' => false,
         'role_name' => 'filament_user',
     ],
 
@@ -37,9 +36,9 @@ return [
     */
 
     'prefixes' => [
-        'resource' => ["view","view_any","create","delete","delete_any","update"],
-        'page'  =>  'view',
-        'widget' => 'view'
+        'resource' => ['view', 'view_any', 'create', 'delete', 'delete_any', 'update'],
+        'page' => 'view',
+        'widget' => 'view',
     ],
 
     /*
@@ -84,8 +83,8 @@ return [
 
     'exclude' => [
         'enabled' => true,
-        'pages' => ["Dashboard"],
-        'widgets' => ["AccountWidget","FilamentInfoWidget"],
+        'pages' => ['Dashboard'],
+        'widgets' => ['AccountWidget', 'FilamentInfoWidget'],
         'resources' => [],
     ],
 

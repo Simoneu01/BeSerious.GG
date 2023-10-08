@@ -11,7 +11,9 @@ use Livewire\Component;
 class Rankings extends Component
 {
     public Collection $rankings;
+
     public string $year = '2021';
+
     public bool $killcache = false;
 
     protected $queryString = [
@@ -24,7 +26,7 @@ class Rankings extends Component
             Cache::forget('rankings' . $this->year);
         }
 
-        $tournamentLink = match($this->year) {
+        $tournamentLink = match ($this->year) {
             default => 'https://gameshard.io/api/tournaments/75/phases/47/rounds'
         };
 
@@ -63,9 +65,9 @@ class Rankings extends Component
                         'contestant' => [
                             'id' => $contestant['id'],
                             'name' => $contestant['name'],
-                            'avatar' => $contestant['avatar']
+                            'avatar' => $contestant['avatar'],
                         ],
-                        'points' => 0
+                        'points' => 0,
                     ];
                 }
             }
@@ -107,8 +109,9 @@ class Rankings extends Component
             }
 
             $rankings = collect($rankings);
+
             return $rankings->sortBy([
-                ['points', 'desc']
+                ['points', 'desc'],
             ]);
         });
 
@@ -118,10 +121,10 @@ class Rankings extends Component
     public function getTrophyColor(int $position): string
     {
         return match ($position) {
-            1 => "#FFD147",
-            2 => "#C9C8CC",
-            3 => "#B5785B",
-            default => "000000",
+            1 => '#FFD147',
+            2 => '#C9C8CC',
+            3 => '#B5785B',
+            default => '000000',
         };
     }
 

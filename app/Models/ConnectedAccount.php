@@ -14,7 +14,7 @@ class ConnectedAccount extends SocialstreamConnectedAccount
     use HasFactory;
     use HasTimestamps;
 
-    /** @inheritdoc */
+    /** {@inheritdoc} */
     protected $fillable = [
         'provider',
         'provider_id',

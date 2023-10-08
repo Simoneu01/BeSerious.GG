@@ -17,6 +17,6 @@ class Article extends Model
         'url',
         'author',
         'author_img',
-        'author_link'
+        'author_link',
     ];
 }
