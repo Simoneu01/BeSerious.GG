@@ -27,6 +27,7 @@ class GameShardProvider extends AbstractProvider implements ProviderInterface
 
     /**
      * {@inheritdoc}
+     *
      * @throws GuzzleException
      */
     protected function getUserByToken($token): array
@@ -34,7 +35,8 @@ class GameShardProvider extends AbstractProvider implements ProviderInterface
         $userUrl = 'https://gameshard.io/api/user';
 
         $response = $this->getHttpClient()->get(
-            $userUrl, $this->getRequestOptions($token)
+            $userUrl,
+            $this->getRequestOptions($token)
         );
 
         return json_decode($response->getBody(), true);
@@ -56,15 +58,12 @@ class GameShardProvider extends AbstractProvider implements ProviderInterface
 
     /**
      * Get the default options for an HTTP request.
-     *
-     * @param string $token
-     * @return array
      */
     protected function getRequestOptions(string $token): array
     {
         return [
             'headers' => [
-                'Authorization' => 'Bearer '.$token,
+                'Authorization' => 'Bearer ' . $token,
             ],
         ];
     }

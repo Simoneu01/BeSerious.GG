@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
             <a href="/">
-                <x-6ixproject.icon class="h-16 w-16"/>
+                <x-6ixproject.icon class="h-16 w-16" />
             </a>
         </x-slot>
 
@@ -17,10 +17,11 @@
 
             <div>
                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" autofocus />
+                <x-jet-input class="mt-1 block w-full" id="password" name="password" type="password" required
+                    autocomplete="current-password" autofocus />
             </div>
 
-            <div class="flex justify-end mt-4">
+            <div class="mt-4 flex justify-end">
                 <x-jet-button class="ml-4">
                     {{ __('Confirm') }}
                 </x-jet-button>

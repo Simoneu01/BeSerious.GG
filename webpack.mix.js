@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -16,9 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ])
-    .copyDirectory('resources/img', 'public/img');
-
+    .copyDirectory('resources/img', 'public/img')
 
 if (mix.inProduction()) {
-    mix.version();
+    mix.version()
 }

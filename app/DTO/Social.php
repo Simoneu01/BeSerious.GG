@@ -11,5 +11,6 @@ class Social extends DataTransferObject
 {
     #[CastWith(EnumCaster::class)]
     public SocialEnum $type;
+
     public string $url;
 }

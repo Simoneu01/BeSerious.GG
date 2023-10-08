@@ -29,16 +29,18 @@
 
                 <x-connected-account provider="{{ $provider }}" created-at="{{ $account->created_at ?? null }}">
                     <x-slot name="action">
-                        @if (! is_null($account))
+                        @if (!is_null($account))
                             <div class="flex items-center space-x-6">
-                                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos() && ! is_null($account->avatar_path))
-                                    <button class="cursor-pointer ml-6 text-sm text-gray-500 focus:outline-none" wire:click="setAvatarAsProfilePhoto({{ $account->id }})">
+                                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos() && !is_null($account->avatar_path))
+                                    <button class="ml-6 cursor-pointer text-sm text-gray-500 focus:outline-none"
+                                        wire:click="setAvatarAsProfilePhoto({{ $account->id }})">
                                         {{ __('Use Avatar as Profile Photo') }}
                                     </button>
                                 @endif
 
-                                @if (($this->accounts->count() > 1 || ! is_null($this->user->password)))
-                                    <x-jet-danger-button wire:click="confirmRemove({{ $account->id }})" wire:loading.attr="disabled">
+                                @if ($this->accounts->count() > 1 || !is_null($this->user->password))
+                                    <x-jet-danger-button wire:click="confirmRemove({{ $account->id }})"
+                                        wire:loading.attr="disabled">
                                         {{ __('Remove') }}
                                     </x-jet-danger-button>
                                 @endif
@@ -69,7 +71,8 @@
                     {{ __('Nevermind') }}
                 </x-jet-secondary-button>
 
-                <x-jet-danger-button class="ml-2" wire:click="removeConnectedAccount({{ $this->selectedAccountId }})" wire:loading.attr="disabled">
+                <x-jet-danger-button class="ml-2" wire:click="removeConnectedAccount({{ $this->selectedAccountId }})"
+                    wire:loading.attr="disabled">
                     {{ __('Remove Connected Account') }}
                 </x-jet-danger-button>
             </x-slot>

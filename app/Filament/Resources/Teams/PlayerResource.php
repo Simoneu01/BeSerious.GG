@@ -19,6 +19,7 @@ class PlayerResource extends Resource
     protected static ?string $model = Player::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
+
     protected static ?string $navigationGroup = 'Teams';
 
     public static function form(Form $form): Form
@@ -51,7 +52,7 @@ class PlayerResource extends Resource
                                             ->options(SocialEnum::class)
                                             ->required(),
                                     ])
-                                    ->columnSpan(2)
+                                    ->columnSpan(2),
                             ])->columns(),
                     ])
                     ->columnSpan(2),
@@ -86,8 +87,8 @@ class PlayerResource extends Resource
                     ->description('Impostazioni SEO')
                     ->collapsed()
                     ->schema([
-                        SEO::make()
-                    ])
+                        SEO::make(),
+                    ]),
             ])->columns(3);
     }
 
@@ -106,14 +107,14 @@ class PlayerResource extends Resource
                     ->dateTime(),
             ])
             ->filters([
-                Filters\TextFilter::make('nationality')
+                Filters\TextFilter::make('nationality'),
             ]);
     }
 
     public static function getRelations(): array
     {
         return [
-            RelationManagers\TeamsRelationManager::class
+            RelationManagers\TeamsRelationManager::class,
         ];
     }
 

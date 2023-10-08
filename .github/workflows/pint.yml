@@ -1,0 +1,32 @@
+name: Laravel Pint
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '**.php'
+
+permissions:
+  contents: write
+
+jobs:
+  laravel-pint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Fix PHP code style issues
+        uses: aglipanci/laravel-pint-action@2.3.0
+        with:
+          useComposer: true
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: >
+            chore: styling
+

@@ -1,0 +1,19 @@
+{
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "sortTailwindcssClasses": true,
+    "sortHtmlAttributes": "code-guide",
+    "plugins": ["@shufo/prettier-plugin-blade"],
+    "overrides": [
+        {
+            "files": [
+                "*.blade.php"
+            ],
+            "options": {
+                "tabWidth": 4,
+                "parser": "blade"
+            }
+        }
+    ]
+}

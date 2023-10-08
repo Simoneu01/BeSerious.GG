@@ -6,12 +6,13 @@ use App\Filament\Resources\ArticleResource\Pages;
 use Filament\Forms\Components;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Columns;
 use Filament\Resources\Table;
+use Filament\Tables\Columns;
 
 class ArticleResource extends Resource
 {
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+
     protected static ?string $navigationGroup = 'Blog';
 
     public static function form(Form $form): Form

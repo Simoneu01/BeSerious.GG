@@ -16,8 +16,11 @@ class TeamsRelationManager extends BelongsToManyRelationManager
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static bool $hasAssociateAction = true;
+
     protected static bool $hasDissociateAction = true;
+
     protected static bool $hasDissociateBulkAction = true;
+
     protected static bool $canCreateAnother = false;
 
     public static function form(Form $form): Form
@@ -41,7 +44,7 @@ class TeamsRelationManager extends BelongsToManyRelationManager
                     ->dateTime(),
             ])
             ->filters([
-                Filters\TextFilter::make('role')
+                Filters\TextFilter::make('role'),
             ]);
     }
 

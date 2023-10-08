@@ -33,7 +33,7 @@ return [
         Providers::github(),
         Providers::google(),
         'gameshard',
-        'discord'
+        'discord',
     ],
 
     /*
@@ -50,6 +50,6 @@ return [
     'features' => [
         Features::createAccountOnFirstLogin(),
         Features::providerAvatars(),
-        Features::rememberSession()
+        Features::rememberSession(),
     ],
 ];

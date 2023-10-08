@@ -17,6 +17,7 @@ class TeamResource extends Resource
     protected static ?string $model = Team::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
     protected static ?string $navigationGroup = 'Teams';
 
     public static function form(Form $form): Form
@@ -37,8 +38,8 @@ class TeamResource extends Resource
                     ->description('Impostazioni SEO')
                     ->collapsed()
                     ->schema([
-                        SEO::make()
-                    ])
+                        SEO::make(),
+                    ]),
             ]);
     }
 
@@ -62,7 +63,7 @@ class TeamResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\PlayersRelationManager::class
+            RelationManagers\PlayersRelationManager::class,
         ];
     }
 

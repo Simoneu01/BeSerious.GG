@@ -1,7 +1,7 @@
 <div class="flex flex-row items-center justify-between py-4 text-gray-500">
-    <hr class="w-full mr-2">
-        {{ __('Or') }}
-    <hr class="w-full ml-2">
+    <hr class="mr-2 w-full">
+    {{ __('Or') }}
+    <hr class="ml-2 w-full">
 </div>
 
 <div class="flex items-center justify-center space-x-4">
@@ -13,7 +13,7 @@
     @endif
 
     @if (JoelButcher\Socialstream\Socialstream::hasGoogleSupport())
-        <a href="{{ route('oauth.redirect', ['provider' => JoelButcher\Socialstream\Providers::google()]) }}" >
+        <a href="{{ route('oauth.redirect', ['provider' => JoelButcher\Socialstream\Providers::google()]) }}">
             <x-google-icon class="h-6 w-6" />
             <span class="sr-only">Google</span>
         </a>
@@ -55,12 +55,12 @@
     @endif
 
     <a href="{{ route('oauth.redirect', ['provider' => 'gameshard']) }}">
-        <x-gameshard-icon class="h-6 w-6"/>
+        <x-gameshard-icon class="h-6 w-6" />
         <span class="sr-only">GameShard</span>
     </a>
 
     <a href="{{ route('oauth.redirect', ['provider' => 'discord']) }}">
-        <x-discord-icon class="h-6 w-6"/>
+        <x-discord-icon class="h-6 w-6" />
         <span class="sr-only">Discord</span>
     </a>
 </div>

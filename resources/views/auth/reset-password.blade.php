@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
             <a href="/">
-                <x-6ixproject.icon class="h-16 w-16"/>
+                <x-6ixproject.icon class="h-16 w-16" />
             </a>
         </x-slot>
 
@@ -11,24 +11,27 @@
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
 
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+            <input name="token" type="hidden" value="{{ $request->route('token') }}">
 
             <div class="block">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                <x-jet-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email', $request->email)"
+                    required autofocus />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-jet-input class="mt-1 block w-full" id="password" name="password" type="password" required
+                    autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-jet-input class="mt-1 block w-full" id="password_confirmation" name="password_confirmation"
+                    type="password" required autocomplete="new-password" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="mt-4 flex items-center justify-end">
                 <x-jet-button>
                     {{ __('Reset Password') }}
                 </x-jet-button>

@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
             <a href="/">
-                <x-6ixproject.icon class="h-16 w-16"/>
+                <x-6ixproject.icon class="h-16 w-16" />
             </a>
         </x-slot>
 
@@ -11,7 +11,7 @@
         </div>
 
         @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-emerald-600">
+            <div class="mb-4 text-sm font-medium text-emerald-600">
                 {{ __('A new verification link has been sent to the email address you provided during registration.') }}
             </div>
         @endif
@@ -30,7 +30,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
+                <button class="text-sm text-gray-600 underline hover:text-gray-900" type="submit">
                     {{ __('Log Out') }}
                 </button>
             </form>

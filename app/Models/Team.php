@@ -9,8 +9,8 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Team extends Model
 {
-    use HasSEO;
     use HasFactory;
+    use HasSEO;
 
     /** @inheritdoc  */
     protected $fillable = [
