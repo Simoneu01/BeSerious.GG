@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    needs: laravel-tests
 
     steps:
       - name: Checkout
@@ -29,6 +28,7 @@ jobs:
 
   laravel-tests:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
       - name: Setup PHP
