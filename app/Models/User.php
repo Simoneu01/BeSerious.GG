@@ -74,6 +74,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     use HasApiTokens;
     use HasConnectedAccounts;
     use HasFactory;
+    use HasPanelShield {
+        canAccessPanel as canAccessPanelShield;
+    }
     use HasProfilePhoto {
         profilePhotoUrl as getPhotoUrl;
     }
@@ -81,9 +84,6 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     use Notifiable;
     use SetsProfilePhotoFromUrl;
     use TwoFactorAuthenticatable;
-    use HasPanelShield {
-        canAccessPanel as canAccessPanelShield;
-    }
 
     /** @inheritdoc  */
     protected $fillable = [
