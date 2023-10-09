@@ -5,10 +5,12 @@ namespace App\Filament\Resources\Teams\TeamResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Tables;
+use Filament\Tables\Actions\AttachAction;
 use Filament\Tables\Table;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
+use Filament\Resources\RelationManagers\RelationManager;
 
-class PlayersRelationManager extends \Filament\Resources\RelationManagers\RelationManager
+class PlayersRelationManager extends RelationManager
 {
     protected static string $relationship = 'players';
 
@@ -45,16 +47,25 @@ class PlayersRelationManager extends \Filament\Resources\RelationManagers\Relati
             ->filters([
                 Filters\TextFilter::make('nationality'),
                 Filters\TextFilter::make('role'),
-            ]);
-    }
-
-    public static function attachForm(Form $form): Form
-    {
-        return $form
-            ->schema([
-                static::getAttachFormRecordSelect(),
-                Forms\Components\TextInput::make('role')->default('player')->required(),
-                Forms\Components\DateTimePicker::make('joined_at')->default(now())->required(),
+            ])
+            ->headerActions([
+                // ...
+                Tables\Actions\AttachAction::make()
+                    ->form(fn (AttachAction $action): array => [
+                        $action->getRecordSelect(),
+                        Forms\Components\TextInput::make('role')->default('player')->required(),
+                        Forms\Components\DateTimePicker::make('joined_at')->default(now())->required(),
+                    ]),
+            ])
+            ->actions([
+                // ...
+                Tables\Actions\DetachAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    // ...
+                    Tables\Actions\DetachBulkAction::make(),
+                ]),
             ]);
     }
 
