@@ -14,7 +14,7 @@
                 <footer class="mt-8">
                     <div class="flex items-start">
                         <div class="inline-flex flex-shrink-0 rounded-full border-2 border-white">
-                            <img class="h-12 w-12 rounded-full" src="{{ Vite::asset('resources/img/simone.jpg') }}"
+                            <img class="h-12 w-12 rounded-full" src="{{ Vite::asset('resources/images/simone.jpg') }}"
                                 alt="simone-photo">
                         </div>
                         <div class="ml-4">
@@ -42,7 +42,7 @@
                 <footer class="mt-8">
                     <div class="flex items-start">
                         <div class="inline-flex flex-shrink-0 rounded-full border-2 border-white">
-                            <img class="h-12 w-12 rounded-full" src="{{ Vite::asset('resources/img/matteo.jpg') }}"
+                            <img class="h-12 w-12 rounded-full" src="{{ Vite::asset('resources/images/matteo.jpg') }}"
                                 alt="forever-photo">
                         </div>
                         <div class="ml-4">

@@ -66,6 +66,6 @@ class Staff extends Model
 
     public function getImgUrlAttribute(): string
     {
-        return $this->img ? Storage::disk('public')->url($this->img) : Vite::asset('resources/img/default.png');
+        return $this->img ? Storage::disk('public')->url($this->img) : Vite::asset('resources/images/default.png');
     }
 }
