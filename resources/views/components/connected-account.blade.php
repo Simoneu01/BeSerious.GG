@@ -5,52 +5,56 @@
         <div class="flex items-center">
             @switch($provider)
                 @case(JoelButcher\Socialstream\Providers::facebook())
-                    <x-facebook-icon class="mr-2 h-6 w-6" />
+                    <x-socialstream-icons.facebook class="mr-2 h-6 w-6" />
                 @break
 
                 @case(JoelButcher\Socialstream\Providers::google())
-                    <x-google-icon class="mr-2 h-6 w-6" />
+                    <x-socialstream-icons.google class="mr-2 h-6 w-6" />
                 @break
 
                 @case(JoelButcher\Socialstream\Providers::twitter())
-                    <x-twitter-icon class="mr-2 h-6 w-6" />
+                @case(JoelButcher\Socialstream\Providers::twitterOAuth1())
+
+                @case(JoelButcher\Socialstream\Providers::twitterOAuth2())
+                    <x-socialstream-icons.twitter class="mr-2 h-6 w-6" />
                 @break
 
                 @case(JoelButcher\Socialstream\Providers::linkedin())
-                    <x-linked-in-icon class="mr-2 h-6 w-6" />
+                @case(JoelButcher\Socialstream\Providers::linkedinOpenId())
+                    <x-socialstream-icons.linkedin class="mr-2 h-6 w-6" />
                 @break
 
                 @case(JoelButcher\Socialstream\Providers::github())
-                    <x-github-icon class="mr-2 h-6 w-6" />
+                    <x-socialstream-icons.github class="mr-2 h-6 w-6" />
                 @break
 
                 @case(JoelButcher\Socialstream\Providers::gitlab())
-                    <x-gitlab-icon class="mr-2 h-6 w-6" />
+                    <x-socialstream-icons.gitlab class="mr-2 h-6 w-6" />
                 @break
 
                 @case(JoelButcher\Socialstream\Providers::bitbucket())
-                    <x-bitbucket-icon class="mr-2 h-6 w-6" />
+                    <x-socialstream-icons.bitbucket class="mr-2 h-6 w-6" />
                 @break
 
                 @case('gameshard')
-                    <x-gameshard-icon class="mr-2 h-6 w-6" />
+                    <x-socialstream-icons.gameshard class="mr-2 h-6 w-6" />
                 @break
 
                 @case('discord')
-                    <x-discord-icon class="mr-2 h-6 w-6" />
+                    <x-socialstream-icons.discord class="mr-2 h-6 w-6" />
                 @break
 
                 @default
             @endswitch
 
             <div>
-                <div class="text-sm font-semibold text-gray-600">
+                <div class="text-sm font-semibold text-gray-600 dark:text-gray-400">
                     {{ __(ucfirst($provider)) }}
                 </div>
 
                 @if (!empty($createdAt))
                     <div class="text-xs text-gray-500">
-                        Connected {{ $createdAt }}
+                        {{ __('Connected :createdAt', ['createdAt' => $createdAt]) }}
                     </div>
                 @else
                     <div class="text-xs text-gray-500">

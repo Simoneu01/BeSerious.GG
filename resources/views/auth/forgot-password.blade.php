@@ -1,9 +1,7 @@
 <x-auth-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-6ixproject.icon class="h-16 w-16" />
-            </a>
+            <x-authentication-card-logo />
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
@@ -23,8 +21,8 @@
 
             <div class="block">
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email')"
-                    required autofocus autocomplete="username" />
+                <x-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email')" required
+                    autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4 flex items-center justify-end">

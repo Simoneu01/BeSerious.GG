@@ -7,11 +7,12 @@
         'bg-gray-500': style != 'success' &&
             style != 'danger'
     }"
-    x-show="show && message" x-init="document.addEventListener('banner-message', event => {
-        style = event.detail.style;
-        message = event.detail.message;
-        show = true;
-    });">
+    x-show="show && message"
+    x-on:banner-message.window="
+                style = event.detail.style;
+                message = event.detail.message;
+                show = true;
+            ">
     <div class="mx-auto max-w-screen-xl px-3 py-2 sm:px-6 lg:px-8">
         <div class="flex flex-wrap items-center justify-between">
             <div class="flex w-0 min-w-0 flex-1 items-center">
