@@ -1,5 +1,5 @@
 <x-auth-layout>
-    <x-jet-authentication-card>
+    <x-authentication-card>
         <x-slot name="logo">
             <a href="/">
                 <x-6ixproject.icon class="h-16 w-16" />
@@ -15,20 +15,20 @@
                 {{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}
             </div>
 
-            <x-jet-validation-errors class="mb-4" />
+            <x-validation-errors class="mb-4" />
 
             <form method="POST" action="{{ route('two-factor.login') }}">
                 @csrf
 
                 <div class="mt-4" x-show="! recovery">
-                    <x-jet-label for="code" value="{{ __('Code') }}" />
-                    <x-jet-input class="mt-1 block w-full" id="code" name="code" type="text"
+                    <x-label for="code" value="{{ __('Code') }}" />
+                    <x-input class="mt-1 block w-full" id="code" name="code" type="text"
                         inputmode="numeric" autofocus x-ref="code" autocomplete="one-time-code" />
                 </div>
 
                 <div class="mt-4" x-show="recovery">
-                    <x-jet-label for="recovery_code" value="{{ __('Recovery Code') }}" />
-                    <x-jet-input class="mt-1 block w-full" id="recovery_code" name="recovery_code" type="text"
+                    <x-label for="recovery_code" value="{{ __('Recovery Code') }}" />
+                    <x-input class="mt-1 block w-full" id="recovery_code" name="recovery_code" type="text"
                         x-ref="recovery_code" autocomplete="one-time-code" />
                 </div>
 
@@ -51,11 +51,11 @@
                         {{ __('Use an authentication code') }}
                     </button>
 
-                    <x-jet-button class="ml-4">
+                    <x-button class="ml-4">
                         {{ __('Log in') }}
-                    </x-jet-button>
+                    </x-button>
                 </div>
             </form>
         </div>
-    </x-jet-authentication-card>
+    </x-authentication-card>
 </x-auth-layout>

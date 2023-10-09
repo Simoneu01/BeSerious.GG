@@ -13,21 +13,21 @@
                 <!-- Navigation Links -->
                 <div class="hidden lg:ml-10 lg:block">
                     <div class="flex space-x-4">
-                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
-                        </x-jet-nav-link>
+                        </x-nav-link>
 
-                        <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                        <x-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
                             {{ __('BeSerious') }}
-                        </x-jet-nav-link>
+                        </x-nav-link>
 
-                        <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                        <x-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
                             {{ __('Pickem') }}
-                        </x-jet-nav-link>
+                        </x-nav-link>
 
-                        <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                        <x-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
                             {{ __('Twitch') }}
-                        </x-jet-nav-link>
+                        </x-nav-link>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
 
                     <!-- Settings/Profile Dropdown -->
                     <div class="relative ml-3 shrink-0">
-                        <x-jet-dropdown align="right" width="48"
+                        <x-dropdown align="right" width="48"
                             contentClasses="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <x-slot name="trigger">
                                 <button
@@ -111,15 +111,15 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                <x-jet-dropdown-link id="user-menu-item-1" href="{{ route('profile.show') }}"
+                                <x-dropdown-link id="user-menu-item-1" href="{{ route('profile.show') }}"
                                     tabindex="-1">
                                     {{ __('Profile') }}
-                                </x-jet-dropdown-link>
+                                </x-dropdown-link>
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                    <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                    <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                         {{ __('API Tokens') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 @endif
 
                                 <div class="border-t border-gray-100"></div>
@@ -130,10 +130,10 @@
                                         {{ __('Amministrazione') }}
                                     </div>
 
-                                    <x-jet-dropdown-link id="user-menu-item-1"
+                                    <x-dropdown-link id="user-menu-item-1"
                                         href="{{ route('filament.pages.dashboard') }}" tabindex="-1">
                                         {{ __('Admin') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
 
                                     <div class="border-t border-gray-100"></div>
                                 @endif
@@ -142,15 +142,15 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
 
-                                    <x-jet-dropdown-link id="user-menu-item-2" href="{{ route('logout') }}"
+                                    <x-dropdown-link id="user-menu-item-2" href="{{ route('logout') }}"
                                         tabindex="-1"
                                         onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                         {{ __('Log Out') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </form>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                 </div>
             </div>
@@ -161,21 +161,21 @@
     <div class="lg:hidden" id="mobile-menu" :class="{ 'block': open, 'hidden': !open }">
         <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-red-700 text-white", Default: "text-white hover:bg-red-500 hover:bg-opacity-75" -->
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+            <x-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
                 {{ __('BeSerious') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+            <x-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
                 {{ __('Pickem') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+            <x-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
                 {{ __('Twitch') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
         </div>
         <div class="border-t border-red-700 pb-3 pt-4">
             <div class="flex items-center px-5">
@@ -200,23 +200,23 @@
             </div>
             <div class="mt-3 space-y-1 px-2">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Your Profile') }}
-                </x-jet-responsive-nav-link>
+                </x-responsive-nav-link>
 
-                <x-jet-responsive-nav-link href="#">
+                <x-responsive-nav-link href="#">
                     {{ __('Settings') }}
-                </x-jet-responsive-nav-link>
+                </x-responsive-nav-link>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-jet-responsive-nav-link id="user-menu-item-2" href="{{ route('logout') }}" tabindex="-1"
+                    <x-responsive-nav-link id="user-menu-item-2" href="{{ route('logout') }}" tabindex="-1"
                         onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                         {{ __('Log Out') }}
-                    </x-jet-responsive-nav-link>
+                    </x-responsive-nav-link>
                 </form>
             </div>
         </div>

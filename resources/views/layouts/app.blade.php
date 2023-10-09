@@ -19,7 +19,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <x-jet-banner />
+    <x-banner />
 
     <div class="flex h-full min-h-screen flex-col justify-between bg-gray-100">
         <div>
