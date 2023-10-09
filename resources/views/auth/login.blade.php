@@ -51,7 +51,7 @@
         </form>
 
         @if (JoelButcher\Socialstream\Socialstream::show())
-            <x-socialstream-providers />
+            <x-socialstream />
         @endif
     </x-authentication-card>
 </x-auth-layout>

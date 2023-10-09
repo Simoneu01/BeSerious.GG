@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e79ec35e3a2e4c7456fa88da7c6d052",
+    "content-hash": "e8166cb318f89e24c291e1abc0e49fcc",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2608,31 +2608,31 @@
         },
         {
             "name": "joelbutcher/socialstream",
-            "version": "v4.1.0",
+            "version": "v4.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joelbutcher/socialstream.git",
-                "reference": "89bf059d6502cf8128c2afaae2683186feedd051"
+                "reference": "120c736a56efcc7834e90e77e99b8eea3371dd8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joelbutcher/socialstream/zipball/89bf059d6502cf8128c2afaae2683186feedd051",
-                "reference": "89bf059d6502cf8128c2afaae2683186feedd051",
+                "url": "https://api.github.com/repos/joelbutcher/socialstream/zipball/120c736a56efcc7834e90e77e99b8eea3371dd8e",
+                "reference": "120c736a56efcc7834e90e77e99b8eea3371dd8e",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "^3.0",
-                "illuminate/support": "^9.21|^10.0",
-                "laravel/jetstream": "^2.16.2|^3.0",
-                "laravel/socialite": "^5.6",
-                "php": "^8.0.2"
+                "laravel/jetstream": "^3.0|^4.0",
+                "laravel/socialite": "^5.9",
+                "php": "^8.1"
             },
             "require-dev": {
                 "inertiajs/inertia-laravel": "^0.6.4",
-                "laravel/sanctum": "^2.7|^3.2",
+                "laravel/sanctum": "^3.2",
+                "livewire/livewire": "^3.0",
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^7.0|^8.0",
-                "phpunit/phpunit": "^9.5"
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.0",
+                "phpunit/phpunit": "^10.0"
             },
             "type": "library",
             "extra": {
@@ -2690,7 +2690,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-24T16:41:55+00:00"
+            "time": "2023-09-21T11:46:36+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
