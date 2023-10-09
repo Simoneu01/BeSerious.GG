@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
 use Spatie\Permission\Models\Role;
-use App\Models\Team;
 
 /**
  * @extends Factory<User>
@@ -50,6 +50,7 @@ class UserFactory extends Factory
         if (! Features::hasTeamFeatures()) {
             return $this->state([]);
         }
+
         return $this->has(
             Team::factory()
                 ->state(function (array $attributes, User $user) {
@@ -58,9 +59,11 @@ class UserFactory extends Factory
             'ownedTeams'
         );
     }
+
     public function admin()
     {
         $adminRole = Role::findOrCreate('admin');
+
         return $this->hasAttached($adminRole);
     }
 }
