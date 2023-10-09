@@ -13,8 +13,8 @@
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="name" value="{{ __('Token Name') }}" />
-                <x-input class="mt-1 block w-full" id="name" type="text"
-                    wire:model.defer="createApiTokenForm.name" autofocus />
+                <x-input class="mt-1 block w-full" id="name" type="text" wire:model.defer="createApiTokenForm.name"
+                    autofocus />
                 <x-input-error class="mt-2" for="name" />
             </div>
 
@@ -107,9 +107,9 @@
                 {{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}
             </div>
 
-            <x-input class="mt-4 w-full rounded bg-gray-100 px-4 py-2 font-mono text-sm text-gray-500"
-                type="text" x-ref="plaintextToken" readonly :value="$plainTextToken" autofocus autocomplete="off"
-                autocorrect="off" autocapitalize="off" spellcheck="false"
+            <x-input class="mt-4 w-full rounded bg-gray-100 px-4 py-2 font-mono text-sm text-gray-500" type="text"
+                x-ref="plaintextToken" readonly :value="$plainTextToken" autofocus autocomplete="off" autocorrect="off"
+                autocapitalize="off" spellcheck="false"
                 @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)" />
         </x-slot>
 
@@ -138,8 +138,7 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$set('managingApiTokenPermissions', false)"
-                wire:loading.attr="disabled">
+            <x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
                 {{ __('Cancel') }}
             </x-secondary-button>
 

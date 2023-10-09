@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4bbab6c7bbe5c1f0faa725e25b234012",
+    "content-hash": "24906da64c4a24ec28b3e6e33357b8d8",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -2533,16 +2533,16 @@
         },
         {
             "name": "joelbutcher/socialstream",
-            "version": "v4.0.0",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joelbutcher/socialstream.git",
-                "reference": "6d072c1ef0a7ce415a238742c127d9e362f13d78"
+                "reference": "89bf059d6502cf8128c2afaae2683186feedd051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joelbutcher/socialstream/zipball/6d072c1ef0a7ce415a238742c127d9e362f13d78",
-                "reference": "6d072c1ef0a7ce415a238742c127d9e362f13d78",
+                "url": "https://api.github.com/repos/joelbutcher/socialstream/zipball/89bf059d6502cf8128c2afaae2683186feedd051",
+                "reference": "89bf059d6502cf8128c2afaae2683186feedd051",
                 "shasum": ""
             },
             "require": {
@@ -2615,7 +2615,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-15T15:39:37+00:00"
+            "time": "2023-02-24T16:41:55+00:00"
         },
         {
             "name": "laravel/fortify",

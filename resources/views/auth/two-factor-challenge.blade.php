@@ -22,8 +22,8 @@
 
                 <div class="mt-4" x-show="! recovery">
                     <x-label for="code" value="{{ __('Code') }}" />
-                    <x-input class="mt-1 block w-full" id="code" name="code" type="text"
-                        inputmode="numeric" autofocus x-ref="code" autocomplete="one-time-code" />
+                    <x-input class="mt-1 block w-full" id="code" name="code" type="text" inputmode="numeric"
+                        autofocus x-ref="code" autocomplete="one-time-code" />
                 </div>
 
                 <div class="mt-4" x-show="recovery">

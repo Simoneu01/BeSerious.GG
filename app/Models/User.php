@@ -35,7 +35,6 @@ use Spatie\Permission\Traits\HasRoles;
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\ConnectedAccount> $connectedAccounts
  * @property-read int|null $connected_accounts_count
  * @property-read \App\Models\ConnectedAccount|null $currentConnectedAccount
- * @property-read string $profile_photo_url
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Permission\Models\Permission> $permissions
@@ -44,6 +43,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property-read int|null $roles_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
+ * @property-read string $profile_photo_url
  *
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
@@ -123,9 +123,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
      */
     public function profilePhotoUrl(): Attribute
     {
-        return Attribute::get(fn () => filter_var($this->profile_photo_path, FILTER_VALIDATE_URL)
-            ? $this->profile_photo_path
-            : ($this->getPhotoUrl()->get)());
+        return filter_var($this->profile_photo_path, FILTER_VALIDATE_URL)
+            ? Attribute::get(fn () => $this->profile_photo_path)
+            : $this->getPhotoUrl();
     }
 
     public function canAccessFilament(): bool

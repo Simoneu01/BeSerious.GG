@@ -19,8 +19,8 @@
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email')"
-                    required autofocus />
+                <x-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email')" required
+                    autofocus />
             </div>
 
             <div class="mt-4">

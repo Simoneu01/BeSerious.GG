@@ -13,8 +13,8 @@
 
             <div>
                 <x-label for="name" value="{{ __('Name') }}" />
-                <x-input class="mt-1 block w-full" id="name" name="name" type="text" :value="old('name')"
-                    required autofocus autocomplete="name" />
+                <x-input class="mt-1 block w-full" id="name" name="name" type="text" :value="old('name')" required
+                    autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
