@@ -2,7 +2,7 @@
 <?php /** @var \App\Models\Staff $member */?>
 <div class="space-y-4">
     <div class="aspect-h-2 aspect-w-3">
-        <img class="rounded-lg object-cover shadow-lg" src="{{ $member->img_url }}" alt="">
+        <img class="rounded-lg object-cover shadow-lg" src="{{ $member->img_url }}" alt="{{ $member->full_name }}-photo">
     </div>
 
     <div class="space-y-2">

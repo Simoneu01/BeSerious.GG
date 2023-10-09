@@ -37,8 +37,7 @@ class StaffResource extends Resource
                 Components\FileUpload::make('img')
                     ->directory('staff-photos')
                     ->image()
-                    ->imageCropAspectRatio('4:3')
-                    ->required(),
+                    ->imageCropAspectRatio('4:3'),
             ]);
     }
 

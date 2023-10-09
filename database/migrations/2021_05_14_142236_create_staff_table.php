@@ -13,7 +13,7 @@ return new class() extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('role');
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->json('socials')->nullable();
             $table->timestamps();
         });
