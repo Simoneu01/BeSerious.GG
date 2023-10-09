@@ -7,10 +7,10 @@ use App\Filament\Resources\Teams\PlayerResource\Pages;
 use App\Filament\Resources\Teams\PlayerResource\RelationManagers;
 use App\Models\Player;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 use RalphJSmit\Filament\SEO\SEO;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
 

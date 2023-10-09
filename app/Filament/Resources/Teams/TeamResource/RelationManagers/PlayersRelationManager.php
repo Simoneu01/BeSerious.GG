@@ -3,13 +3,12 @@
 namespace App\Filament\Resources\Teams\TeamResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\RelationManagers\BelongsToManyRelationManager;
-use Filament\Resources\Table;
+use Filament\Forms\Form;
 use Filament\Tables;
+use Filament\Tables\Table;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
 
-class PlayersRelationManager extends BelongsToManyRelationManager
+class PlayersRelationManager extends \Filament\Resources\RelationManagers\RelationManager
 {
     protected static string $relationship = 'players';
 
@@ -23,7 +22,7 @@ class PlayersRelationManager extends BelongsToManyRelationManager
 
     protected static bool $canCreateAnother = false;
 
-    public static function form(Form $form): Form
+    public function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -32,7 +31,7 @@ class PlayersRelationManager extends BelongsToManyRelationManager
             ]);
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
             ->columns([
