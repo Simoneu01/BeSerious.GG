@@ -34,7 +34,7 @@
                     <div class="flex w-full items-center justify-between md:w-auto">
                         <a href="{{ route('welcome') }}">
                             <span class="sr-only">BeSerious</span>
-                            <x-6ixproject.red-icon class="h-8 w-auto sm:h-10" />
+                            <x-beserious.icon class="h-10 sm:h-14 w-auto text-red-600"/>
                         </a>
                         <div class="-mr-2 flex items-center md:hidden">
                             <button
@@ -100,7 +100,7 @@
             <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
                 <div class="flex items-center justify-between px-5 pt-4">
                     <div>
-                        <x-6ixproject.red-icon class="h-8 w-auto" />
+                        <x-beserious.icon class="h-10 w-auto text-red-600"/>
                     </div>
                     <div class="-mr-2">
                         <button

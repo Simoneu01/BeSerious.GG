@@ -59,7 +59,7 @@
                 </svg>
             </a>
 
-            <a class="text-gray-400 hover:text-gray-500" href="https://github.com/Simoneu01/6ixProject">
+            <a class="text-gray-400 hover:text-gray-500" href="https://github.com/Simoneu01/BeSerious.GG">
                 <span class="sr-only">GitHub</span>
                 <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd"
@@ -73,7 +73,7 @@
                 <x-fab-twitch class="inline-flex h-6 w-6" />
             </a>
 
-            <a class="text-gray-400 hover:text-gray-500" href="https://discord.gg/nzADY4P">
+            <a class="text-gray-400 hover:text-gray-500" href="https://discord.gg/mKaTXyT7kj">
                 <span class="sr-only">Discord</span>
                 <svg class="h-6 w-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146 146">
                     <path
@@ -83,7 +83,7 @@
             </a>
         </div>
         <p class="mt-8 text-center text-base text-gray-400">
-            &copy; 2020 BeSerious. All rights reserved.
+            &copy; 2019-{{ now()->year }} BeSerious. All rights reserved.
         </p>
     </div>
 </footer>
