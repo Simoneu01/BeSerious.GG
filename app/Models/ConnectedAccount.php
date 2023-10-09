@@ -64,6 +64,7 @@ class ConnectedAccount extends SocialstreamConnectedAccount
         'email',
         'avatar_path',
         'token',
+        'secret',
         'refresh_token',
         'expires_at',
     ];

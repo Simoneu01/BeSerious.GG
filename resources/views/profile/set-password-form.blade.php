@@ -1,4 +1,4 @@
-<x-jet-form-section submit="setPassword">
+<x-form-section submit="setPassword">
     <x-slot name="title">
         {{ __('Set Password') }}
     </x-slot>
@@ -9,27 +9,27 @@
 
     <x-slot name="form">
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="password" value="{{ __('New Password') }}" />
-            <x-jet-input class="mt-1 block w-full" id="password" type="password" wire:model.defer="state.password"
+            <x-label for="password" value="{{ __('New Password') }}" />
+            <x-input class="mt-1 block w-full" id="password" type="password" wire:model.defer="state.password"
                 autocomplete="new-password" />
-            <x-jet-input-error class="mt-2" for="password" />
+            <x-input-error class="mt-2" for="password" />
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-            <x-jet-input class="mt-1 block w-full" id="password_confirmation" type="password"
+            <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+            <x-input class="mt-1 block w-full" id="password_confirmation" type="password"
                 wire:model.defer="state.password_confirmation" autocomplete="new-password" />
-            <x-jet-input-error class="mt-2" for="password_confirmation" />
+            <x-input-error class="mt-2" for="password_confirmation" />
         </div>
     </x-slot>
 
     <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
+        <x-action-message class="mr-3" on="saved">
             {{ __('Password saved, please refresh.') }}
-        </x-jet-action-message>
+        </x-action-message>
 
-        <x-jet-button>
+        <x-button>
             {{ __('Save') }}
-        </x-jet-button>
+        </x-button>
     </x-slot>
-</x-jet-form-section>
+</x-form-section>

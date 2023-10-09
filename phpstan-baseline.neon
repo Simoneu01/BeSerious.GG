@@ -1,6 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Parameter \\#1 \\$photo of method App\\\\Models\\\\User\\:\\:updateProfilePhoto\\(\\) expects Illuminate\\\\Http\\\\UploadedFile, string given\\.$#"
+			count: 1
+			path: app/Actions/Fortify/UpdateUserProfileInformation.php
+
+		-
 			message: "#^Access to an undefined property Laravel\\\\Socialite\\\\Contracts\\\\User\\:\\:\\$token\\.$#"
 			count: 1
 			path: app/Actions/Socialstream/CreateConnectedAccount.php
