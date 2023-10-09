@@ -4,11 +4,11 @@ namespace App\Filament\Resources\Teams\TeamResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Actions\AttachAction;
 use Filament\Tables\Table;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
-use Filament\Resources\RelationManagers\RelationManager;
 
 class PlayersRelationManager extends RelationManager
 {
