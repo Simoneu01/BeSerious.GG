@@ -24,6 +24,8 @@
         <!-- Slot -->
         {{ $slot }}
     </div>
+
+    @livewireScripts
 </body>
 
 </html>

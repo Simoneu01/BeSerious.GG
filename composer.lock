@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8166cb318f89e24c291e1abc0e49fcc",
+    "content-hash": "249665376f3d175cad9121e4876abbad",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3020,16 +3020,16 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v3.3.3",
+            "version": "v4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "6660ede858e1a964134732bb41dff9fd08450d0e"
+                "reference": "722f641393af7a41563a777607369dba648abc0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/6660ede858e1a964134732bb41dff9fd08450d0e",
-                "reference": "6660ede858e1a964134732bb41dff9fd08450d0e",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/722f641393af7a41563a777607369dba648abc0e",
+                "reference": "722f641393af7a41563a777607369dba648abc0e",
                 "shasum": ""
             },
             "require": {
@@ -3043,16 +3043,16 @@
             "require-dev": {
                 "inertiajs/inertia-laravel": "^0.6.5",
                 "laravel/sanctum": "^3.0",
-                "livewire/livewire": "^2.12",
+                "livewire/livewire": "^3.0",
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^8.0",
+                "orchestra/testbench": "^8.11",
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.x-dev"
+                    "dev-master": "4.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -3085,7 +3085,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2023-08-23T13:50:02+00:00"
+            "time": "2023-10-02T00:37:02+00:00"
         },
         {
             "name": "laravel/pint",

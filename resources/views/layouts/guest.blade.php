@@ -16,20 +16,22 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Styles -->
+    @livewireStyles
 </head>
 
 <body>
     <div class="font-sans text-gray-900 antialiased dark:text-gray-100">
-
         <!-- Hero -->
         <x-hero />
-
         <!-- Slot -->
         {{ $slot }}
-
         <!-- Footer -->
         <x-footer />
     </div>
+
+    @livewireScripts
 </body>
 
 </html>
