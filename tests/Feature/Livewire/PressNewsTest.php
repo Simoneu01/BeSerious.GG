@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Livewire;
 
-use App\Http\Livewire\PressNews;
+use App\Livewire\PressNews;
 use App\Models\Article;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;

@@ -6,10 +6,10 @@ use App\Filament\Resources\Teams\TeamResource\Pages;
 use App\Filament\Resources\Teams\TeamResource\RelationManagers;
 use App\Models\Team;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 use RalphJSmit\Filament\SEO\SEO;
 
 class TeamResource extends Resource

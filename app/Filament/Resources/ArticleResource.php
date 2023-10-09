@@ -4,10 +4,11 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ArticleResource\Pages;
 use Filament\Forms\Components;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables\Columns;
+use Filament\Tables\Table;
+use RalphJSmit\Filament\SEO\SEO;
 
 class ArticleResource extends Resource
 {
@@ -35,6 +36,13 @@ class ArticleResource extends Resource
                 Components\Textarea::make('body')
                     ->required()
                     ->rows(3),
+
+                Components\Section::make('SEO')
+                    ->description('Impostazioni SEO')
+                    ->collapsed()
+                    ->schema([
+                        SEO::make(),
+                    ]),
             ]);
     }
 

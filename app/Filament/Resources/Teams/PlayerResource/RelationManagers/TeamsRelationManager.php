@@ -3,13 +3,13 @@
 namespace App\Filament\Resources\Teams\PlayerResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\RelationManagers\BelongsToManyRelationManager;
-use Filament\Resources\Table;
+use Filament\Forms\Form;
 use Filament\Tables;
+use Filament\Tables\Actions\AttachAction;
+use Filament\Tables\Table;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
 
-class TeamsRelationManager extends BelongsToManyRelationManager
+class TeamsRelationManager extends \Filament\Resources\RelationManagers\RelationManager
 {
     protected static string $relationship = 'teams';
 
@@ -23,7 +23,7 @@ class TeamsRelationManager extends BelongsToManyRelationManager
 
     protected static bool $canCreateAnother = false;
 
-    public static function form(Form $form): Form
+    public function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -32,7 +32,7 @@ class TeamsRelationManager extends BelongsToManyRelationManager
             ]);
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
             ->columns([
@@ -45,16 +45,24 @@ class TeamsRelationManager extends BelongsToManyRelationManager
             ])
             ->filters([
                 Filters\TextFilter::make('role'),
-            ]);
-    }
-
-    public static function attachForm(Form $form): Form
-    {
-        return $form
-            ->schema([
-                static::getAttachFormRecordSelect(),
-                Forms\Components\TextInput::make('role')->default('player')->required(),
-                Forms\Components\DateTimePicker::make('joined_at')->default(now())->required(),
+            ])->headerActions([
+                // ...
+                Tables\Actions\AttachAction::make()
+                    ->form(fn (AttachAction $action): array => [
+                        $action->getRecordSelect(),
+                        Forms\Components\TextInput::make('role')->default('player')->required(),
+                        Forms\Components\DateTimePicker::make('joined_at')->default(now())->required(),
+                    ]),
+            ])
+            ->actions([
+                // ...
+                Tables\Actions\DetachAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    // ...
+                    Tables\Actions\DetachBulkAction::make(),
+                ]),
             ]);
     }
 

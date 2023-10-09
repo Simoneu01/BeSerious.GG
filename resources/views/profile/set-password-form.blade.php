@@ -10,7 +10,7 @@
     <x-slot name="form">
         <div class="col-span-6 sm:col-span-4">
             <x-label for="password" value="{{ __('New Password') }}" />
-            <x-input class="mt-1 block w-full" id="password" type="password" wire:model.defer="state.password"
+            <x-input class="mt-1 block w-full" id="password" type="password" wire:model="state.password"
                 autocomplete="new-password" />
             <x-input-error class="mt-2" for="password" />
         </div>
@@ -18,7 +18,7 @@
         <div class="col-span-6 sm:col-span-4">
             <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
             <x-input class="mt-1 block w-full" id="password_confirmation" type="password"
-                wire:model.defer="state.password_confirmation" autocomplete="new-password" />
+                wire:model="state.password_confirmation" autocomplete="new-password" />
             <x-input-error class="mt-2" for="password_confirmation" />
         </div>
     </x-slot>

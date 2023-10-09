@@ -7,10 +7,10 @@ use App\Filament\Resources\Teams\PlayerResource\Pages;
 use App\Filament\Resources\Teams\PlayerResource\RelationManagers;
 use App\Models\Player;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 use RalphJSmit\Filament\SEO\SEO;
 use Webbingbrasil\FilamentAdvancedFilter\Filters;
 
@@ -58,7 +58,7 @@ class PlayerResource extends Resource
                     ->columnSpan(2),
 
                 Forms\Components\Group::make()->schema([
-                    Forms\Components\Card::make()
+                    Forms\Components\Section::make()
                         ->schema([
                             Forms\Components\Placeholder::make('created_at')
                                 ->label('Creato')
@@ -67,19 +67,17 @@ class PlayerResource extends Resource
                                 ->label('Ultima modifica')
                                 ->content(fn ($record): string => $record ? $record->updated_at->diffForHumans() : '-'),
                         ]),
-                    Forms\Components\Card::make()
+                    Forms\Components\Section::make()
                         ->schema([
-                            Forms\Components\BelongsToSelect::make('user_id')
+                            Forms\Components\Select::make('user_id')
                                 ->placeholder("Seleziona un'opzione")
                                 ->relationship('user', 'name')
-                                ->searchable()
-                                ->default(fn ($livewire) => $livewire instanceof Pages\EditPlayer ? $livewire->record->user : null),
-                            Forms\Components\BelongsToSelect::make('current_team_id')
+                                ->searchable(),
+                            Forms\Components\Select::make('current_team_id')
                                 ->label('Team Corrente')
                                 ->placeholder("Seleziona un'opzione")
                                 ->relationship('team', 'name')
-                                ->searchable()
-                                ->default(fn ($livewire) => $livewire instanceof Pages\EditPlayer ? $livewire->record->team : null),
+                                ->searchable(),
                         ]),
                 ]),
 

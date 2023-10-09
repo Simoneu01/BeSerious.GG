@@ -19,6 +19,18 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          check-latest: true
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Run prettier
+        run: npm run prettier
+
       - name: Fix PHP code style issues
         uses: aglipanci/laravel-pint-action@2.3.0
         with:

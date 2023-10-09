@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -72,6 +74,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     use HasApiTokens;
     use HasConnectedAccounts;
     use HasFactory;
+    use HasPanelShield {
+        canAccessPanel as canAccessPanelShield;
+    }
     use HasProfilePhoto {
         profilePhotoUrl as getPhotoUrl;
     }
@@ -128,13 +133,13 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
             : $this->getPhotoUrl();
     }
 
-    public function canAccessFilament(): bool
+    public function canAccessPanel(Panel $panel): bool
     {
         if (App::environment(['local', 'staging'])) {
             return true;
         }
 
-        return $this->can('access_filament');
+        return $this->canAccessPanelShield($panel);
     }
 
     public function getFilamentAvatarUrl(): ?string

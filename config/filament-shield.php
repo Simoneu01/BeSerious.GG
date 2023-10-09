@@ -22,9 +22,9 @@ return [
         'intercept_gate' => 'before', // after
     ],
 
-    'filament_user' => [
-        'enabled' => true,
-        'name' => 'filament_user',
+    'panel_user' => [
+        'enabled' => false,
+        'name' => 'panel_user',
     ],
 
     'permission_prefixes' => [
@@ -70,6 +70,12 @@ return [
         ],
 
         'resources' => [],
+    ],
+
+    'discovery' => [
+        'discover_all_resources' => false,
+        'discover_all_widgets' => false,
+        'discover_all_pages' => false,
     ],
 
     'register_role_policy' => [
