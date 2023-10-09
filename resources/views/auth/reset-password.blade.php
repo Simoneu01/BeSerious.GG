@@ -11,27 +11,24 @@
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
 
-            <input name="token" type="hidden" value="{{ $request->route('token') }}">
+            <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <div class="block">
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email', $request->email)"
-                    required autofocus />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
-                <x-input class="mt-1 block w-full" id="password" name="password" type="password" required
-                    autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input class="mt-1 block w-full" id="password_confirmation" name="password_confirmation"
-                    type="password" required autocomplete="new-password" />
+                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-            <div class="mt-4 flex items-center justify-end">
+            <div class="flex items-center justify-end mt-4">
                 <x-button>
                     {{ __('Reset Password') }}
                 </x-button>

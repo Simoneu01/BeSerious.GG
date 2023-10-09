@@ -5,7 +5,7 @@
                 <div class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" aria-hidden="true"></div>
                 <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:h-full lg:p-0">
                     <div
-                        class="aspect-h-6 aspect-w-10 overflow-hidden rounded-xl shadow-xl sm:aspect-h-7 sm:aspect-w-16 lg:aspect-none lg:h-full">
+                        class="aspect-h-6 aspect-w-10 sm:aspect-h-7 sm:aspect-w-16 lg:aspect-none overflow-hidden rounded-xl shadow-xl lg:h-full">
                         <img class="object-cover lg:h-full lg:w-full" src="{{ asset('img/chinook.jpg') }}" alt="">
                     </div>
                 </div>
