@@ -3,10 +3,13 @@
 namespace Tests\Feature\Pages;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class DashboardPageTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_dashboard_cannot_be_accessed_by_guest()
     {
         $this

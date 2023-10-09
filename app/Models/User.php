@@ -22,7 +22,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string $name
  * @property string $email
  * @property \Illuminate\Support\Carbon|null $email_verified_at
- * @property string|null $password
+ * @property mixed|null $password
  * @property string|null $remember_token
  * @property int|null $current_team_id
  * @property int|null $current_connected_account_id
@@ -105,6 +105,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
 
     /**

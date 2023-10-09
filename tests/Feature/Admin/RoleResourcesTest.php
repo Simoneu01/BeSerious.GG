@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Admin;
 
-use App\Filament\Resources\Shield\RoleResource;
 use App\Models\User;
+use BezhanSalleh\FilamentShield\Resources\RoleResource;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Spatie\Permission\Models\Role;
 use Tests\TestCase;
@@ -41,10 +41,5 @@ class RoleResourcesTest extends TestCase
         $this->get(RoleResource::getUrl('view', [
             'record' => Role::findOrCreate('admin'),
         ]))->assertSuccessful();
-    }
-
-    public function test_settings_page_can_be_rendered()
-    {
-        $this->get(RoleResource::getUrl('settings'))->assertSuccessful();
     }
 }
