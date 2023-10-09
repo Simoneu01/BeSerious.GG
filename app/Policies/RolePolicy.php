@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class RolePolicy
@@ -12,9 +13,10 @@ class RolePolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param  \App\Models\User  $user
+     * @return bool
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user): bool
     {
         return $user->can('view_any_role');
     }
@@ -22,9 +24,11 @@ class RolePolicy
     /**
      * Determine whether the user can view the model.
      *
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param  \App\Models\User  $user
+     * @param  \Spatie\Permission\Models\Role  $role
+     * @return bool
      */
-    public function view(User $user)
+    public function view(User $user, Role $role): bool
     {
         return $user->can('view_role');
     }
@@ -32,9 +36,10 @@ class RolePolicy
     /**
      * Determine whether the user can create models.
      *
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param  \App\Models\User  $user
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         return $user->can('create_role');
     }
@@ -42,9 +47,11 @@ class RolePolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param  \App\Models\User  $user
+     * @param  \Spatie\Permission\Models\Role  $role
+     * @return bool
      */
-    public function update(User $user)
+    public function update(User $user, Role $role): bool
     {
         return $user->can('update_role');
     }
@@ -52,9 +59,11 @@ class RolePolicy
     /**
      * Determine whether the user can delete the model.
      *
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param  \App\Models\User  $user
+     * @param  \Spatie\Permission\Models\Role  $role
+     * @return bool
      */
-    public function delete(User $user)
+    public function delete(User $user, Role $role): bool
     {
         return $user->can('delete_role');
     }
@@ -62,9 +71,10 @@ class RolePolicy
     /**
      * Determine whether the user can bulk delete.
      *
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param  \App\Models\User  $user
+     * @return bool
      */
-    public function deleteAny(User $user)
+    public function deleteAny(User $user): bool
     {
         return $user->can('delete_any_role');
     }

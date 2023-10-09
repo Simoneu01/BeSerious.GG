@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
@@ -80,6 +81,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     use Notifiable;
     use SetsProfilePhotoFromUrl;
     use TwoFactorAuthenticatable;
+    use HasPanelShield {
+        canAccessPanel as canAccessPanelShield;
+    }
 
     /** @inheritdoc  */
     protected $fillable = [
@@ -135,7 +139,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
             return true;
         }
 
-        return $this->can('access_filament');
+        return $this->canAccessPanelShield($panel);
     }
 
     public function getFilamentAvatarUrl(): ?string

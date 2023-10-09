@@ -3,6 +3,7 @@
 namespace Tests\Feature\Admin;
 
 use App\Models\User;
+use Filament\Pages\Dashboard;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,7 +15,7 @@ class DashboardTest extends TestCase
     {
         $this->actingAs(User::factory()->admin()->create());
 
-        $response = $this->get(route('filament.pages.dashboard'));
+        $response = $this->get(Dashboard::getUrl());
 
         $response->assertSuccessful();
     }
@@ -29,7 +30,7 @@ class DashboardTest extends TestCase
 
         $this->actingAs(User::factory()->create());
 
-        $response = $this->get(route('filament.pages.dashboard'));
+        $response = $this->get(Dashboard::getUrl());
 
         $response->assertSuccessful();
     }
@@ -38,7 +39,7 @@ class DashboardTest extends TestCase
     {
         $this->actingAs(User::factory()->create());
 
-        $response = $this->get(route('filament.pages.dashboard'));
+        $response = $this->get(Dashboard::getUrl());
 
         $response->assertForbidden();
     }
