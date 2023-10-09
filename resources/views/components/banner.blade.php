@@ -1,8 +1,12 @@
 @props(['style' => session('flash.bannerStyle', 'success'), 'message' => session('flash.banner')])
 
 <div style="display: none;" x-data="{{ json_encode(['show' => true, 'style' => $style, 'message' => $message]) }}"
-    :class="{ 'bg-indigo-500': style == 'success', 'bg-red-700': style == 'danger', 'bg-gray-500': style != 'success' &&
-            style != 'danger' }"
+    :class="{
+        'bg-indigo-500': style == 'success',
+        'bg-red-700': style == 'danger',
+        'bg-gray-500': style != 'success' &&
+            style != 'danger'
+    }"
     x-show="show && message"
     x-on:banner-message.window="
                 style = event.detail.style;
@@ -38,8 +42,11 @@
             <div class="shrink-0 sm:ml-3">
                 <button class="-mr-1 flex rounded-md p-2 transition focus:outline-none sm:-mr-2" type="button"
                     aria-label="Dismiss"
-                    :class="{ 'hover:bg-indigo-600 focus:bg-indigo-600': style ==
-                        'success', 'hover:bg-red-600 focus:bg-red-600': style == 'danger' }"
+                    :class="{
+                        'hover:bg-indigo-600 focus:bg-indigo-600': style ==
+                            'success',
+                        'hover:bg-red-600 focus:bg-red-600': style == 'danger'
+                    }"
                     x-on:click="show = false">
                     <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
