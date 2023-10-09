@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns;
 use Filament\Tables\Table;
+use RalphJSmit\Filament\SEO\SEO;
 
 class ArticleResource extends Resource
 {
@@ -35,6 +36,13 @@ class ArticleResource extends Resource
                 Components\Textarea::make('body')
                     ->required()
                     ->rows(3),
+
+                Components\Section::make('SEO')
+                    ->description('Impostazioni SEO')
+                    ->collapsed()
+                    ->schema([
+                        SEO::make(),
+                    ]),
             ]);
     }
 

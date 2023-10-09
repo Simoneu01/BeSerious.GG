@@ -10,8 +10,8 @@
     <x-slot name="form">
         <div class="col-span-6 sm:col-span-4">
             <x-label for="current_password" value="{{ __('Current Password') }}" />
-            <x-input class="mt-1 block w-full" id="current_password" type="password"
-                wire:model="state.current_password" autocomplete="current-password" />
+            <x-input class="mt-1 block w-full" id="current_password" type="password" wire:model="state.current_password"
+                autocomplete="current-password" />
             <x-input-error class="mt-2" for="current_password" />
         </div>
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 /**
  * App\Models\Article
@@ -18,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $author_link
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \RalphJSmit\Laravel\SEO\Models\SEO $seo
  *
  * @method static \Database\Factories\ArticleFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Article newModelQuery()
@@ -39,6 +41,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+    use HasSEO;
 
     /** @inheritdoc  */
     protected $fillable = [
