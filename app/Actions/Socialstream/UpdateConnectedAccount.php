@@ -11,11 +11,8 @@ class UpdateConnectedAccount implements UpdatesConnectedAccounts
 {
     /**
      * Update a given connected account.
-     *
-     * @param  mixed  $user
-     * @return \JoelButcher\Socialstream\ConnectedAccount
      */
-    public function update($user, ConnectedAccount $connectedAccount, string $provider, User $providerUser)
+    public function update(mixed $user, ConnectedAccount $connectedAccount, string $provider, User $providerUser): ConnectedAccount
     {
         Gate::forUser($user)->authorize('update', $connectedAccount);
 

@@ -1,12 +1,12 @@
 <x-auth-layout>
-    <x-jet-authentication-card>
+    <x-authentication-card>
         <x-slot name="logo">
             <a href="/">
                 <x-6ixproject.icon class="h-16 w-16" />
             </a>
         </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
+        <x-validation-errors class="mb-4" />
 
         @if (session('status'))
             <div class="mb-4 text-sm font-medium text-emerald-600">
@@ -18,20 +18,20 @@
             @csrf
 
             <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email')"
+                <x-label for="email" value="{{ __('Email') }}" />
+                <x-input class="mt-1 block w-full" id="email" name="email" type="email" :value="old('email')"
                     required autofocus />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input class="mt-1 block w-full" id="password" name="password" type="password" required
+                <x-label for="password" value="{{ __('Password') }}" />
+                <x-input class="mt-1 block w-full" id="password" name="password" type="password" required
                     autocomplete="current-password" />
             </div>
 
             <div class="mt-4 block">
                 <label class="flex items-center" for="remember_me">
-                    <x-jet-checkbox id="remember_me" name="remember" />
+                    <x-checkbox id="remember_me" name="remember" />
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
@@ -44,14 +44,14 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4">
+                <x-button class="ml-4">
                     {{ __('Log in') }}
-                </x-jet-button>
+                </x-button>
             </div>
         </form>
 
         @if (JoelButcher\Socialstream\Socialstream::show())
             <x-socialstream-providers />
         @endif
-    </x-jet-authentication-card>
+    </x-authentication-card>
 </x-auth-layout>

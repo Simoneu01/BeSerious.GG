@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -72,7 +73,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     use HasConnectedAccounts;
     use HasFactory;
     use HasProfilePhoto {
-        getProfilePhotoUrlAttribute as getPhotoUrl;
+        profilePhotoUrl as getPhotoUrl;
     }
     use HasRoles;
     use Notifiable;
@@ -119,16 +120,12 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
     /**
      * Get the URL to the user's profile photo.
-     *
-     * @return string
      */
-    public function getProfilePhotoUrlAttribute()
+    public function profilePhotoUrl(): Attribute
     {
-        if (filter_var($this->profile_photo_path, FILTER_VALIDATE_URL)) {
-            return $this->profile_photo_path;
-        }
-
-        return $this->getPhotoUrl();
+        return Attribute::get(fn () => filter_var($this->profile_photo_path, FILTER_VALIDATE_URL)
+            ? $this->profile_photo_path
+            : ($this->getPhotoUrl()->get)());
     }
 
     public function canAccessFilament(): bool
