@@ -19,7 +19,7 @@
             </div>
 
             <div class="mt-4">
-                {{ $articles->links() }}
+                {{ $articles->links(data: ['scrollTo' => false]) }}
             </div>
         </div>
     </div>

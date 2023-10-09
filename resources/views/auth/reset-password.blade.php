@@ -2,7 +2,7 @@
     <x-authentication-card>
         <x-slot name="logo">
             <a href="/">
-                <x-6ixproject.icon class="h-16 w-16" />
+                <x-beserious.logo class="h-24 w-24" />
             </a>
         </x-slot>
 

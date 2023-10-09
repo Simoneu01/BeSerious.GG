@@ -6,6 +6,7 @@ use App\Casts\Socials;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Vite;
 
 /**
  * App\Models\Staff
@@ -65,6 +66,6 @@ class Staff extends Model
 
     public function getImgUrlAttribute(): string
     {
-        return Storage::disk('public')->url($this->img);
+        return $this->img ? Storage::disk('public')->url($this->img) : Vite::asset('resources/images/default.png');
     }
 }
