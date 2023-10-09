@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\TeamController;
-use App\Http\Livewire\PressNews;
+use App\Livewire\PressNews;
 use Illuminate\Support\Facades\Route;
 
 /*

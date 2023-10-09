@@ -53,7 +53,7 @@
                         <x-label for="code" value="{{ __('Code') }}" />
 
                         <x-input class="mt-1 block w-1/2" id="code" name="code" type="text"
-                            inputmode="numeric" autofocus autocomplete="one-time-code" wire:model.defer="code"
+                            inputmode="numeric" autofocus autocomplete="one-time-code" wire:model="code"
                             wire:keydown.enter="confirmTwoFactorAuthentication" />
 
                         <x-input-error class="mt-2" for="code" />

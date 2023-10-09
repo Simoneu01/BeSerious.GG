@@ -57,7 +57,7 @@
         </div>
 
         <!-- Logout Other Devices Confirmation Modal -->
-        <x-dialog-modal wire:model="confirmingRemove">
+        <x-dialog-modal wire:model.live="confirmingRemove">
             <x-slot name="title">
                 {{ __('Remove Connected Account') }}
             </x-slot>

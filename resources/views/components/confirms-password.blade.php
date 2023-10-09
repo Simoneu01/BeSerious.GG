@@ -11,7 +11,7 @@
 </span>
 
 @once
-    <x-dialog-modal wire:model="confirmingPassword">
+    <x-dialog-modal wire:model.live="confirmingPassword">
         <x-slot name="title">
             {{ $title }}
         </x-slot>
@@ -22,7 +22,7 @@
             <div class="mt-4" x-data="{}"
                 x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
                 <x-input class="mt-1 block w-3/4" type="password" placeholder="{{ __('Password') }}"
-                    autocomplete="current-password" x-ref="confirmable_password" wire:model.defer="confirmablePassword"
+                    autocomplete="current-password" x-ref="confirmable_password" wire:model="confirmablePassword"
                     wire:keydown.enter="confirmPassword" />
 
                 <x-input-error class="mt-2" for="confirmable_password" />
