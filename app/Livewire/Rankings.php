@@ -13,7 +13,7 @@ class Rankings extends Component
 {
     public Collection $rankings;
 
-    public string $year = '2021';
+    public string $year = '2023';
 
     public bool $killcache = false;
 
