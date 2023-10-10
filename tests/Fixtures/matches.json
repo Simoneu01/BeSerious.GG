@@ -1,0 +1,1060 @@
+{
+    "data": [
+        {
+            "id": "98c04fb2-3f0b-4422-93dd-e2dd98f964ec",
+            "status": "closed",
+            "round": {
+                "id": "98c04fb2-3b82-4ba5-b669-14fa7fac248f",
+                "winners": 6
+            },
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3",
+                "name": "Groupstage"
+            },
+            "tournament": {
+                "id": "98bfa269-4fce-4bb1-84c7-7ba0ed4d1da0",
+                "name": "Be Serious 2023 - Campionato",
+                "slug": "be-serious-2023-campionato",
+                "images": {
+                    "cover": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/cover/G7atdi9fzYleBfMIjxcX0o7fRH3pGQsTAxcvPoRR.jpg",
+                    "thumbnail": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/thumbnails/z1W1hfj2oxqKTlYPn7iGUDjKlnOyUNwD27hhRgbY.jpg"
+                },
+                "integration": {
+                    "id": "0ef0f682-57ca-4994-ae2f-4395c9255711",
+                    "name": "rainbowsix",
+                    "linkage_provider": {
+                        "id": "77c30ebf-c397-4b1b-a180-cff936613e8b",
+                        "names": {
+                            "internal": "ubisoft",
+                            "public": "Ubisoft"
+                        },
+                        "logo": "https://gameshard.s3.eu-central-1.amazonaws.com/linkages/ubisoft.png",
+                        "linkage": false,
+                        "should_refresh": false,
+                        "created_at": "2021-02-03 17:22:39",
+                        "updated_at": "2023-10-09 09:01:48",
+                        "deleted_at": "2023-10-10 09:32:26"
+                    },
+                    "capabilities": {
+                        "report_scores": true
+                    }
+                },
+                "contestants": {
+                    "size": 5,
+                    "type": "team"
+                }
+            },
+            "game": {
+                "id": "82181c11-e8d0-432f-9c3a-880efbeec102",
+                "name": "Rainbow Six Siege"
+            },
+            "winner": {
+                "id": "98bff4f3-3e32-463d-8924-e5df3558c94f",
+                "type": "team",
+                "name": "DELTALAND",
+                "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/k4EVJbnjm5oDQwXMdPM2wv05wHPqGZUkgqcPiuES.jpg",
+                "verified": false
+            },
+            "additional_data": {
+                "best_of": "1",
+                "discord": {
+                    "channelId": "1110502171117621318",
+                    "vetoMessageId": "1110502180596764713",
+                    "readyMessageId": "1110947280309202974"
+                },
+                "home_away": "away",
+                "veto_ended": true,
+                "current_day": 14,
+                "veto_actions": [
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "contestant": "98bff4f3-3e32-463d-8924-e5df3558c94f"
+                    },
+                    {
+                        "item": "Villa",
+                        "type": "ban",
+                        "contestant": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2"
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "ban",
+                        "contestant": "98bff4f3-3e32-463d-8924-e5df3558c94f"
+                    },
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "contestant": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2"
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "contestant": "98bff4f3-3e32-463d-8924-e5df3558c94f"
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "contestant": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2"
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "contestant": "98bff4f3-3e32-463d-8924-e5df3558c94f"
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "contestant": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2"
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "pick",
+                        "contestant": null
+                    }
+                ]
+            },
+            "schedule": {
+                "scheduled_at": "2023-03-22 21:36:10",
+                "played_at": "2023-05-25 10:28:59"
+            },
+            "contestants": [
+                {
+                    "id": "98bff4f3-3e32-463d-8924-e5df3558c94f",
+                    "type": "team",
+                    "name": "DELTALAND",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/k4EVJbnjm5oDQwXMdPM2wv05wHPqGZUkgqcPiuES.jpg",
+                    "score": 1,
+                    "verified": false
+                },
+                {
+                    "id": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2",
+                    "type": "team",
+                    "name": "20Stars Esports",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/emexazWPQiAZSSlnfXSffVcUWbKB3w5jOTyARgpU.jpg",
+                    "score": 0,
+                    "verified": false
+                }
+            ],
+            "has_ticket": false,
+            "veto": {
+                "required": true,
+                "algorithm": "rainbow_six_pro_league",
+                "items": [
+                    "Bank",
+                    "Chalet",
+                    "Club House",
+                    "Kafe Dostoyevsky",
+                    "Oregon",
+                    "Villa",
+                    "Border",
+                    "Skyscraper",
+                    "Theme park"
+                ],
+                "actions": [
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff4f3-3e32-463d-8924-e5df3558c94f",
+                            "name": "DELTALAND",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/k4EVJbnjm5oDQwXMdPM2wv05wHPqGZUkgqcPiuES.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Villa",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2",
+                            "name": "20Stars Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/emexazWPQiAZSSlnfXSffVcUWbKB3w5jOTyARgpU.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff4f3-3e32-463d-8924-e5df3558c94f",
+                            "name": "DELTALAND",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/k4EVJbnjm5oDQwXMdPM2wv05wHPqGZUkgqcPiuES.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2",
+                            "name": "20Stars Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/emexazWPQiAZSSlnfXSffVcUWbKB3w5jOTyARgpU.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff4f3-3e32-463d-8924-e5df3558c94f",
+                            "name": "DELTALAND",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/k4EVJbnjm5oDQwXMdPM2wv05wHPqGZUkgqcPiuES.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2",
+                            "name": "20Stars Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/emexazWPQiAZSSlnfXSffVcUWbKB3w5jOTyARgpU.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff4f3-3e32-463d-8924-e5df3558c94f",
+                            "name": "DELTALAND",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/k4EVJbnjm5oDQwXMdPM2wv05wHPqGZUkgqcPiuES.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c039ad-a4ea-4dbb-ac25-03c0d83fcbf2",
+                            "name": "20Stars Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/emexazWPQiAZSSlnfXSffVcUWbKB3w5jOTyARgpU.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "pick",
+                        "executed_at": null,
+                        "contestant": null,
+                        "user": null
+                    }
+                ],
+                "ended": true,
+                "next": []
+            },
+            "checked_by": null,
+            "type": "competitive",
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-05-25 10:28:59",
+            "is_in_match": false
+        },
+        {
+            "id": "98c04fb2-46ab-40fb-8c84-0651fc651a51",
+            "status": "closed",
+            "round": {
+                "id": "98c04fb2-3b82-4ba5-b669-14fa7fac248f",
+                "winners": 6
+            },
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3",
+                "name": "Groupstage"
+            },
+            "tournament": {
+                "id": "98bfa269-4fce-4bb1-84c7-7ba0ed4d1da0",
+                "name": "Be Serious 2023 - Campionato",
+                "slug": "be-serious-2023-campionato",
+                "images": {
+                    "cover": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/cover/G7atdi9fzYleBfMIjxcX0o7fRH3pGQsTAxcvPoRR.jpg",
+                    "thumbnail": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/thumbnails/z1W1hfj2oxqKTlYPn7iGUDjKlnOyUNwD27hhRgbY.jpg"
+                },
+                "integration": {
+                    "id": "0ef0f682-57ca-4994-ae2f-4395c9255711",
+                    "name": "rainbowsix",
+                    "linkage_provider": {
+                        "id": "77c30ebf-c397-4b1b-a180-cff936613e8b",
+                        "names": {
+                            "internal": "ubisoft",
+                            "public": "Ubisoft"
+                        },
+                        "logo": "https://gameshard.s3.eu-central-1.amazonaws.com/linkages/ubisoft.png",
+                        "linkage": false,
+                        "should_refresh": false,
+                        "created_at": "2021-02-03 17:22:39",
+                        "updated_at": "2023-10-09 09:01:48",
+                        "deleted_at": "2023-10-10 09:32:26"
+                    },
+                    "capabilities": {
+                        "report_scores": true
+                    }
+                },
+                "contestants": {
+                    "size": 5,
+                    "type": "team"
+                }
+            },
+            "game": {
+                "id": "82181c11-e8d0-432f-9c3a-880efbeec102",
+                "name": "Rainbow Six Siege"
+            },
+            "winner": {
+                "id": "989381f6-63d3-4975-a3ea-fae8091842ba",
+                "type": "team",
+                "name": "CyberGround Gaming",
+                "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2DpmVd5toQMf7pEFXcoLNAL90YMrHdQUuilIZRUu.jpg",
+                "verified": false
+            },
+            "additional_data": {
+                "best_of": "1",
+                "discord": {
+                    "channelId": "1110502184946258021",
+                    "vetoMessageId": "1110502192433082378",
+                    "readyMessageId": "1110977802288771132"
+                },
+                "home_away": "away",
+                "veto_ended": true,
+                "current_day": 14,
+                "veto_actions": [
+                    {
+                        "item": "Villa",
+                        "type": "ban",
+                        "contestant": "989381f6-63d3-4975-a3ea-fae8091842ba"
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "ban",
+                        "contestant": "98bff033-8ea8-4605-8c43-88bed93b4e42"
+                    },
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "contestant": "989381f6-63d3-4975-a3ea-fae8091842ba"
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "contestant": "98bff033-8ea8-4605-8c43-88bed93b4e42"
+                    },
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "contestant": "989381f6-63d3-4975-a3ea-fae8091842ba"
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "contestant": "98bff033-8ea8-4605-8c43-88bed93b4e42"
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "contestant": "989381f6-63d3-4975-a3ea-fae8091842ba"
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "contestant": "98bff033-8ea8-4605-8c43-88bed93b4e42"
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "pick",
+                        "contestant": null
+                    }
+                ]
+            },
+            "schedule": {
+                "scheduled_at": "2023-03-22 21:36:10",
+                "played_at": "2023-05-25 10:29:57"
+            },
+            "contestants": [
+                {
+                    "id": "989381f6-63d3-4975-a3ea-fae8091842ba",
+                    "type": "team",
+                    "name": "CyberGround Gaming",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2DpmVd5toQMf7pEFXcoLNAL90YMrHdQUuilIZRUu.jpg",
+                    "score": 1,
+                    "verified": false
+                },
+                {
+                    "id": "98bff033-8ea8-4605-8c43-88bed93b4e42",
+                    "type": "team",
+                    "name": "UnderWorld Esports",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2ra07nK4dTtdLUFCTV59q7V4viUFyIDg5gIzgL3b.jpg",
+                    "score": 0,
+                    "verified": false
+                }
+            ],
+            "has_ticket": false,
+            "veto": {
+                "required": true,
+                "algorithm": "rainbow_six_pro_league",
+                "items": [
+                    "Bank",
+                    "Chalet",
+                    "Club House",
+                    "Kafe Dostoyevsky",
+                    "Oregon",
+                    "Villa",
+                    "Border",
+                    "Skyscraper",
+                    "Theme park"
+                ],
+                "actions": [
+                    {
+                        "item": "Villa",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "989381f6-63d3-4975-a3ea-fae8091842ba",
+                            "name": "CyberGround Gaming",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2DpmVd5toQMf7pEFXcoLNAL90YMrHdQUuilIZRUu.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff033-8ea8-4605-8c43-88bed93b4e42",
+                            "name": "UnderWorld Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2ra07nK4dTtdLUFCTV59q7V4viUFyIDg5gIzgL3b.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "989381f6-63d3-4975-a3ea-fae8091842ba",
+                            "name": "CyberGround Gaming",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2DpmVd5toQMf7pEFXcoLNAL90YMrHdQUuilIZRUu.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff033-8ea8-4605-8c43-88bed93b4e42",
+                            "name": "UnderWorld Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2ra07nK4dTtdLUFCTV59q7V4viUFyIDg5gIzgL3b.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "989381f6-63d3-4975-a3ea-fae8091842ba",
+                            "name": "CyberGround Gaming",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2DpmVd5toQMf7pEFXcoLNAL90YMrHdQUuilIZRUu.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff033-8ea8-4605-8c43-88bed93b4e42",
+                            "name": "UnderWorld Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2ra07nK4dTtdLUFCTV59q7V4viUFyIDg5gIzgL3b.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "989381f6-63d3-4975-a3ea-fae8091842ba",
+                            "name": "CyberGround Gaming",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2DpmVd5toQMf7pEFXcoLNAL90YMrHdQUuilIZRUu.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98bff033-8ea8-4605-8c43-88bed93b4e42",
+                            "name": "UnderWorld Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/2ra07nK4dTtdLUFCTV59q7V4viUFyIDg5gIzgL3b.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "pick",
+                        "executed_at": null,
+                        "contestant": null,
+                        "user": null
+                    }
+                ],
+                "ended": true,
+                "next": []
+            },
+            "checked_by": null,
+            "type": "competitive",
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-05-25 10:29:57",
+            "is_in_match": false
+        },
+        {
+            "id": "98c04fb2-4dcf-4328-90f6-d068df5b1d99",
+            "status": "closed",
+            "round": {
+                "id": "98c04fb2-3b82-4ba5-b669-14fa7fac248f",
+                "winners": 6
+            },
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3",
+                "name": "Groupstage"
+            },
+            "tournament": {
+                "id": "98bfa269-4fce-4bb1-84c7-7ba0ed4d1da0",
+                "name": "Be Serious 2023 - Campionato",
+                "slug": "be-serious-2023-campionato",
+                "images": {
+                    "cover": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/cover/G7atdi9fzYleBfMIjxcX0o7fRH3pGQsTAxcvPoRR.jpg",
+                    "thumbnail": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/thumbnails/z1W1hfj2oxqKTlYPn7iGUDjKlnOyUNwD27hhRgbY.jpg"
+                },
+                "integration": {
+                    "id": "0ef0f682-57ca-4994-ae2f-4395c9255711",
+                    "name": "rainbowsix",
+                    "linkage_provider": {
+                        "id": "77c30ebf-c397-4b1b-a180-cff936613e8b",
+                        "names": {
+                            "internal": "ubisoft",
+                            "public": "Ubisoft"
+                        },
+                        "logo": "https://gameshard.s3.eu-central-1.amazonaws.com/linkages/ubisoft.png",
+                        "linkage": false,
+                        "should_refresh": false,
+                        "created_at": "2021-02-03 17:22:39",
+                        "updated_at": "2023-10-09 09:01:48",
+                        "deleted_at": "2023-10-10 09:32:26"
+                    },
+                    "capabilities": {
+                        "report_scores": true
+                    }
+                },
+                "contestants": {
+                    "size": 5,
+                    "type": "team"
+                }
+            },
+            "game": {
+                "id": "82181c11-e8d0-432f-9c3a-880efbeec102",
+                "name": "Rainbow Six Siege"
+            },
+            "winner": {
+                "id": "98c0019b-b8b3-4314-9e3f-25c55d2916cb",
+                "type": "team",
+                "name": "Reghium Esports",
+                "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/elV7Md8JHCkqkpp7YdxV9vffkIitiqCKkWuDX9Hb.jpg",
+                "verified": false
+            },
+            "additional_data": {
+                "best_of": "1",
+                "discord": {
+                    "channelId": "1110502200502931476",
+                    "vetoMessageId": "1110502206647566426",
+                    "readyMessageId": "1110957905332670475"
+                },
+                "home_away": "away",
+                "veto_ended": true,
+                "current_day": 14,
+                "veto_actions": [
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "contestant": "9890fcbe-cced-4102-8300-4a8b7f4eab4c"
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "ban",
+                        "contestant": "98c0019b-b8b3-4314-9e3f-25c55d2916cb"
+                    },
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "contestant": "9890fcbe-cced-4102-8300-4a8b7f4eab4c"
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "contestant": "98c0019b-b8b3-4314-9e3f-25c55d2916cb"
+                    },
+                    {
+                        "item": "Villa",
+                        "type": "ban",
+                        "contestant": "9890fcbe-cced-4102-8300-4a8b7f4eab4c"
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "contestant": "98c0019b-b8b3-4314-9e3f-25c55d2916cb"
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "contestant": "9890fcbe-cced-4102-8300-4a8b7f4eab4c"
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "contestant": "98c0019b-b8b3-4314-9e3f-25c55d2916cb"
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "pick",
+                        "contestant": null
+                    }
+                ]
+            },
+            "schedule": {
+                "scheduled_at": "2023-03-22 21:36:10",
+                "played_at": "2023-05-25 10:30:12"
+            },
+            "contestants": [
+                {
+                    "id": "9890fcbe-cced-4102-8300-4a8b7f4eab4c",
+                    "type": "team",
+                    "name": "BATS eSports",
+                    "avatar": "https://d2ccr4ca6o85xl.cloudfront.net/c4d00321-014d-458e-9978-5109d72b1150/images/avatars/default-avatar.png",
+                    "score": 0,
+                    "verified": false
+                },
+                {
+                    "id": "98c0019b-b8b3-4314-9e3f-25c55d2916cb",
+                    "type": "team",
+                    "name": "Reghium Esports",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/elV7Md8JHCkqkpp7YdxV9vffkIitiqCKkWuDX9Hb.jpg",
+                    "score": 1,
+                    "verified": false
+                }
+            ],
+            "has_ticket": false,
+            "veto": {
+                "required": true,
+                "algorithm": "rainbow_six_pro_league",
+                "items": [
+                    "Bank",
+                    "Chalet",
+                    "Club House",
+                    "Kafe Dostoyevsky",
+                    "Oregon",
+                    "Villa",
+                    "Border",
+                    "Skyscraper",
+                    "Theme park"
+                ],
+                "actions": [
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9890fcbe-cced-4102-8300-4a8b7f4eab4c",
+                            "name": "BATS eSports",
+                            "avatar": "https://d2ccr4ca6o85xl.cloudfront.net/c4d00321-014d-458e-9978-5109d72b1150/images/avatars/default-avatar.png"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c0019b-b8b3-4314-9e3f-25c55d2916cb",
+                            "name": "Reghium Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/elV7Md8JHCkqkpp7YdxV9vffkIitiqCKkWuDX9Hb.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9890fcbe-cced-4102-8300-4a8b7f4eab4c",
+                            "name": "BATS eSports",
+                            "avatar": "https://d2ccr4ca6o85xl.cloudfront.net/c4d00321-014d-458e-9978-5109d72b1150/images/avatars/default-avatar.png"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c0019b-b8b3-4314-9e3f-25c55d2916cb",
+                            "name": "Reghium Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/elV7Md8JHCkqkpp7YdxV9vffkIitiqCKkWuDX9Hb.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Villa",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9890fcbe-cced-4102-8300-4a8b7f4eab4c",
+                            "name": "BATS eSports",
+                            "avatar": "https://d2ccr4ca6o85xl.cloudfront.net/c4d00321-014d-458e-9978-5109d72b1150/images/avatars/default-avatar.png"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c0019b-b8b3-4314-9e3f-25c55d2916cb",
+                            "name": "Reghium Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/elV7Md8JHCkqkpp7YdxV9vffkIitiqCKkWuDX9Hb.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9890fcbe-cced-4102-8300-4a8b7f4eab4c",
+                            "name": "BATS eSports",
+                            "avatar": "https://d2ccr4ca6o85xl.cloudfront.net/c4d00321-014d-458e-9978-5109d72b1150/images/avatars/default-avatar.png"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "98c0019b-b8b3-4314-9e3f-25c55d2916cb",
+                            "name": "Reghium Esports",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/elV7Md8JHCkqkpp7YdxV9vffkIitiqCKkWuDX9Hb.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "pick",
+                        "executed_at": null,
+                        "contestant": null,
+                        "user": null
+                    }
+                ],
+                "ended": true,
+                "next": []
+            },
+            "checked_by": null,
+            "type": "competitive",
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-05-25 10:30:12",
+            "is_in_match": false
+        },
+        {
+            "id": "98c04fb2-5628-4234-b332-968eddba4bc4",
+            "status": "closed",
+            "round": {
+                "id": "98c04fb2-3b82-4ba5-b669-14fa7fac248f",
+                "winners": 6
+            },
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3",
+                "name": "Groupstage"
+            },
+            "tournament": {
+                "id": "98bfa269-4fce-4bb1-84c7-7ba0ed4d1da0",
+                "name": "Be Serious 2023 - Campionato",
+                "slug": "be-serious-2023-campionato",
+                "images": {
+                    "cover": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/cover/G7atdi9fzYleBfMIjxcX0o7fRH3pGQsTAxcvPoRR.jpg",
+                    "thumbnail": "https://gameshard.s3.eu-central-1.amazonaws.com/tournaments/thumbnails/z1W1hfj2oxqKTlYPn7iGUDjKlnOyUNwD27hhRgbY.jpg"
+                },
+                "integration": {
+                    "id": "0ef0f682-57ca-4994-ae2f-4395c9255711",
+                    "name": "rainbowsix",
+                    "linkage_provider": {
+                        "id": "77c30ebf-c397-4b1b-a180-cff936613e8b",
+                        "names": {
+                            "internal": "ubisoft",
+                            "public": "Ubisoft"
+                        },
+                        "logo": "https://gameshard.s3.eu-central-1.amazonaws.com/linkages/ubisoft.png",
+                        "linkage": false,
+                        "should_refresh": false,
+                        "created_at": "2021-02-03 17:22:39",
+                        "updated_at": "2023-10-09 09:01:48",
+                        "deleted_at": "2023-10-10 09:32:26"
+                    },
+                    "capabilities": {
+                        "report_scores": true
+                    }
+                },
+                "contestants": {
+                    "size": 5,
+                    "type": "team"
+                }
+            },
+            "game": {
+                "id": "82181c11-e8d0-432f-9c3a-880efbeec102",
+                "name": "Rainbow Six Siege"
+            },
+            "winner": {
+                "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                "type": "team",
+                "name": "GameZone ASD",
+                "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg",
+                "verified": false
+            },
+            "additional_data": {
+                "best_of": "1",
+                "discord": {
+                    "channelId": "1110502215958925342",
+                    "vetoMessageId": "1110502224519503883",
+                    "readyMessageId": "1110992477021802696"
+                },
+                "home_away": "away",
+                "veto_ended": true,
+                "current_day": 14,
+                "veto_actions": [
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "contestant": "9891968c-2922-40e2-8fc7-49866fdfd362"
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "contestant": "97f0ef73-8620-4de1-af0c-121495381bc9"
+                    },
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "contestant": "9891968c-2922-40e2-8fc7-49866fdfd362"
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "contestant": "97f0ef73-8620-4de1-af0c-121495381bc9"
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "ban",
+                        "contestant": "9891968c-2922-40e2-8fc7-49866fdfd362"
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "contestant": "97f0ef73-8620-4de1-af0c-121495381bc9"
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "contestant": "9891968c-2922-40e2-8fc7-49866fdfd362"
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "ban",
+                        "contestant": "97f0ef73-8620-4de1-af0c-121495381bc9"
+                    },
+                    {
+                        "item": "Villa",
+                        "type": "pick",
+                        "contestant": null
+                    }
+                ]
+            },
+            "schedule": {
+                "scheduled_at": "2023-03-22 21:36:10",
+                "played_at": "2023-05-25 10:30:25"
+            },
+            "contestants": [
+                {
+                    "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                    "type": "team",
+                    "name": "GameZone ASD",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg",
+                    "score": 1,
+                    "verified": false
+                },
+                {
+                    "id": "97f0ef73-8620-4de1-af0c-121495381bc9",
+                    "type": "team",
+                    "name": "SO-LI-DO",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/sceMPdljB703vOx1Pvm0dVrCz95aUAQoyUsmmYpj.jpg",
+                    "score": 0,
+                    "verified": false
+                }
+            ],
+            "has_ticket": false,
+            "veto": {
+                "required": true,
+                "algorithm": "rainbow_six_pro_league",
+                "items": [
+                    "Bank",
+                    "Chalet",
+                    "Club House",
+                    "Kafe Dostoyevsky",
+                    "Oregon",
+                    "Villa",
+                    "Border",
+                    "Skyscraper",
+                    "Theme park"
+                ],
+                "actions": [
+                    {
+                        "item": "Theme park",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                            "name": "GameZone ASD",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Kafe Dostoyevsky",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "97f0ef73-8620-4de1-af0c-121495381bc9",
+                            "name": "SO-LI-DO",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/sceMPdljB703vOx1Pvm0dVrCz95aUAQoyUsmmYpj.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Bank",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                            "name": "GameZone ASD",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Border",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "97f0ef73-8620-4de1-af0c-121495381bc9",
+                            "name": "SO-LI-DO",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/sceMPdljB703vOx1Pvm0dVrCz95aUAQoyUsmmYpj.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Chalet",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                            "name": "GameZone ASD",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Skyscraper",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "97f0ef73-8620-4de1-af0c-121495381bc9",
+                            "name": "SO-LI-DO",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/sceMPdljB703vOx1Pvm0dVrCz95aUAQoyUsmmYpj.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Club House",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                            "name": "GameZone ASD",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Oregon",
+                        "type": "ban",
+                        "executed_at": null,
+                        "contestant": {
+                            "id": "97f0ef73-8620-4de1-af0c-121495381bc9",
+                            "name": "SO-LI-DO",
+                            "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/sceMPdljB703vOx1Pvm0dVrCz95aUAQoyUsmmYpj.jpg"
+                        },
+                        "user": null
+                    },
+                    {
+                        "item": "Villa",
+                        "type": "pick",
+                        "executed_at": null,
+                        "contestant": null,
+                        "user": null
+                    }
+                ],
+                "ended": true,
+                "next": []
+            },
+            "checked_by": null,
+            "type": "competitive",
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-05-25 10:30:25",
+            "is_in_match": false
+        }
+    ],
+    "links": {
+        "first": "https://gameshard.io/api/matches?page=1",
+        "last": "https://gameshard.io/api/matches?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "https://gameshard.io/api/matches?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "https://gameshard.io/api/matches",
+        "per_page": 20,
+        "to": 4,
+        "total": 4
+    }
+}

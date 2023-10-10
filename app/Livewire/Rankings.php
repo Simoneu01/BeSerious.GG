@@ -43,7 +43,7 @@ class Rankings extends Component
             $playDaysIds->each(fn (string $playDayId) => $matchesIds->push($gameShardApi->pullMatchesIdsFromRoundId($playDayId)));
 
             $allGames = collect();
-            $matchesIds->flatten()->each(fn ($matchId) => $allGames->push($gameShardApi->pullGamesIds($matchId)));
+            $matchesIds->flatten()->each(fn ($matchId) => $allGames->push($gameShardApi->pullGames($matchId)));
 
             // Inizializzo rankings a 0
             $games = $allGames->filter(fn (Collection $game) => $game->first()['played_at']);

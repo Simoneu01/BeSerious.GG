@@ -1,0 +1,298 @@
+{
+    "data": [
+        {
+            "id": "98c04fb0-51fb-498c-a537-d8589adea74f",
+            "number": 1,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "home",
+                "current_day": 1,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb0-9797-4ee7-bc35-286f1f928b8f",
+            "number": 2,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "home",
+                "current_day": 2,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb0-b870-4931-936a-9c45e4f9930f",
+            "number": 3,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "home",
+                "current_day": 3,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb0-d813-4121-bc71-cfbf8c42630f",
+            "number": 4,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "home",
+                "current_day": 4,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb0-f84a-4d30-a936-93235ec5114e",
+            "number": 5,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "home",
+                "current_day": 5,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb1-1874-41b1-90d7-d343b85f313d",
+            "number": 6,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "home",
+                "current_day": 6,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb1-3c26-4cee-b214-83019b8c76e8",
+            "number": 7,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "home",
+                "current_day": 7,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb1-5dc8-4444-aaa1-147e5e9c4405",
+            "number": 8,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "away",
+                "current_day": 8,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb1-81a2-42cf-b283-a08164b464ea",
+            "number": 9,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "away",
+                "current_day": 9,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb1-a492-4e0a-8ee0-3d8bd981b014",
+            "number": 10,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "away",
+                "current_day": 10,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb1-c8fd-4bcc-9484-fa35a68d716c",
+            "number": 11,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "away",
+                "current_day": 11,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:21",
+            "updated_at": "2023-03-22 20:36:21"
+        },
+        {
+            "id": "98c04fb1-f460-472b-ba37-816d602f78fe",
+            "number": 12,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "away",
+                "current_day": 12,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-03-22 20:36:22"
+        },
+        {
+            "id": "98c04fb2-176d-401b-b5d5-80f0d95a72fd",
+            "number": 13,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "away",
+                "current_day": 13,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-03-22 20:36:22"
+        },
+        {
+            "id": "98c04fb2-3b82-4ba5-b669-14fa7fac248f",
+            "number": 14,
+            "winners": 6,
+            "phase": {
+                "id": "98bfa734-0f8c-4949-a352-c7e8654f50d3"
+            },
+            "matches": {
+                "total": 4,
+                "open": 0,
+                "closed": 4,
+                "deleted": 0
+            },
+            "additional_data": {
+                "home_away": "away",
+                "current_day": 14,
+                "scheduled_at": "2023-03-22T21:36:10.000000Z"
+            },
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-03-22 20:36:22"
+        }
+    ]
+}

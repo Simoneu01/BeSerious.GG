@@ -1,0 +1,41 @@
+{
+    "data": [
+        {
+            "id": "98c04fb2-59a0-4d0e-a3e4-954da7eb05ba",
+            "match": {
+                "id": "98c04fb2-5628-4234-b332-968eddba4bc4"
+            },
+            "number": 1,
+            "contestants": [
+                {
+                    "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                    "type": "team",
+                    "name": "GameZone ASD",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg",
+                    "score": 7,
+                    "verified": false
+                },
+                {
+                    "id": "97f0ef73-8620-4de1-af0c-121495381bc9",
+                    "type": "team",
+                    "name": "SO-LI-DO",
+                    "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/sceMPdljB703vOx1Pvm0dVrCz95aUAQoyUsmmYpj.jpg",
+                    "score": 2,
+                    "verified": false
+                }
+            ],
+            "winner": {
+                "id": "9891968c-2922-40e2-8fc7-49866fdfd362",
+                "type": "team",
+                "name": "GameZone ASD",
+                "avatar": "https://gameshard.s3.eu-central-1.amazonaws.com/teams/logo/t1PgKtIihdQD5Czmi04GOCusoINEiJo6GMopJJbM.jpg",
+                "verified": false
+            },
+            "additional_data": [],
+            "played_at": "2023-05-25 10:30:25",
+            "created_at": "2023-03-22 20:36:22",
+            "updated_at": "2023-05-25 10:30:25",
+            "expires_at": null
+        }
+    ]
+}

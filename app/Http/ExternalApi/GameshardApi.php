@@ -53,7 +53,7 @@ class GameshardApi
     /**
      * @throws RequestException
      */
-    public function pullGamesIds(string $matchId): Collection
+    public function pullGames(string $matchId): Collection
     {
         $games = Http::acceptJson()
             ->withToken($this->gameshardToken)
