@@ -2,17 +2,18 @@
 
 namespace App\Livewire;
 
+use App\Http\ExternalApi\GameshardApi;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
 class Rankings extends Component
 {
     public Collection $rankings;
 
-    public string $year = '2021';
+    public string $year = '2023';
 
     public bool $killcache = false;
 
@@ -20,39 +21,32 @@ class Rankings extends Component
         'killcache' => ['except' => false],
     ];
 
-    public function mount()
+    public function mount(GameshardApi $gameShardApi): void
     {
         if ($this->killcache) {
             Cache::forget('rankings' . $this->year);
         }
 
-        $tournamentLink = match ($this->year) {
-            default => 'https://gameshard.io/api/tournaments/75/phases/47/rounds'
+        [$tournamentUuid, $phaseUuid] = match ($this->year) {
+            '2020' => ['f6d9cf5f-9c31-44c6-8693-b99d769b929c', 'ef76c5d2-757b-4ff3-8109-41ea0c1dbb3b'],
+            '2021' => ['1f13aad9-0459-448a-b14b-537bbf4cfc6f', 'a64424d6-f061-4e12-bc28-2d967040c2c3'],
+            '2022' => ['b873126e-ad58-48e0-8a39-e43b2adf35e6', '7c786925-e76e-4b85-b6fb-91c148fa8a1b'],
+            default => ['98bfa269-4fce-4bb1-84c7-7ba0ed4d1da0', '98bfa734-0f8c-4949-a352-c7e8654f50d3']
         };
 
         /** @var Collection $rankings */
-        $rankings = Cache::rememberForever('rankings' . $this->year, function () use ($tournamentLink) {
-            $playday = Http::withHeaders([
-                'Accept' => 'application/json',
-                'Authorization' => 'Bearer ' . config('services.gameshard.api_key'),
-            ])->get($tournamentLink);
+        $rankings = Cache::rememberForever('rankings' . $this->year, function () use ($gameShardApi, $tournamentUuid, $phaseUuid) {
 
-            $playdayIds = collect($playday->json('data'))->pluck('id');
+            $playDaysIds = $gameShardApi->pullRoundsIds($tournamentUuid, $phaseUuid);
 
-            $matchesIds = collect([]);
-            $playdayIds->each(fn ($playday) => $matchesIds->push(collect(Http::withHeaders([
-                'Accept' => 'application/json',
-                'Authorization' => 'Bearer ' . config('services.gameshard.api_key'),
-            ])->get("https://gameshard.io/api/matches?filter[round_id]=$playday")->json('data'))->pluck('id')));
+            $matchesIds = collect();
+            $playDaysIds->each(fn (string $playDayId) => $matchesIds->push($gameShardApi->pullMatchesIdsFromRoundId($playDayId)));
 
-            $gameIds = collect([]);
-            $matchesIds->flatten()->each(fn ($match) => $gameIds->push(collect(Http::withHeaders([
-                'Accept' => 'application/json',
-                'Authorization' => 'Bearer ' . config('services.gameshard.api_key'),
-            ])->get("https://gameshard.io/api/matches/$match/games")->json('data'))));
+            $allGames = collect();
+            $matchesIds->flatten()->each(fn ($matchId) => $allGames->push($gameShardApi->pullGames($matchId)));
 
             // Inizializzo rankings a 0
-            $games = $gameIds->filter(fn (Collection $game) => $game->first()['played_at']);
+            $games = $allGames->filter(fn (Collection $game) => $game->first()['played_at']);
             $rankings = [];
             foreach ($games as $game) {
                 $game = $game->first();
@@ -77,8 +71,14 @@ class Rankings extends Component
              */
             foreach ($games as $game) {
                 $game = $game->first();
-                $homeContestant = $game['contestants'][0];
-                $awayContestant = $game['contestants'][1];
+                $homeContestant = Arr::get($game['contestants'], 0, null);
+                if (! $homeContestant) {
+                    continue;
+                }
+                $awayContestant = Arr::get($game['contestants'], 1, null);
+                if (! $awayContestant) {
+                    continue;
+                }
                 if ((int) $homeContestant['score'] + (int) $awayContestant['score'] > 12) {
                     // Overt Time
                     if ($homeContestant['score'] > $awayContestant['score']) {
@@ -101,8 +101,8 @@ class Rankings extends Component
             }
 
             /**
-             * tempi regolamentari +3 punti alla squadra vincitrice e +0 alla squadra perdente
-             * tempi supplementari +2 punti alla squadra vincitrice e +1 punto alla squadra perdente.
+             * Tempi regolamentari +3 punti alla squadra vincitrice e +0 alla squadra perdente
+             * Tempi supplementari +2 punti alla squadra vincitrice e +1 punto alla squadra perdente.
              */
             foreach ($rankings as $index => $ranking) {
                 $rankings[$index]['points'] = ($ranking['win'] * 3) + ($ranking['loss'] * 0) + ($ranking['ot_win'] * 2) + ($ranking['ot_loss'] * 1);
@@ -130,6 +130,7 @@ class Rankings extends Component
 
     public function render(): View
     {
-        return view('livewire.rankings');
+        return view('livewire.rankings')
+            ->layout('layouts.guest');
     }
 }
