@@ -8,13 +8,6 @@ use Tests\TestCase;
 
 class GameShardApiTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        Http::preventStrayRequests();
-    }
-
     public function test_pull_rounds_ids()
     {
         Http::fake([
