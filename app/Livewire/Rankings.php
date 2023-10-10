@@ -12,7 +12,9 @@ use Livewire\Component;
 class Rankings extends Component
 {
     public Collection $rankings;
+
     public string $year = '2021';
+
     public bool $killcache = false;
 
     protected $queryString = [
@@ -25,7 +27,7 @@ class Rankings extends Component
             Cache::forget('rankings' . $this->year);
         }
 
-        [$tournamentUuid, $phaseUuid] = match($this->year) {
+        [$tournamentUuid, $phaseUuid] = match ($this->year) {
             '2020' => ['f6d9cf5f-9c31-44c6-8693-b99d769b929c', 'ef76c5d2-757b-4ff3-8109-41ea0c1dbb3b'],
             '2021' => ['1f13aad9-0459-448a-b14b-537bbf4cfc6f', 'a64424d6-f061-4e12-bc28-2d967040c2c3'],
             '2022' => ['b873126e-ad58-48e0-8a39-e43b2adf35e6', '7c786925-e76e-4b85-b6fb-91c148fa8a1b'],
@@ -57,9 +59,9 @@ class Rankings extends Component
                         'contestant' => [
                             'id' => $contestant['id'],
                             'name' => $contestant['name'],
-                            'avatar' => $contestant['avatar']
+                            'avatar' => $contestant['avatar'],
                         ],
-                        'points' => 0
+                        'points' => 0,
                     ];
                 }
             }
@@ -69,12 +71,12 @@ class Rankings extends Component
              */
             foreach ($games as $game) {
                 $game = $game->first();
-                $homeContestant = Arr::get($game['contestants'],0, null);
-                if (!$homeContestant) {
+                $homeContestant = Arr::get($game['contestants'], 0, null);
+                if (! $homeContestant) {
                     continue;
                 }
-                $awayContestant = Arr::get($game['contestants'],1, null);
-                if (!$awayContestant) {
+                $awayContestant = Arr::get($game['contestants'], 1, null);
+                if (! $awayContestant) {
                     continue;
                 }
                 if ((int) $homeContestant['score'] + (int) $awayContestant['score'] > 12) {
@@ -107,8 +109,9 @@ class Rankings extends Component
             }
 
             $rankings = collect($rankings);
+
             return $rankings->sortBy([
-                ['points', 'desc']
+                ['points', 'desc'],
             ]);
         });
 
@@ -118,10 +121,10 @@ class Rankings extends Component
     public function getTrophyColor(int $position): string
     {
         return match ($position) {
-            1 => "#FFD147",
-            2 => "#C9C8CC",
-            3 => "#B5785B",
-            default => "000000",
+            1 => '#FFD147',
+            2 => '#C9C8CC',
+            3 => '#B5785B',
+            default => '000000',
         };
     }
 

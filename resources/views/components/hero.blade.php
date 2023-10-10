@@ -55,32 +55,37 @@
                     <a class="font-medium text-gray-500 hover:text-gray-900" href="{{ route('chi-siamo') }}">Chi
                         Siamo</a>
 
-                    <a class="font-medium text-gray-500 hover:text-gray-900" href="{{ route('campionato-corrente') }}">Be
+                    <a class="font-medium text-gray-500 hover:text-gray-900"
+                        href="{{ route('campionato-corrente') }}">Be
                         Serious 2023</a>
 
-                    <div class="relative" x-data="{open: false}" @click.outside="open = false">
-                        <button type="button" class="inline-flex items-center gap-x-1 font-medium leading-6 text-gray-500 hover:text-gray-900" aria-expanded="false" @click="open =! open">
+                    <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                        <button
+                            class="inline-flex items-center gap-x-1 font-medium leading-6 text-gray-500 hover:text-gray-900"
+                            type="button" aria-expanded="false" @click="open =! open">
                             <span>Campionati Precedenti</span>
-                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            <svg class="h-5 w-5" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </button>
 
-                        <div class="absolute left-1/2 z-10 mt-5 flex w-screen max-w-min -translate-x-1/2 px-4" x-show="open" x-cloak
-
-                             x-transition:enter="transition ease-out duration-200"
-                                x-transition:enter-start="opacity-0 translate-y-1"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                                x-transition:leave="transition ease-in duration-150"
-                                x-transition:leave-start="opacity-100 translate-y-0"
-                                x-transition:leave-end="opacity-0 translate-y-1"
-
-
-                        >
-                            <div class="w-56 shrink rounded-xl bg-white p-4 text-sm font-semibold leading-6 text-gray-500 shadow-lg ring-1 ring-gray-900/5">
-                                <a href="{{ route('campionato-anno', 2022) }}" class="block p-2 hover:text-gray-900">BeSerious 2022</a>
-                                <a href="{{ route('campionato-anno', 2021) }}" class="block p-2 hover:text-gray-900">BeSerious 2021</a>
-                                <a href="{{ route('campionato-anno', 2020) }}" class="block p-2 hover:text-gray-900">BeSerious 2020</a>
+                        <div class="absolute left-1/2 z-10 mt-5 flex w-screen max-w-min -translate-x-1/2 px-4"
+                            x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 translate-y-1"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 translate-y-1">
+                            <div
+                                class="w-56 shrink rounded-xl bg-white p-4 text-sm font-semibold leading-6 text-gray-500 shadow-lg ring-1 ring-gray-900/5">
+                                <a class="block p-2 hover:text-gray-900"
+                                    href="{{ route('campionato-anno', 2022) }}">BeSerious 2022</a>
+                                <a class="block p-2 hover:text-gray-900"
+                                    href="{{ route('campionato-anno', 2021) }}">BeSerious 2021</a>
+                                <a class="block p-2 hover:text-gray-900"
+                                    href="{{ route('campionato-anno', 2020) }}">BeSerious 2020</a>
                             </div>
                         </div>
                     </div>
@@ -150,26 +155,32 @@
                     <a class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
                         href="{{ route('campionato-corrente') }}">Be Serious 2023</a>
 
-                    <div x-data="{campionatiIsOpen: false}">
-                        <button type="button" class="flex w-full items-center justify-between rounded-md py-2 pl-3 pr-3.5 text-base font-medium leading-7 text-gray-700 hover:bg-gray-50 hover:text-gray-900" aria-controls="disclosure-1" aria-expanded="false"
-                        @click="campionatiIsOpen =! campionatiIsOpen">
+                    <div x-data="{ campionatiIsOpen: false }">
+                        <button
+                            class="flex w-full items-center justify-between rounded-md py-2 pl-3 pr-3.5 text-base font-medium leading-7 text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                            type="button" aria-controls="disclosure-1" aria-expanded="false"
+                            @click="campionatiIsOpen =! campionatiIsOpen">
                             Campionati precedenti
                             <!--
                               Expand/collapse icon, toggle classes based on menu open state.
 
                               Open: "rotate-180", Closed: ""
                             -->
-                            <svg
-                                :class="campionatiIsOpen ? 'rotate-180' : ''"
-                                class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            <svg class="h-5 w-5 flex-none" aria-hidden="true"
+                                :class="campionatiIsOpen ? 'rotate-180' : ''" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </button>
                         <!-- 'Campionati precedenti' sub-menu, show/hide based on menu state. -->
                         <div class="mt-2 space-y-2" id="disclosure-1" x-show="campionatiIsOpen" x-cloak>
-                            <a href="{{ route('campionato-anno', 2022) }}" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">BeSerious 2022</a>
-                            <a href="{{ route('campionato-anno', 2021) }}" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">BeSerious 2021</a>
-                            <a href="{{ route('campionato-anno', 2020) }}" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium  text-gray-700 hover:bg-gray-50 hover:text-gray-900">BeSerious 2020</a>
+                            <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                                href="{{ route('campionato-anno', 2022) }}">BeSerious 2022</a>
+                            <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                                href="{{ route('campionato-anno', 2021) }}">BeSerious 2021</a>
+                            <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                                href="{{ route('campionato-anno', 2020) }}">BeSerious 2020</a>
                         </div>
                     </div>
 
