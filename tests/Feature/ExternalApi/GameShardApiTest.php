@@ -5,11 +5,9 @@ namespace Feature\ExternalApi;
 use App\Http\ExternalApi\GameshardApi;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
-use Tests\Utils\GameShardApiFake;
 
 class GameShardApiTest extends TestCase
 {
-
     protected function setUp(): void
     {
         parent::setUp();
@@ -20,8 +18,7 @@ class GameShardApiTest extends TestCase
     public function test_pull_rounds_ids()
     {
         Http::fake([
-            'https://gameshard.io/api/tournaments/98bfa269-4fce-4bb1-84c7-7ba0ed4d1da0/phases/98bfa734-0f8c-4949-a352-c7e8654f50d3/rounds' =>
-                Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/rounds.json')), true), 200),
+            'https://gameshard.io/api/tournaments/98bfa269-4fce-4bb1-84c7-7ba0ed4d1da0/phases/98bfa734-0f8c-4949-a352-c7e8654f50d3/rounds' => Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/rounds.json')), true), 200),
         ]);
 
         $gameshardApi = new GameshardApi();
@@ -35,8 +32,7 @@ class GameShardApiTest extends TestCase
     public function test_pull_matches_from_round_id()
     {
         Http::fake([
-            'https://gameshard.io/api/matches?filter%5Bround_id%5D=98c04fb2-3b82-4ba5-b669-14fa7fac248f' =>
-                Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/matches.json')), true), 200),
+            'https://gameshard.io/api/matches?filter%5Bround_id%5D=98c04fb2-3b82-4ba5-b669-14fa7fac248f' => Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/matches.json')), true), 200),
         ]);
 
         $gameshardApi = new GameshardApi();
@@ -48,8 +44,7 @@ class GameShardApiTest extends TestCase
     public function test_pull_matches_ids_from_round_id()
     {
         Http::fake([
-            'https://gameshard.io/api/matches?filter%5Bround_id%5D=98c04fb2-3b82-4ba5-b669-14fa7fac248f' =>
-                Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/matches.json')), true), 200),
+            'https://gameshard.io/api/matches?filter%5Bround_id%5D=98c04fb2-3b82-4ba5-b669-14fa7fac248f' => Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/matches.json')), true), 200),
         ]);
 
         $gameshardApi = new GameshardApi();
@@ -65,8 +60,7 @@ class GameShardApiTest extends TestCase
     public function test_pull_games()
     {
         Http::fake([
-            'https://gameshard.io/api/matches/98c04fb2-5628-4234-b332-968eddba4bc4/games' =>
-            Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/games.json')), true), 200),
+            'https://gameshard.io/api/matches/98c04fb2-5628-4234-b332-968eddba4bc4/games' => Http::response(json_decode(file_get_contents(base_path('tests/Fixtures/games.json')), true), 200),
         ]);
 
         $gameshardApi = new GameshardApi();
