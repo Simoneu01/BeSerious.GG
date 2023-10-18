@@ -57,6 +57,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentShieldPlugin::make(),
-            ]);
+            ])
+            ->favicon(asset('favicon-32x32.png'));
     }
 }

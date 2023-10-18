@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link type="image/x-icon" href="{{ asset('favicon.ico') }}" rel="shortcut icon">
+    <link href="{{ asset('/apple-touch-icon.png') }}" rel="apple-touch-icon" sizes="180x180">
+    <link type="image/png" href="{{ asset('/favicon-32x32.png') }}" rel="icon" sizes="32x32">
+    <link type="image/png" href="{{ asset('/favicon-16x16.png') }}" rel="icon" sizes="16x16">
+    <link href="{{ asset('/site.webmanifest') }}" rel="manifest">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -17,6 +23,10 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @if (config('umami.url'))
+        <script async src="{{ config('umami.url') }}" data-website-id="{{ config('umami.website_id') }}"></script>
+    @endif
 </head>
 
 <body>
