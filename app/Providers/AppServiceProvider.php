@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Auth\Socialite\GameShardProvider;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -21,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         $socialite = $this->app->make('Laravel\Socialite\Contracts\Factory');
         $socialite->extend(
             'gameshard',
