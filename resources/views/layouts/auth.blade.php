@@ -23,6 +23,10 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @if(config('umami.url'))
+        <script async src="{{ config('umami.url') }}" data-website-id="{{ config('umami.website_id') }}"></script>
+    @endif
 </head>
 
 <body>
