@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Http\Auth\Socialite\GameShardProvider;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
